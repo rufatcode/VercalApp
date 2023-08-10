@@ -79,7 +79,7 @@ nav .profileAndBasket span{
 }
 #headling .catagory .catagories{
     position: absolute;
-    top: 100%;
+    top: 60px;
 
 }
 #headling .catagory .catagories ul{
@@ -113,6 +113,27 @@ nav .profileAndBasket span{
     color: rgba(0, 0, 0, 0.617);
     text-decoration: none;
 }
+#headling .catagory .CatagoryTable{
+    position: absolute;
+    left: 150%;
+    top: 60px;
+    padding-left: 30px;
+}
+#headling .catagory .CatagoryTable>div{
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 800px;
+}
+#headling .catagory .CatagoryTable>div>div:first-child{
+    width: 700px;
+}
+#headling .catagory .CatagoryTable table td{
+    border: 0;
+    
+}
+#headling .catagory .CatagoryTable table th{
+    border: 0;
+}
 #headling .catagory {
 background-color: rgba(100, 148, 237, 0.117);
 height: 45px;
@@ -121,6 +142,7 @@ padding-top: 7px;
 padding-left: 20px;
 padding-right: 40px;
 border-radius: 5px;
+position: relative;
 }
 #headling .catagory span{
     margin-left: 10px;
