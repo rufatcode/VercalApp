@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+nav .Catagory{
+    position: absolute;
+    border: 0.5px solid rgba(0, 0, 0, 0.054) !important;
+    border-radius: 5px;
+    top: 50px;
+    left: -20px;
+    background-color: rgba(243, 238, 238, 0.036);
+    padding-top: 10px;
+}
+nav .Catagory p{
+    color: rgba(0, 0, 0, 0.651);
+    cursor: pointer;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 75px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    margin: 0px;
+}
+nav{
+    width: 80%;
+    position: static;
+    top: 0;
+}
+nav .Catagory p:hover{
+    color: red;
+    background-color: rgba(0, 0, 0, 0.051);
+}
+nav .Selection>span{
+    cursor: pointer;
+}
+nav .searchContent{
+    width: 60%;
+}
+nav .searchContent i{
+    position: absolute;
+    color: rgba(0, 0, 0, 0.478);
+    font-size: 20px;
+    top: 10px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1000 !important;
+}
+nav .searchContent input{
+    outline: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+}
+nav a{
+    font-family: 'Calistoga', cursive;
+
+}
+nav .profileAndBasket i{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.07);
+    border-radius: 50%;
+    cursor: pointer;
+}
+nav .profileAndBasket span{
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 2px 8px;
+
+    border-radius: 50%;
+    transform: translate(-20px,-20px);
+}
+#headling{
+    width: 80%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+}
+#headling .catagory {
+background-color: rgba(100, 148, 237, 0.117);
+height: 45px;
+text-align: center;
+padding-top: 7px;
+padding-left: 20px;
+padding-right: 40px;
+border-radius: 5px;
+}
+#headling .catagory span{
+    margin-left: 10px;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.354);
+}
+#headling .naviqation>ul{
+    display: flex;
+}
+#headling .naviqation>ul>li{
+    margin-left: 25px;
+    position: relative;
+}
+#headling .naviqation li{
+    list-style: none;
+}
+#headling .naviqation ul li a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.665);
+}
