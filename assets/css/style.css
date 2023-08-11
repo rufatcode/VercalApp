@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-nav .Catagory{
+.Catagory{
     position: absolute;
     border: 0.5px solid rgba(0, 0, 0, 0.054) !important;
     border-radius: 5px;
@@ -12,8 +12,10 @@ nav .Catagory{
     left: -20px;
     background-color: rgba(243, 238, 238, 0.036);
     padding-top: 10px;
+    background-color: white;
+    z-index: 1;
 }
-nav .Catagory p{
+.Catagory p{
     color: rgba(0, 0, 0, 0.651);
     cursor: pointer;
     padding-top: 10px;
@@ -22,17 +24,27 @@ nav .Catagory p{
     padding-bottom: 10px;
     font-size: 14px;
     margin: 0px;
+    border-color: red;
 }
 nav{
-    width: 80%;
-    position: static;
+    width: 100%;
+    position: sticky !important;
     top: 0;
+    background-color: white;
+    z-index: 999;
 }
-nav .Catagory p:hover{
+nav>div{
+    width: 80% !important;
+    margin: auto;
+}
+.Catagory p:hover{
     color: red;
     background-color: rgba(0, 0, 0, 0.051);
 }
-nav .Selection>span{
+.Selection{
+    cursor: pointer;
+}
+.Selection>span{
     cursor: pointer;
 }
 nav .searchContent{
@@ -73,14 +85,15 @@ nav .profileAndBasket span{
 #headling{
     position: relative;
     width: 80%;
-    margin: 60px auto;
+    margin: 10px auto;
     display: flex;
     justify-content: space-between;
 }
 #headling .catagory .catagories{
     position: absolute;
     top: 60px;
-
+    background-color: white;
+    z-index: 999;
 }
 #headling .catagory .catagories ul{
     width: 300px;
@@ -88,6 +101,7 @@ nav .profileAndBasket span{
     border-radius: 10px;
     padding-top: 10px;
     padding-left: 0px;
+    padding-bottom: 10px;
 }
 #headling .catagory .catagories ul li{
     list-style: none;
@@ -100,10 +114,15 @@ nav .profileAndBasket span{
 #headling .catagory .catagories ul li:hover{
     background-color: rgba(255, 0, 0, 0.136);
 }
-#headling .catagory .catagories ul li:hover a{
+#headling .catagory .catagories ul li:hover >div{
+    display: block;
+    background-color: white;
+    z-index: 999;
+}
+#headling .catagory .catagories>ul>li:hover >a{
     color: red;
 }
-#headling .catagory .catagories ul li:hover svg{
+#headling .catagory .catagories>ul>li:hover >a>svg{
     fill: red;
 }
 #headling .catagory .catagories ul li i{
@@ -113,27 +132,166 @@ nav .profileAndBasket span{
     color: rgba(0, 0, 0, 0.617);
     text-decoration: none;
 }
-#headling .catagory .CatagoryTable{
+#headling .catagory .fashionCatagoryTable{
     position: absolute;
-    left: 150%;
-    top: 60px;
+    left: 100%;
+    top: -10px;
     padding-left: 30px;
+    display: none;
 }
-#headling .catagory .CatagoryTable>div{
+#headling .catagory .fashionCatagoryTable>div{
     border: 1px solid rgba(0, 0, 0, 0.103);
     border-radius: 10px;
     width: 800px;
 }
-#headling .catagory .CatagoryTable>div>div:first-child{
+#headling .catagory .fashionCatagoryTable>div>div:first-child{
     width: 700px;
 }
-#headling .catagory .CatagoryTable table td{
+#headling .catagory .fashionCatagoryTable table td{
     border: 0;
+    cursor: pointer;
     
 }
-#headling .catagory .CatagoryTable table th{
+#headling .catagory .fashionCatagoryTable table th{
     border: 0;
+    cursor: pointer;
 }
+#headling .catagory .fashionCatagoryTable table td:hover{
+    color: red;
+}
+#headling .catagory .fashionCatagoryTable table th:hover{
+    color: red;
+}
+#headling .catagory .electoronicCatagoryTable{
+    position: absolute;
+    left: 100%;
+    top: -55px;
+    padding-left: 30px;
+    display: none;
+}
+#headling .catagory .HomeGarden{
+    top: -140px !important; 
+}
+#headling .catagory .electoronicCatagoryTable>div{
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 720px;
+}
+#headling .catagory .electoronicCatagoryTable>div>div:first-child{
+    width: 700px;
+}
+#headling .catagory .electoronicCatagoryTable table td{
+    border: 0;
+    cursor: pointer;
+    
+}
+#headling .catagory .electoronicCatagoryTable table th{
+    border: 0;
+    cursor: pointer;
+}
+#headling .catagory .electoronicCatagoryTable table td:hover{
+    color: red;
+}
+#headling .catagory .electoronicCatagoryTable table th:hover{
+    color: red;
+}
+
+#headling .catagory .bikesCatagory{
+    position: absolute;
+    left: 100%;
+    top: -100px;
+    padding-left: 30px;
+    display: none;
+    
+}
+#headling .catagory .giftCatagory{
+    top: -180px;
+   
+}
+#headling .catagory .bikesCatagory ul{
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 320px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#headling .catagory .bikesCatagory li{
+    list-style: none;
+    text-align: start;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: relative;
+}
+#headling .catagory .bikesCatagory li i{
+    position: absolute;
+    right: 20px;
+    margin-top: 5px;
+}
+#headling .catagory .bikesCatagory li:hover{
+    color: red;
+    background-color: rgba(0, 0, 0, 0.095);
+}
+#headling .catagory .bikesCatagory li:hover .manCatagoryTable{
+    display: block;
+}
+#headling .catagory .bikesCatagory li:hover svg{
+    fill: red;
+}
+
+#headling .catagory .bikesCatagory .manCatagoryTable{
+    position: absolute;
+    left: 95%;
+    top: -10px;
+    padding-left: 30px;
+    display: none;
+}
+#headling .catagory .bikesCatagory .manCatagoryTable>div{
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 500px;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:first-child{
+    width: 450px;
+    padding-left: 18px;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child{
+   padding-left: 20px;
+   display: flex;
+   justify-content: space-between;
+}#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child img{
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child h1{
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child p{
+    color: rgba(0, 0, 0, 0.62);
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child a{
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid red;
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory .manCatagoryTable table td{
+    border: 0;
+    cursor: pointer;
+    
+}
+#headling .catagory .bikesCatagory .manCatagoryTable table th{
+    border: 0;
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory .manCatagoryTable table td:hover{
+    color: red;
+}
+#headling .catagory .bikesCatagory .manCatagoryTable table th:hover{
+    color: red;
+}
+
 #headling .catagory {
 background-color: rgba(100, 148, 237, 0.117);
 height: 45px;
@@ -151,6 +309,8 @@ position: relative;
 }
 #headling .naviqation>ul{
     display: flex;
+    background-color: white;
+    z-index: 999;
 }
 #headling .naviqation>ul>li{
     margin-left: 25px;
@@ -160,7 +320,8 @@ position: relative;
 #headling .naviqation>ul>li>ul{
     display: none;
     padding-left: 0px;
-
+    background-color: white;
+    z-index: 999;
 }
 #headling .naviqation>ul>li:hover >ul{
     display: block;
@@ -171,6 +332,7 @@ position: relative;
     text-align: start;
     margin-top: 20px;
     padding-top: 10px;
+    
 }
 #headling .naviqation>ul>li>ul>li{
     padding-left: 20px;
@@ -185,6 +347,8 @@ position: relative;
 }
 #headling .naviqation>ul>li>ul>li>ul{
     display: none;
+    background-color: white;
+    z-index: 999;
 }
 #headling .naviqation>ul>li>ul>li:hover >ul{
     display: block;
@@ -228,4 +392,139 @@ position: relative;
 #headling .naviqation ul li a{
     text-decoration: none;
     color: rgba(0, 0, 0, 0.665);
+}
+
+#SearchPhone{
+    width: 100%;
+    background-color:rgb(244,247,252);
+    height: 250px;
+    padding-top: 100px;
+}
+#SearchPhone>div{
+    width: 80%;
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.023);
+    border-radius: 10px;
+}
+#SearchPhone>div div>span{
+    color: rgba(0, 0, 0, 0.432);
+}
+#SearchPhone>div div>i{
+margin-left: 30px;
+margin-right: 0px;
+color: rgba(0, 0, 0, 0.665);
+padding: 10px;
+border-radius: 50%;
+cursor: pointer;
+}
+#SearchPhone>div div>i:hover{
+    background-color: rgba(0, 0, 0, 0.106);
+}
+#SearchPhone>div div>svg{
+    border-radius: 50%;
+    cursor: pointer;
+}
+#SearchPhone>div div>svg:hover{
+    background-color: rgba(0, 0, 0, 0.106);
+}
+#main{
+    width: 100%;
+    background-color:rgb(244,247,252);
+    padding-top: 50px;
+}
+#main>div{
+    width: 80%;
+    margin: 0 auto;
+}
+#main>div>div:first-child{
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.025);
+    border-radius: 15px;
+}
+#main>div>div:first-child h3{
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+#main>div>div:first-child p{
+    cursor: pointer;
+    color: rgba(128, 128, 128, 0.709);
+    font-size: 14px;
+    position: relative;
+    margin-top: 15px;
+}
+#main>div>div:first-child p>i{
+    position: absolute;
+    right: 15%;
+}
+#main>div>div:first-child ul>li{
+    list-style: none;
+    color: rgba(128, 128, 128, 0.709);
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#main>div>div:first-child hr{
+    width: 80%;
+    display: inline-block;
+    margin: 20px auto;
+    color: rgba(128, 128, 128, 0.342);
+}
+#main>div>div:first-child input[type="number"]{
+    width: 35%;
+    margin-top: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.239);
+    border-radius: 5px;
+    cursor: pointer;
+}
+#main>div>div:first-child input[type="number"]:focus{
+    outline: none;
+    border: 1px solid red;
+}
+#main>div>div:first-child input[type="checkbox"]{
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#main>div>div:first-child span{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-color: black;
+    border-radius: 50%;
+    margin-right: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#main>div>div:first-child span:last-child{
+    background-color:rgba(0, 0, 255, 0.518);
+    
+}
+#main>div>div:last-child >div>div>p>i{
+    border: 0.1px solid rgba(255, 0, 0, 0.152);
+    cursor: pointer;
+}
+#main>div>div:last-child >div>div>p>i:hover{
+    background-color: red;
+    color: white !important;
+}
+#main>div>div:last-child >div>div:first-child{
+    width: 20px;
+    right: 5%;
+    top: 10px;
+    cursor: pointer;
+    display: none;
+}
+#main>div>div:last-child >div:hover >div:first-child{
+    display: block;
+}
+#main>div>div:last-child img{
+    cursor: pointer;
+}
+#main>div>div:last-child h5{
+    cursor: pointer;
 }
