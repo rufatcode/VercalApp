@@ -424,6 +424,7 @@ cursor: pointer;
 #SearchPhone>div div>svg{
     border-radius: 50%;
     cursor: pointer;
+    fill: red;
 }
 #SearchPhone>div div>svg:hover{
     background-color: rgba(0, 0, 0, 0.106);
@@ -575,6 +576,50 @@ cursor: pointer;
     border: 0.5px solid black;
     border-color: red;
     color: red;
+}
+#main .barShow{
+    width: 75%;
+    margin: 0px auto;
+}
+#main .barShow>div .second{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+}
+#main .barShow>div .first{
+    position: absolute;
+    left: 22%;
+    top: 10px;
+    display: none;
+    cursor: pointer;
+}
+#main .barShow>div>div>p>i{
+    border: 0.5px solid rgba(255, 0, 0, 0.4);
+    display: none;
+    cursor: pointer;
+}
+#main .barShow>div:hover .first{
+    display: inline-block;
+}
+#main .barShow>div:hover >div>p>i{
+    display: inline-block;
+}
+#main .barShow>div>div>p>i:hover{
+    color: white !important;
+    background-color: red;
+}
+#main .barShow>div{
+    width: 98%;
+    display: flex !important;
+    background-color: white;
+}
+#main .barShow>div img{
+    width: 200px;
+    height: 200px;
+}
+#main .barShow>div a {
+    color: gray;
 }
 footer{
     background-color: rgba(15, 38, 77, 0.961);
@@ -801,6 +846,9 @@ footer>div>div h3{
         margin-left: 5%;
     }
     #main>div:last-child >div:last-child{
+        width: 95%;
+    }
+    #main .barShow{
         width: 95%;
     }
 }

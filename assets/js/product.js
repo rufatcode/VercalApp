@@ -181,8 +181,26 @@ $("document").ready(function(){
         $(" nav>div>.searchContent input").removeClass("rounded-end-pill");
     }
     $("#SearchPhone .searchContent>i").click(function(){
-        let arr=$("#main>div>div:last-child >div");
-        
+        $("#main .barShow").removeClass("d-none");
+        $("#main>div>div:last-child").removeClass("d-flex");
+        $("#main>div>div:last-child").addClass("d-none");
+        $(this).css({
+            color:"red"
+        })
+        $(this).prev().css({
+            fill:"black"
+        })
+    })
+    $("#SearchPhone .searchContent>i").prev().click(function(){
+        $("#main .barShow").addClass("d-none");
+        $("#main>div>div:last-child").addClass("d-flex");
+        $("#main>div>div:last-child").removeClass("d-none");
+        $(this).css({
+            fill:"red"
+        })
+        $(this).next().css({
+            color:"black"
+        })
     })
 
 })
