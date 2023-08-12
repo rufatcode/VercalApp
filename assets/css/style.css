@@ -48,7 +48,7 @@ nav>div{
     cursor: pointer;
 }
 nav .searchContent{
-    width: 60%;
+    width: 600px;
 }
 nav .searchContent i{
     position: absolute;
@@ -397,14 +397,15 @@ position: relative;
 #SearchPhone{
     width: 100%;
     background-color:rgb(244,247,252);
-    height: 250px;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 #SearchPhone>div{
     width: 80%;
     background-color: white;
     border: 0.5px solid rgba(0, 0, 0, 0.023);
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 #SearchPhone>div div>span{
     color: rgba(0, 0, 0, 0.432);
@@ -427,21 +428,25 @@ cursor: pointer;
 #SearchPhone>div div>svg:hover{
     background-color: rgba(0, 0, 0, 0.106);
 }
+
 #main{
     width: 100%;
     background-color:rgb(244,247,252);
     padding-top: 50px;
 }
-#main>div{
+#main>div:first-child{
     width: 80%;
     margin: 0 auto;
 }
+
 #main>div>div:first-child{
     padding-top: 25px;
     padding-left: 25px;
     padding-bottom: 20px;
     border: 2px solid rgba(0, 0, 0, 0.025);
     border-radius: 15px;
+    height: 90%;
+    margin-right: 20px;
 }
 #main>div>div:first-child h3{
     font-size: 14px;
@@ -504,6 +509,17 @@ cursor: pointer;
     background-color:rgba(0, 0, 255, 0.518);
     
 }
+#main>div>div:last-child{
+    width: 75%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#main>div>div:last-child >div{
+    width: 28% !important;
+    margin-bottom: 40px;
+}
 #main>div>div:last-child >div>div>p>i{
     border: 0.1px solid rgba(255, 0, 0, 0.152);
     cursor: pointer;
@@ -524,7 +540,267 @@ cursor: pointer;
 }
 #main>div>div:last-child img{
     cursor: pointer;
+    height: 250px;
+    width: 80%;
+    margin: 0px auto;
+    transform: scale(1.4);
 }
 #main>div>div:last-child h5{
     cursor: pointer;
+}
+#main>div:last-child{
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 30%;
+}
+#main>div:last-child >div:last-child{
+    width: 40%;
+}
+#main>div:last-child >div p{
+    color: rgb(109,118,141);
+}
+#main>div:last-child >div span{
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+    height: 25px;
+}
+#main>div:last-child >div span:first-child{
+    border: 0.5px solid black; 
+    border-color: red;
+    color: red;
+    opacity: 0.4;
+}
+#main>div:last-child >div span:last-child{
+    border: 0.5px solid black;
+    border-color: red;
+    color: red;
+}
+footer{
+    background-color: rgba(15, 38, 77, 0.961);
+    margin-bottom: 0px;
+}
+footer>div{
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+}
+footer>div>div{
+    width: 18%;
+
+}
+footer>div>div:first-child{
+    width: 35%;
+}
+
+footer>div>div:first-child h3{
+    cursor: pointer;
+}
+footer>div>div span{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.542);
+    margin-top: 10px;
+    display: block;
+}
+footer>div>div span:hover{
+    color: white;
+}
+footer>div>div img{
+    cursor: pointer;
+    margin-right: 20px;
+}
+footer>div>div a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.542);
+    display: inline-block;
+    
+}
+footer>div>div a>i{
+    padding: 10px;
+    background-color:  rgb(15, 38, 77);
+    border-radius: 50%;
+    color: white;
+}
+footer>div>div p{
+    color: rgba(255, 255, 255, 0.542);
+    width: 100%;
+}
+footer>div>div h3{
+    color: white;
+    margin-bottom: 20px;
+}
+@media screen and (min-width:850px) and (max-width:1150px) {
+    #headling{
+        width: 95%;
+    }
+    #headling>div:last-child ul li,span{
+        font-size: 14px;
+    }
+    nav>div{
+        width: 100% !important;
+    }
+    #SearchPhone>div{
+        width: 100%;
+    }
+    #main>div:first-child{
+        width: 100%;
+    }
+    #main>div>div:first-child{
+        display: none;
+    }
+    #main>div>div:last-child{
+        width: 98%;
+        margin: 0px auto;
+        justify-content: space-around;
+    }
+    #main>div>div:last-child >div{
+        width: 42% !important;
+    }
+    #main>div:last-child >div:last-child{
+        width: 80%;
+    }
+    
+}
+@media screen and (min-width:560px) and (max-width:900px) {
+    footer>div>div{
+        width: 40%;
+        margin-bottom: 40px;
+    
+    }
+    footer>div>div:first-child{
+        width: 50%;
+    }
+    #headling{
+        display: none;
+    }
+    nav>div{
+        width: 100% !important;
+    }
+    nav>div>div:first-child{
+        display: none;
+    }
+    nav>div>div:last-child{
+        display: none;
+    }
+    nav>div>.searchContent{
+        width: 85%;
+        margin: 0px auto;
+        
+    }
+    nav>div>.searchContent input{
+        margin: 0px auto;
+        width: 100% !important;
+    }
+    
+    nav>div>.searchContent .Selection{
+        display: none;
+    }
+    #SearchPhone>div{
+        display: block !important;
+    }
+    #SearchPhone>div>div:last-child{
+        margin-top: 20px;
+        width: 60%;
+    }
+    #SearchPhone>div>div:last-child >div>div{
+        width: 100px !important;
+    }
+    #SearchPhone>div>div:last-child >div>span:first-child{
+        margin-left: 0px !important;
+        margin-right: 10px;
+    }
+    #SearchPhone>div{
+        width: 100%;
+    }
+    
+    #main>div:first-child{
+        width: 100%;
+    }
+    #main>div>div:first-child{
+        display: none;
+    }
+    #main>div>div:last-child{
+        width: 98%;
+        margin: 0px auto;
+    }
+    #main>div>div:last-child >div{
+        width: 44% !important;
+    }
+    #main>div:last-child >div:last-child{
+        width: 80%;
+    }
+    
+}
+@media screen and (max-width:560px)  {
+    footer>div>div{
+        width: 80%;
+        margin-bottom: 40px;
+    
+    }
+    footer>div>div:first-child{
+        width: 90%;
+    }
+     #headling{
+        display: none;
+    }
+    nav>div{
+        width: 100% !important;
+    }
+    nav>div>div:first-child{
+        display: none;
+    }
+    nav>div>div:last-child{
+        display: none;
+    }
+    nav>div>.searchContent .Selection{
+        display: none;
+    }
+    nav>div>.searchContent input{
+        margin: 0px auto;
+        width: 100% !important;
+    }
+    #SearchPhone>div{
+        display: block !important;
+    }
+    #SearchPhone>div>div:last-child{
+        margin-top: 20px;
+    }
+    #SearchPhone>div>div:last-child >div>span{
+        margin-left: 0px !important;
+        margin-right: 10px;
+    }
+    #SearchPhone>div{
+        width: 100%;
+    }
+    #SearchPhone>div>div:last-child{
+        margin-top: 20px;
+        width: 60%;
+    }
+    
+    #main>div:first-child{
+        width: 100%;
+    }
+    #main>div>div:first-child{
+        display: none;
+    }
+    #main>div>div:last-child{
+        width: 98%;
+        margin: 0px auto;
+    }
+    #main>div>div:last-child >div{
+        width: 95% !important;
+    }
+    #main>div:last-child{
+        width: 100%;
+        margin-left: 5%;
+    }
+    #main>div:last-child >div:last-child{
+        width: 95%;
+    }
 }

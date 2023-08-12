@@ -105,15 +105,84 @@ $("document").ready(function(){
         if($("#main>div>.first>ul").attr("class").includes("d-none")){
             $("#main>div>.first>ul").addClass("d-block");
             $("#main>div>.first>ul").removeClass("d-none");
-            $("#main>div>.first>.bath>i").removeClass("fa-chevron-down");
-            $("#main>div>.first>.bath>i").addClass("fa-chevron-right");
+           
+            $("#main>div>.first>.bath>i").removeClass("fa-chevron-right");
+            $("#main>div>.first>.bath>i").addClass("fa-chevron-down");
         }
         else{
             $("#main>div>.first>ul").removeClass("d-block");
             $("#main>div>.first>ul").addClass("d-none");
-            $("#main>div>.first>.bath>i").addClass("fa-chevron-down");
-            $("#main>div>.first>.bath>i").removeClass("fa-chevron-right");
+            $("#main>div>.first>.bath>i").removeClass("fa-chevron-down");
+            $("#main>div>.first>.bath>i").addClass("fa-chevron-right");
         }
+    })
+    $("#main>div:last-child >div span").eq(1).css({
+        color:"red",
+        border: "0.5px solid black",
+        "border-color":"red",
+    })
+    $("#main>div:last-child >div span").slice(1,8).click(function(){
+        $("#main>div:last-child >div span").slice(1,8).css({
+            color:"black",
+            border:"0",
+        })
+        $(this).css({
+            color:"red",
+            border: "0.5px solid black",
+            "border-color":"red",
+
+        })
+        if ($(this).html()=="1") {
+            $("#main>div:last-child >div span").eq(0).css({
+                opacity:"0.4"
+            })
+        }
+        else{
+            $("#main>div:last-child >div span").eq(0).css({
+                opacity:"1"
+            })
+        }
+        if ($(this).html()=="9") {
+            $("#main>div:last-child >div span").eq(8).css({
+                opacity:"0.4"
+            })
+        }
+        else{
+            $("#main>div:last-child >div span").eq(8).css({
+                opacity:"1"
+            })
+        }
+        
+    })
+    $("#main>div:last-child >div span").eq(0).click(function(){
+        let arr=$("#main>div:last-child >div span").slice(1,8);
+        arr.each(index => {
+            if(arr[index].style.color=="red"&&index>0){
+                
+                arr[index-1].click();
+                
+             }
+        });
+    })
+    $("#main>div:last-child >div span").eq(8).click(function(){
+        let arr=$("#main>div:last-child >div span").slice(1,8);
+        arr.each(index => {
+            if(arr[index].style.color=="red"&&index<6){
+                arr[index+1].click();
+                return false;
+            }
+        });
+        
+    })
+    if (window.screen.width<"900") {
+        $(" nav>div>.searchContent input").addClass("rounded-end-pill");
+    }
+    else{
+        $(" nav>div>.searchContent input").removeClass("rounded-end-pill");
+    }
+    $("#SearchPhone .searchContent>i").click(function(){
+        let arr=$("#main>div>div:last-child >div");
+        
     })
 
 })
