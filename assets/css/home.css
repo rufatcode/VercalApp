@@ -1,0 +1,1034 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.Catagory{
+    position: absolute;
+    border: 0.5px solid rgba(0, 0, 0, 0.054) !important;
+    border-radius: 5px;
+    top: 50px;
+    left: -20px;
+    background-color: rgba(243, 238, 238, 0.036);
+    padding-top: 10px;
+    background-color: white;
+    z-index: 1;
+}
+.Catagory p{
+    color: rgba(0, 0, 0, 0.651);
+    cursor: pointer;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 75px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    margin: 0px;
+    border-color: red;
+}
+nav{
+    width: 100%;
+    position: sticky !important;
+    top: 0;
+    background-color: white;
+    z-index: 999;
+}
+nav>div{
+    width: 80% !important;
+    margin: auto;
+}
+.Catagory p:hover{
+    color: red;
+    background-color: rgba(0, 0, 0, 0.051);
+}
+.Selection{
+    cursor: pointer;
+}
+.Selection>span{
+    cursor: pointer;
+}
+nav .searchContent{
+    width: 600px;
+}
+nav .searchContent i{
+    position: absolute;
+    color: rgba(0, 0, 0, 0.478);
+    font-size: 20px;
+    top: 10px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1000 !important;
+}
+nav .searchContent input{
+    outline: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+}
+nav a{
+    font-family: 'Calistoga', cursive;
+
+}
+nav .profileAndBasket i{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.07);
+    border-radius: 50%;
+    cursor: pointer;
+}
+nav .profileAndBasket span{
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 2px 8px;
+
+    border-radius: 50%;
+    transform: translate(-20px,-20px);
+}
+#headling{
+    position: relative;
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+#headling .catagory .catagories{
+    position: absolute;
+    top: 60px;
+    background-color: white;
+    z-index: 999;
+}
+#headling .catagory .catagories ul{
+    width: 300px;
+    border: 0.3px solid rgba(0, 0, 0, 0.084);
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+}
+#headling .catagory .catagories ul li{
+    list-style: none;
+    position: relative;
+    text-align: start;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+#headling .catagory .catagories ul li:hover{
+    background-color: rgba(255, 0, 0, 0.136);
+}
+#headling .catagory .catagories ul li:hover >div{
+    display: block;
+    background-color: white;
+    z-index: 999;
+}
+#headling .catagory .catagories>ul>li:hover >a{
+    color: red;
+}
+#headling .catagory .catagories>ul>li:hover >a>svg{
+    fill: red;
+}
+#headling .catagory .catagories ul li i{
+    right: 15px;
+}
+#headling .catagory .catagories ul li a{
+    color: rgba(0, 0, 0, 0.617);
+    text-decoration: none;
+}
+#headling .catagory .fashionCatagoryTable{
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    padding-left: 30px;
+    display: none;
+}
+#headling .catagory .fashionCatagoryTable>div{
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 800px;
+}
+#headling .catagory .fashionCatagoryTable>div>div:first-child{
+    width: 700px;
+}
+#headling .catagory .fashionCatagoryTable table td{
+    border: 0;
+    cursor: pointer;
+    
+}
+#headling .catagory .fashionCatagoryTable table th{
+    border: 0;
+    cursor: pointer;
+}
+#headling .catagory .fashionCatagoryTable table td:hover{
+    color: red;
+}
+#headling .catagory .fashionCatagoryTable table th:hover{
+    color: red;
+}
+#headling .catagory .electoronicCatagoryTable{
+    position: absolute;
+    left: 100%;
+    top: -55px;
+    padding-left: 30px;
+    display: none;
+}
+#headling .catagory .HomeGarden{
+    top: -140px !important; 
+}
+#headling .catagory .electoronicCatagoryTable>div{
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 720px;
+}
+#headling .catagory .electoronicCatagoryTable>div>div:first-child{
+    width: 700px;
+}
+#headling .catagory .electoronicCatagoryTable table td{
+    border: 0;
+    cursor: pointer;
+    
+}
+#headling .catagory .electoronicCatagoryTable table th{
+    border: 0;
+    cursor: pointer;
+}
+#headling .catagory .electoronicCatagoryTable table td:hover{
+    color: red;
+}
+#headling .catagory .electoronicCatagoryTable table th:hover{
+    color: red;
+}
+
+#headling .catagory .bikesCatagory{
+    position: absolute;
+    left: 100%;
+    top: -100px;
+    padding-left: 30px;
+    display: none;
+    
+}
+#headling .catagory .giftCatagory{
+    top: -180px;
+   
+}
+#headling .catagory .bikesCatagory ul{
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 320px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#headling .catagory .bikesCatagory li{
+    list-style: none;
+    text-align: start;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: relative;
+}
+#headling .catagory .bikesCatagory li i{
+    position: absolute;
+    right: 20px;
+    margin-top: 5px;
+}
+#headling .catagory .bikesCatagory li:hover{
+    color: red;
+    background-color: rgba(0, 0, 0, 0.095);
+}
+#headling .catagory .bikesCatagory li:hover .manCatagoryTable{
+    display: block;
+}
+#headling .catagory .bikesCatagory li:hover svg{
+    fill: red;
+}
+
+#headling .catagory .bikesCatagory .manCatagoryTable{
+    position: absolute;
+    left: 95%;
+    top: -10px;
+    padding-left: 30px;
+    display: none;
+}
+#headling .catagory .bikesCatagory .manCatagoryTable>div{
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 500px;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:first-child{
+    width: 450px;
+    padding-left: 18px;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child{
+   padding-left: 20px;
+   display: flex;
+   justify-content: space-between;
+}#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child img{
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child h1{
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child p{
+    color: rgba(0, 0, 0, 0.62);
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory  .manCatagoryTable>div>div:last-child a{
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid red;
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory .manCatagoryTable table td{
+    border: 0;
+    cursor: pointer;
+    
+}
+#headling .catagory .bikesCatagory .manCatagoryTable table th{
+    border: 0;
+    cursor: pointer;
+}
+#headling .catagory .bikesCatagory .manCatagoryTable table td:hover{
+    color: red;
+}
+#headling .catagory .bikesCatagory .manCatagoryTable table th:hover{
+    color: red;
+}
+
+#headling .catagory {
+background-color: rgba(100, 148, 237, 0.117);
+height: 45px;
+text-align: center;
+padding-top: 7px;
+padding-left: 20px;
+padding-right: 40px;
+border-radius: 5px;
+position: relative;
+}
+#headling .catagory span{
+    margin-left: 10px;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.354);
+}
+#headling .naviqation>ul{
+    display: flex;
+    background-color: white;
+    z-index: 999;
+}
+#headling .naviqation>ul>li{
+    margin-left: 25px;
+    position: relative;
+    height: 50px;
+}
+#headling .naviqation>ul>li>ul{
+    display: none;
+    padding-left: 0px;
+    background-color: white;
+    z-index: 999;
+}
+#headling .naviqation>ul>li:hover >ul{
+    display: block;
+    position: absolute;
+    border: 0.5px solid rgba(0, 0, 0, 0.053);
+    border-radius: 10px;
+    width: 250px;
+    text-align: start;
+    margin-top: 20px;
+    padding-top: 10px;
+    
+}
+#headling .naviqation>ul>li>ul>li{
+    padding-left: 20px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+}
+#headling .naviqation>ul>li>ul>li i{
+    position: absolute;
+    right: 20px;
+}
+#headling .naviqation>ul>li>ul>li>ul{
+    display: none;
+    background-color: white;
+    z-index: 999;
+}
+#headling .naviqation>ul>li>ul>li:hover >ul{
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: -10%;
+    border: 0.3px solid rgba(0, 0, 0, 0.039);
+    border-radius: 10px;
+    padding-left: 0px;
+}
+#headling .naviqation>ul>li>ul>li>ul>li{
+    padding-left: 20px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+}
+#headling .naviqation>ul>li>ul>li>ul>li:hover{
+    background-color: rgba(0, 0, 0, 0.034);
+}
+#headling .naviqation>ul>li>ul>li>ul>li:hover a{
+    color: red;
+}
+#headling .naviqation>ul>li>ul>li>a{
+    width: 100%;
+    display: block;
+    color: rgba(0, 0, 0, 0.623);
+}
+#headling .naviqation>ul>li>ul>li:hover{
+    background-color: rgba(0, 0, 0, 0.066);
+}
+#headling .naviqation>ul>li>ul>li>a:hover{
+    color: red;
+}
+#headling .naviqation>ul>li>a:hover{
+    color: red;
+}
+#headling .naviqation li{
+    list-style: none;
+}
+#headling .naviqation ul li a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.665);
+}
+
+#stock{
+    width: 100%;
+    background-color: rgba(240, 240, 240, 0.585);
+}
+#stock>div>div>div>div{
+    display: flex;
+    justify-content: end;
+}
+#stock>div>div .item{
+   width: 70%;
+   display: flex;
+   padding-top: 50px;
+}
+#stock>div>div:last-child >button >span{
+    width: 15px;
+    height: 15px;
+    margin-bottom: 30px;
+}
+#stock>div>div .up{
+    width: 65%;
+}
+#stock>div>div .down{
+    width: 30%;
+    margin-top: -50px;
+}
+#stock>div>div img{
+    width: 250px;
+    height: 350px;
+}
+#stock>div>div>div:first-child h1{
+    font-weight: 800;
+    font-size: 45px;
+    width: 90%;
+}
+#stock>div>div>div:first-child p{
+    color: rgba(0, 0, 0, 0.648);
+    margin-top: 25px;
+    margin-bottom:20px;
+}
+#stock>div>div>div:first-child a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, 0.849);
+    border-radius: 5px;
+}
+#FlashDeals{
+    background-color: rgb(236,236,236);
+}
+#FlashDeals>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    margin: 0px auto;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+#FlashDeals>div:first-child h1{
+    font-size: 28px;
+}
+#FlashDeals>div:first-child h1 i{
+    margin-right: 10px;
+}
+#FlashDeals>div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#FlashDeals>div:first-child p i{
+    margin-left: 10px;
+}
+#FlashDeals>div:last-child {
+    margin: 10px auto;
+    width: 85%;
+}
+
+#FlashDeals>div:last-child .item{
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 4%;
+    margin-bottom: 30px;
+}
+#FlashDeals>div:last-child .item>div:first-child{
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top: 15px;
+    display: none;
+}
+#FlashDeals>div:last-child .item:hover >div:first-child{
+    display: block;
+}
+#FlashDeals>div:last-child .item>div:first-child i{
+    cursor: pointer;
+}
+#FlashDeals>div:last-child .item .percent{
+    color: white;
+    background-color: rgba(172, 15, 15, 0.769);
+    padding: 5px 10px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 11px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#FlashDeals>div:last-child .item >img{
+    width: 75%;
+    height: 180px;
+    transform: scale(1.3);
+    margin: 0px auto;
+    cursor: pointer;
+}
+#FlashDeals>div:last-child .item>h1{
+    font-size: 14px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+#FlashDeals>div:last-child .item>p{
+    position: relative;
+}
+#FlashDeals>div:last-child .item>p>del{
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}
+#FlashDeals>div:last-child .item>p>i{
+    border: 0.5px solid rgba(255, 0, 0, 0.375);
+    color: red;
+    padding: 5px;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+#FlashDeals>div:last-child .item>p>i:hover{
+    background-color: red;
+    color: white;
+}
+#FlashDeals>div:last-child .owl-next span{
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    background-color: rgba(15, 38, 66, 0.655);
+    border-radius: 50%;
+    padding: 2px 15px;
+    cursor: pointer;
+}
+#FlashDeals>div:last-child .owl-next span:hover{
+    background-color: rgba(15, 38, 66);
+}
+#FlashDeals>div:last-child .owl-prev span:hover{
+    background-color: rgba(15, 38, 66);
+}
+
+#FlashDeals>div:last-child .owl-nav{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    margin: 0px auto;
+    top: 35%;
+    cursor: pointer;
+}
+#FlashDeals>div:last-child .owl-next{
+    display: inline-block;
+}
+#FlashDeals>div:last-child .owl-prev{
+    display: inline-block;
+}
+#FlashDeals>div:last-child .owl-prev span{
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    background-color: rgba(15, 38, 66, 0.649);
+    border-radius: 50%;
+    padding: 2px 15px;
+    cursor: pointer;
+}
+
+
+
+#TopCategories{
+    background-color: rgb(236,236,236);
+    margin-top: -10px;
+    padding-top: 40px;
+}
+#TopCategories>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    margin: 0px auto;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+#TopCategories>div:first-child h1{
+    font-size: 28px;
+}
+#TopCategories>div:first-child h1 i{
+    margin-right: 10px;
+}
+#TopCategories>div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#TopCategories>div:first-child p i{
+    margin-left: 10px;
+}
+#TopCategories>div:last-child {
+    margin: 10px auto;
+    width: 85%;
+}
+
+#TopCategories>div:last-child .item{
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 14px;
+}
+#TopCategories>div:last-child .item>div{
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 30px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+#TopCategories>div:last-child .item>div>p:first-child{
+    font-size: 11px;
+    background-color: rgb(15,38,66);
+    color: white;
+    border-radius: 25px;
+    padding: 2px 10px;
+}
+#TopCategories>div:last-child .item>div>p:last-child{
+    font-size: 11px;
+    background-color: rgba(128, 128, 128, 0.384);
+    color: black;
+    border-radius: 25px;
+    padding: 2px 10px;
+}
+
+#TopCategories>div:last-child .item >img{
+    width: 100%;
+    height: 120px;
+    margin: 0px auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#TopCategories>div:last-child .item>h1{
+    height: 120px;
+    width: 93%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 0;
+    z-index: 1;
+    
+}
+
+#TopCategories>div:last-child .item>h1:hover{
+    opacity: 1;
+}
+#TopCategories>div:last-child .owl-next span{
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    background-color: rgba(15, 38, 66, 0.629);
+    border-radius: 50%;
+    padding: 2px 15px;
+    cursor: pointer;
+}
+#TopCategories>div:last-child .owl-next span:hover{
+    background-color: rgba(15, 38, 66);
+}
+
+#TopCategories>div:last-child .owl-nav{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 105%;
+    margin: 0px auto;
+    margin-left: -35px;
+    top: 30%;
+    cursor: pointer;
+    z-index: 0;
+}
+#TopCategories>div:last-child .owl-next{
+    display: inline-block;
+}
+#TopCategories>div:last-child .owl-prev{
+    display: inline-block;
+}
+#TopCategories>div:last-child .owl-prev span{
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    background-color: rgba(15, 38, 66, 0.665);
+    border-radius: 50%;
+    padding: 2px 15px;
+    cursor: pointer;
+}
+#TopCategories>div:last-child .owl-prev span:hover{
+    background-color: rgb(15,38,66);
+}
+
+#TopRating{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(236,236,236);
+    margin-top: -10px;
+    padding-top: 40px;
+}
+#TopRating .first{
+    
+    width: 50%;
+}
+#TopRating .first>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+#TopRating .first>div:first-child h1{
+    font-size: 28px;
+}
+#TopRating .first>div:first-child h1 i{
+    margin-right: 10px;
+}
+#TopRating .first>div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#TopRating .first>div:first-child p i{
+    margin-left: 10px;
+}
+#TopRating .first>div:last-child {
+    margin: 10px auto;
+    width: 85%;
+    background-color: white;
+}
+
+#TopRating .first>div:last-child .item{
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+   
+}
+
+#TopRating .first>div:last-child .item >img{
+    width: 100%;
+    height: 120px;
+    margin: 0px auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#TopRating .first>div:last-child .item>h1{
+    height: 120px;
+    width: 93%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 0;
+    z-index: 1;
+    
+}
+
+#TopRating .first>div:last-child .item>h1:hover{
+    opacity: 1;
+}
+
+
+
+#TopRating>div:last-child{
+    width: 50%;
+}
+#TopRating>div:last-child >div:first-child{
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    margin: 0px auto;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+#TopRating>div:last-child >div:first-child h1{
+    font-size: 28px;
+}
+#TopRating>div:last-child >div:first-child h1 i{
+    margin-right: 10px;
+}
+#TopRating>div:last-child >div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#TopRating>div:last-child >div:first-child p i{
+    margin-left: 10px;
+}
+#TopRating>div:last-child >div:last-child {
+    margin: 10px auto;
+    width: 85%;
+    display: flex;
+}
+
+#TopRating>div:last-child >div:last-child .item{
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+   
+}
+
+#TopRating>div:last-child >div:last-child .item >img{
+    width: 100%;
+    height: 120px;
+    margin: 0px auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#TopRating>div:last-child >div:last-child .item>h1{
+    height: 120px;
+    width: 93%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 0;
+    z-index: 1;
+    
+}
+
+#TopRating>div:last-child >div:last-child .item>h1:hover{
+    opacity: 1;
+}
+
+footer{
+    background-color: rgba(15, 38, 77, 0.961);
+    margin-bottom: 0px;
+}
+footer>div{
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+}
+footer>div>div{
+    width: 18%;
+
+}
+footer>div>div:first-child{
+    width: 35%;
+}
+
+footer>div>div:first-child h3{
+    cursor: pointer;
+}
+footer>div>div span{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.542);
+    margin-top: 10px;
+    display: block;
+}
+footer>div>div span:hover{
+    color: white;
+}
+footer>div>div img{
+    cursor: pointer;
+    margin-right: 20px;
+}
+footer>div>div a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.542);
+    display: inline-block;
+    
+}
+footer>div>div a>i{
+    padding: 10px;
+    background-color:  rgb(15, 38, 77);
+    border-radius: 50%;
+    color: white;
+}
+footer>div>div p{
+    color: rgba(255, 255, 255, 0.542);
+    width: 100%;
+}
+footer>div>div h3{
+    color: white;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width:850px) and (max-width:1150px) {
+    #headling{
+        width: 95%;
+    }
+    #headling>div:last-child ul li,span{
+        font-size: 14px;
+    }
+    nav>div{
+        width: 100% !important;
+    }
+   
+    
+}
+@media screen and (min-width:560px) and (max-width:900px) {
+    footer>div>div{
+        width: 40%;
+        margin-bottom: 40px;
+    
+    }
+    footer>div>div:first-child{
+        width: 50%;
+    }
+    #headling{
+        display: none;
+    }
+    nav>div{
+        width: 100% !important;
+    }
+    nav>div>div:first-child{
+        display: none;
+    }
+    nav>div>div:last-child{
+        display: none;
+    }
+    nav>div>.searchContent{
+        width: 85%;
+        margin: 0px auto;
+        
+    }
+    nav>div>.searchContent input{
+        margin: 0px auto;
+        width: 100% !important;
+    }
+    
+    nav>div>.searchContent .Selection{
+        display: none;
+    }
+    #stock>div>div .item{
+        width: 100%;
+        padding-left: 5%;
+    }
+    #stock>div>div img{
+        width: 60%;
+        height: 75%;
+    }
+    #stock>div>div>div:first-child h1{
+        font-size: 35px;
+        width: 80%;
+    }
+    #stock>div>div>div:first-child p{
+        color: rgba(0, 0, 0, 0.648);
+        margin-top: 20px;
+        margin-bottom:17px;
+        
+    }
+    #stock>div>div>div:first-child a{
+        padding: 8px 16px;
+    }
+    #FlashDeals>div:last-child {
+        width: 92%;
+    }
+    #TopCategories>div:last-child {
+        width: 92%;
+    }
+    
+}
+@media screen and (max-width:560px)  {
+    footer>div>div{
+        width: 80%;
+        margin-bottom: 40px;
+    
+    }
+    footer>div>div:first-child{
+        width: 90%;
+    }
+     #headling{
+        display: none;
+    }
+    nav>div{
+        width: 100% !important;
+    }
+    nav>div>div:first-child{
+        display: none;
+    }
+    nav>div>div:last-child{
+        display: none;
+    }
+    nav>div>.searchContent .Selection{
+        display: none;
+    }
+    nav>div>.searchContent input{
+        margin: 0px auto;
+        width: 100% !important;
+    }
+    #stock>div>div .item{
+        width: 100%;
+        padding-left: 5%;
+   
+    }
+    #stock>div>div img{
+        width: 75%;
+        height: 85%;
+    }
+    #stock>div>div>div:first-child h1{
+        font-size: 20px;
+        width: 80%;
+    }
+    #stock>div>div>div:first-child p{
+        color: rgba(0, 0, 0, 0.648);
+        margin-top: 18px;
+        margin-bottom:14px;
+        font-size: 11px;
+        
+    }
+    #FlashDeals>div:last-child {
+        width: 97%;
+    }
+    #TopCategories>div:last-child {
+        width: 97%;
+    }
+   
+    
+}
