@@ -1129,6 +1129,9 @@ position: relative;
     margin-bottom: 30px;
     width: 30%;
 }
+#Cars>div:last-child>div:last-child >div:hover{
+    border: 1px solid rgba(128, 128, 128, 0.216);
+}
 #Cars>div:last-child>div:last-child >div>div:first-child{
     position: absolute;
     width: 30px;
@@ -1200,7 +1203,7 @@ position: relative;
     background-color: white;
     border-radius: 10px;
     width: 25%;
-    height: 520px;
+    height: 560px;
     padding-top: 10px;
     padding-bottom: 20px;
 }
@@ -1215,6 +1218,49 @@ position: relative;
     text-align: start;
     background-color: rgba(128, 128, 128, 0.154);
 }
+#Phones>div:first-child >div{
+    display: none;
+}
+#Phones>div:first-child >h1{
+    font-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#Phones>div:first-child >h1>span{
+    cursor: pointer;
+}
+#Phones>div:first-child >h1>span:last-child{
+    color: rgba(128, 128, 128, 0.361);
+}
+#Phones>div:first-child >h1>.mid{
+    display: inline-block;
+    width: 2px;
+    height: 18px;
+    background-color: rgba(128, 128, 128, 0.361);
+    margin: 0px 20px;
+}
+#Phones>div:first-child >div>button{
+    display: block;
+    width: 90%;
+    border: 0;
+    margin: 10px auto;
+    border-radius:7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: start;
+    background-color: rgba(128, 128, 128, 0.154);
+}
+#Phones>div:first-child >div>button:last-child{
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+#Phones>div:first-child >div>button>svg{
+    margin-left: 20px;
+    margin-right: 25px;
+}
 #Phones>div:first-child >button:last-child{
     text-align: center;
     margin-top: 70px;
@@ -1224,7 +1270,7 @@ position: relative;
     margin-left: 20px;
     margin-right: 25px;
 }
-#Phones>div:first-child >button:hover{
+#Phones>div:first-child button:hover{
     background-color: rgba(128, 128, 128, 0.358);
 }
 #Phones>div:last-child{
@@ -1264,6 +1310,9 @@ position: relative;
     padding-left: 1%;
     margin-bottom: 30px;
     width: 30%;
+}
+#Phones>div:last-child>div:last-child >div:hover{
+    border: 1px solid rgba(128, 128, 128, 0.225);
 }
 #Phones>div:last-child>div:last-child >div>div:first-child{
     position: absolute;
@@ -1321,6 +1370,54 @@ position: relative;
     background-color: red;
     color: white;
 }
+
+#img{
+    background-color: rgb(236,236,236);
+    display: flex;
+    justify-content: space-around;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+#img>div:first-child{
+    width: 35%;
+    height: 400px;
+    margin-bottom: 30px;
+}
+#img>div:last-child{
+    width: 60%;
+    height: 400px;
+}
+#img>div>img{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+#Categories>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    margin: 0px auto;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+#Categories>div:first-child h1{
+    font-size: 28px;
+}
+#Categories>div:first-child h1 i{
+    margin-right: 10px;
+}
+#Categories>div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#Categories>div:first-child p i{
+    margin-left: 10px;
+}
+
 footer{
     background-color: rgba(15, 38, 77, 0.961);
     margin-bottom: 0px;
@@ -1407,6 +1504,10 @@ footer>div>div h3{
 
     #Phones>div:last-child>div:last-child >div{
         width: 45%;
+    }
+    #img{
+        padding-left: 0px;
+        padding-right: 0px;
     }
     
     
@@ -1525,6 +1626,18 @@ footer>div>div h3{
     }
     #Phones>div:last-child>div:last-child >div{
         width: 45%;
+    }
+    #img{
+        display: block;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    #img>div:first-child{
+        width: 92%;
+        height: 300px;
+    }
+    #img>div:last-child{
+        width: 92%;
     }
     
 }
@@ -1656,5 +1769,18 @@ footer>div>div h3{
     #Phones>div:last-child>div:last-child >div{
         width: 85%;
         margin: 10px auto;
+    }
+    #img{
+        display: block;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    #img>div:first-child{
+        width: 98%;
+        height: 200px;
+    }
+    #img>div:last-child{
+        width: 98%;
+        height: 300px;
     }
 }

@@ -195,6 +195,40 @@ $("document").ready(function(){
             }
         }
     })
+    $("#Phones>div:first-child >h1>span:last-child").click(function(){
+        $("#Phones>div:first-child >button").css({
+            display:"none"
+        })
+        $("#Phones>div:first-child >div").css({
+            display:"block"
+        })
+        $(this).css({
+            color:"black"
+        })
+        $(this).prev().prev().css({
+            color:"rgba(128, 128, 128, 0.361)"
+        })
+        $("#Phones>div:first-child").css({
+            height:"420px"
+        })
+    })
+    $("#Phones>div:first-child >h1>span:first-child").click(function(){
+        $("#Phones>div:first-child >button").css({
+            display:"block"
+        })
+        $("#Phones>div:first-child >div").css({
+            display:"none"
+        })
+        $(this).css({
+            color:"black"
+        })
+        $(this).next().next().css({
+            color:"rgba(128, 128, 128, 0.361)"
+        })
+        $("#Phones>div:first-child").css({
+            height:"560px"
+        })
+    })
     
     
     
