@@ -554,8 +554,9 @@ position: relative;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    width: 100%;
+    width: 108%;
     margin: 0px auto;
+    margin-left: -5%;
     top: 35%;
     cursor: pointer;
 }
@@ -681,12 +682,12 @@ position: relative;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    width: 105%;
+    width: 110%;
     margin: 0px auto;
-    margin-left: -35px;
+    margin-left: -6%;
     top: 30%;
     cursor: pointer;
-    z-index: 0;
+    z-index: -999;
 }
 #TopCategories>div:last-child .owl-next{
     display: inline-block;
@@ -713,18 +714,19 @@ position: relative;
     background-color: rgb(236,236,236);
     margin-top: -10px;
     padding-top: 40px;
+    padding-bottom: 40px;
 }
 #TopRating .first{
-    
+    padding-left: 50px;
     width: 50%;
 }
 #TopRating .first>div:first-child{
     display: flex;
     justify-content: space-between;
-    width: 75%;
-    margin: 0px auto;
+    width: 95%;
     padding-top: 30px;
     margin-bottom: 20px;
+    margin-left: 8%;
 }
 #TopRating .first>div:first-child h1{
     font-size: 28px;
@@ -741,20 +743,27 @@ position: relative;
     margin-left: 10px;
 }
 #TopRating .first>div:last-child {
-    margin: 10px auto;
-    width: 85%;
+    margin-left: 8%;
+    width: 95%;
     background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    border-radius: 10px;
 }
 
 #TopRating .first>div:last-child .item{
     background-color: white;
     border-radius: 8px;
     position: relative;
-   
+    text-align: center;
+   cursor: pointer;
 }
 
 #TopRating .first>div:last-child .item >img{
-    width: 100%;
+    width: 85%;
     height: 120px;
     margin: 0px auto;
     cursor: pointer;
@@ -762,21 +771,32 @@ position: relative;
 }
 #TopRating .first>div:last-child .item>h1{
     height: 120px;
-    width: 93%;
+    width: 83%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.28);
     cursor: pointer;
     border-radius: 10px;
     opacity: 0;
     z-index: 1;
+    margin-left: 13px;
     
 }
 
 #TopRating .first>div:last-child .item>h1:hover{
     opacity: 1;
 }
-
-
+#TopRating .first>div:last-child .item>span{
+    font-size: 11px;
+}
+#TopRating .first>div:last-child .item>p{
+    margin-bottom: 0px;
+}
+#TopRating .first>div:last-child .item>.price{
+    color: red;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
 
 #TopRating>div:last-child{
     width: 50%;
@@ -784,10 +804,10 @@ position: relative;
 #TopRating>div:last-child >div:first-child{
     display: flex;
     justify-content: space-between;
-    width: 83%;
-    margin: 0px auto;
+    width: 85%;
     padding-top: 30px;
     margin-bottom: 20px;
+    margin: 0px auto;
 }
 #TopRating>div:last-child >div:first-child h1{
     font-size: 28px;
@@ -804,29 +824,98 @@ position: relative;
     margin-left: 10px;
 }
 #TopRating>div:last-child >div:last-child {
-    margin: 10px auto;
+    margin: 18px auto;
     width: 85%;
     display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;
 }
 
 #TopRating>div:last-child >div:last-child .item{
     background-color: white;
     border-radius: 8px;
     position: relative;
+    width: 45%;
+    padding-top: 15px;
+    cursor: pointer;
    
 }
-
+#TopRating>div:last-child >div:last-child .item>p{
+    margin-top: 15px;
+}
 #TopRating>div:last-child >div:last-child .item >img{
     width: 100%;
-    height: 120px;
+    height: 160px;
     margin: 0px auto;
     cursor: pointer;
     border-radius: 10px;
 }
-#TopRating>div:last-child >div:last-child .item>h1{
-    height: 120px;
-    width: 93%;
+
+#newAriivals{
+    background-color: rgb(236,236,236);
+    padding-bottom: 20px;
+}
+#newAriivals>div:first-child >div{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0px auto;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+#newAriivals>div:first-child >div h1{
+    font-size: 28px;
+    font-weight: 600;
+}
+#newAriivals>div:first-child >div h1 i{
+    margin-right: 10px;
+}
+#newAriivals>div:first-child >div a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#newAriivals>div:first-child >div>p i{
+    margin-left: 10px;
+}
+#newAriivals>div:last-child{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+#newAriivals>div:last-child >div{
+    width: 15%;
+    padding-left: 0.5%;
+    position: relative;
+}
+#newAriivals>div:last-child >div>img{
+    width: 98%;
+    height: 65%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#newAriivals>div:last-child >div>p{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+#newAriivals>div:last-child >div>span{
+    color: red;
+    font-size: 13px;
+    cursor: pointer;
+}
+#newAriivals>div:last-child >div>h1{
+    height: 65%;
+    width: 96%;
     position: absolute;
+    margin-top: 15px;
     background-color: rgba(0, 0, 0, 0.28);
     cursor: pointer;
     border-radius: 10px;
@@ -835,10 +924,403 @@ position: relative;
     
 }
 
-#TopRating>div:last-child >div:last-child .item>h1:hover{
+#newAriivals>div:last-child >div>h1:hover{
     opacity: 1;
 }
 
+#BigDiscounts{
+    background-color: rgb(236,236,236);
+}
+#BigDiscounts>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0px auto;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+#BigDiscounts>div:first-child h1{
+    font-size: 28px;
+}
+#BigDiscounts>div:first-child h1 i{
+    margin-right: 10px;
+}
+#BigDiscounts>div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#BigDiscounts>div:first-child p i{
+    margin-left: 10px;
+}
+#BigDiscounts>div:last-child {
+    margin: 0px auto;
+    width: 85%;
+}
+
+#BigDiscounts>div:last-child .item{
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 4%;
+    margin-bottom: 30px;
+    z-index: 999;
+}
+
+
+#BigDiscounts>div:last-child .item >img{
+    width: 95%;
+    height: 130px;
+    margin: 0px auto;
+    cursor: pointer;
+}
+#BigDiscounts>div:last-child .item>h2{
+    font-size: 14px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+#BigDiscounts>div:last-child .item>p{
+    font-size: 14px;
+    cursor: pointer;
+}
+#BigDiscounts>div:last-child .item>p>del{
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}
+
+
+#BigDiscounts>div:last-child .owl-next span{
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    background-color: rgba(15, 38, 66, 0.655);
+    border-radius: 50%;
+    padding: 2px 15px;
+    cursor: pointer;
+}
+#BigDiscounts>div:last-child .owl-next span:hover{
+    background-color: rgba(15, 38, 66);
+}
+#BigDiscounts>div:last-child .owl-prev span:hover{
+    background-color: rgba(15, 38, 66);
+    
+}
+
+#BigDiscounts>div:last-child .owl-nav{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    margin: 0px auto;
+    top: 35%;
+    cursor: pointer;
+    z-index: -1;
+}
+#BigDiscounts>div:last-child .owl-next{
+    display: inline-block;
+    margin-right: -2.5%;
+}
+#BigDiscounts>div:last-child .owl-prev{
+    display: inline-block;
+    margin-left: -3.5%;
+}
+#BigDiscounts>div:last-child .owl-prev span{
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    background-color: rgba(15, 38, 66, 0.649);
+    border-radius: 50%;
+    padding: 2px 15px;
+    cursor: pointer;
+}
+#BigDiscounts>div:last-child .item>h1{
+    height: 59%;
+    width: 88%;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 1%;
+    background-color: rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 0;
+    z-index: 999;
+    
+}
+
+#BigDiscounts>div:last-child .item>h1:hover{
+    opacity: 1;
+}
+#Cars{
+    background-color: rgb(236,236,236);
+    display: flex;
+    justify-content: space-around;
+    padding-left: 6%;
+    padding-right: 7%;
+}
+#Cars>div:first-child{
+    background-color: white;
+    border-radius: 10px;
+    width: 25%;
+    height: 520px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+#Cars>div:first-child >button{
+    display: block;
+    width: 90%;
+    border: 0;
+    margin: 10px auto;
+    border-radius:7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: start;
+    background-color: rgba(128, 128, 128, 0.154);
+}
+#Cars>div:first-child >button:last-child{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+#Cars>div:first-child >button>svg{
+    margin-left: 20px;
+    margin-right: 25px;
+}
+#Cars>div:first-child >button:hover{
+    background-color: rgba(128, 128, 128, 0.358);
+}
+#Cars>div:last-child{
+    width: 70%;
+}
+#Cars>div:last-child>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#Cars>div:last-child>div:first-child h1{
+    font-size: 28px;
+}
+#Cars>div:last-child>div:first-child h1 i{
+    margin-right: 10px;
+}
+#Cars>div:last-child>div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#Cars>div:last-child>div:first-child p i{
+    margin-left: 10px;
+}
+#Cars>div:last-child>div:last-child {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#Cars>div:last-child>div:last-child >div{
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 1%;
+    margin-bottom: 30px;
+    width: 30%;
+}
+#Cars>div:last-child>div:last-child >div>div:first-child{
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top: 15px;
+    display: none;
+}
+#Cars>div:last-child>div:last-child >div:hover >div:first-child{
+    display: block;
+}
+#Cars>div:last-child>div:last-child >div>div:first-child i{
+    cursor: pointer;
+}
+#Cars>div:last-child>div:last-child >div .percent{
+    color: white;
+    background-color: rgba(172, 15, 15, 0.769);
+    padding: 5px 10px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 11px;
+    margin-top: 10px;
+}
+#Cars>div:last-child>div:last-child >div >img{
+    width: 80%;
+    height: 180px;
+    transform: scale(1.2);
+    margin-left: 12%;
+    cursor: pointer;
+}
+#Cars>div:last-child>div:last-child >div>h1{
+    font-size: 14px;
+    margin-top: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#Cars>div:last-child>div:last-child >div>p{
+    position: relative;
+    margin-top: 5px;
+}
+#Cars>div:last-child>div:last-child >div>p>del{
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}
+#Cars>div:last-child>div:last-child >div>p>i{
+    border: 0.5px solid rgba(255, 0, 0, 0.375);
+    color: red;
+    padding: 5px;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+#Cars>div:last-child>div:last-child >div>p>i:hover{
+    background-color: red;
+    color: white;
+}
+
+
+
+#Phones{
+    background-color: rgb(236,236,236);
+    display: flex;
+    justify-content: space-around;
+    padding-left: 6%;
+    padding-right: 7%;
+    padding-top: 50px;
+}
+#Phones>div:first-child{
+    background-color: white;
+    border-radius: 10px;
+    width: 25%;
+    height: 520px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+#Phones>div:first-child >button{
+    display: block;
+    width: 90%;
+    border: 0;
+    margin: 10px auto;
+    border-radius:7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: start;
+    background-color: rgba(128, 128, 128, 0.154);
+}
+#Phones>div:first-child >button:last-child{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+#Phones>div:first-child >button>svg{
+    margin-left: 20px;
+    margin-right: 25px;
+}
+#Phones>div:first-child >button:hover{
+    background-color: rgba(128, 128, 128, 0.358);
+}
+#Phones>div:last-child{
+    width: 70%;
+}
+#Phones>div:last-child>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#Phones>div:last-child>div:first-child h1{
+    font-size: 28px;
+}
+#Phones>div:last-child>div:first-child h1 i{
+    margin-right: 10px;
+}
+#Phones>div:last-child>div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#Phones>div:last-child>div:first-child p i{
+    margin-left: 10px;
+}
+#Phones>div:last-child>div:last-child {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#Phones>div:last-child>div:last-child >div{
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 1%;
+    margin-bottom: 30px;
+    width: 30%;
+}
+#Phones>div:last-child>div:last-child >div>div:first-child{
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top: 15px;
+    display: none;
+}
+#Phones>div:last-child>div:last-child >div:hover >div:first-child{
+    display: block;
+}
+#Phones>div:last-child>div:last-child >div>div:first-child i{
+    cursor: pointer;
+}
+#Phones>div:last-child>div:last-child >div .percent{
+    color: white;
+    background-color: rgba(172, 15, 15, 0.769);
+    padding: 5px 10px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 11px;
+    margin-top: 10px;
+}
+#Phones>div:last-child>div:last-child >div >img{
+    width: 80%;
+    height: 180px;
+    transform: scale(1.2);
+    margin-left: 12%;
+    cursor: pointer;
+}
+#Phones>div:last-child>div:last-child >div>h1{
+    font-size: 14px;
+    margin-top: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#Phones>div:last-child>div:last-child >div>p{
+    position: relative;
+    margin-top: 5px;
+}
+#Phones>div:last-child>div:last-child >div>p>del{
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}
+#Phones>div:last-child>div:last-child >div>p>i{
+    border: 0.5px solid rgba(255, 0, 0, 0.375);
+    color: red;
+    padding: 5px;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+#Phones>div:last-child>div:last-child >div>p>i:hover{
+    background-color: red;
+    color: white;
+}
 footer{
     background-color: rgba(15, 38, 77, 0.961);
     margin-bottom: 0px;
@@ -909,10 +1391,28 @@ footer>div>div h3{
     nav>div{
         width: 100% !important;
     }
-   
+    #Cars{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    #Cars>div:last-child>div:last-child >div{
+        width: 45%;
+    }
+
+    #Phones{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    #Phones>div:last-child>div:last-child >div{
+        width: 45%;
+    }
+    
+    
     
 }
-@media screen and (min-width:560px) and (max-width:900px) {
+@media screen and (min-width:560px) and (max-width:850px) {
     footer>div>div{
         width: 40%;
         margin-bottom: 40px;
@@ -973,6 +1473,59 @@ footer>div>div h3{
     #TopCategories>div:last-child {
         width: 92%;
     }
+    #TopRating{
+        display: block;
+    }
+    #TopRating .first{
+        padding-left: 15px;
+        width: 90%;
+    }
+    #TopRating>div:last-child{
+        padding-left: 15px;
+        width: 100%;
+    }
+    #newAriivals>div:last-child{
+        width: 95%;
+    }
+    #newAriivals>div:last-child >div{
+        width: 31%;
+    }
+    #BigDiscounts>div:last-child .owl-nav{
+        z-index: 1;
+    }
+    #TopCategories>div:last-child .owl-nav{
+        z-index: 1;
+    }
+    #BigDiscounts>div:last-child{
+        width: 95%;
+    }
+    #Cars{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    #Cars>div:first-child{
+        display: none;
+    }
+    #Cars>div:last-child{
+        width: 98%;
+    }
+    #Cars>div:last-child>div:last-child >div{
+        width: 45%;
+    }
+
+    #Phones{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    #Phones>div:first-child{
+        display: none;
+    }
+    #Phones>div:last-child{
+        width: 98%;
+    }
+    #Phones>div:last-child>div:last-child >div{
+        width: 45%;
+    }
     
 }
 @media screen and (max-width:560px)  {
@@ -1029,6 +1582,79 @@ footer>div>div h3{
     #TopCategories>div:last-child {
         width: 97%;
     }
-   
+    #TopRating{
+        display: block;
+    }
+    #TopRating .first{
+        padding-left: 15px;
+        width: 90%;
+    }
+    #TopRating>div:last-child{
+        padding-left: 8%;
+        width: 90%;
+    }
     
+
+    #TopRating>div:last-child >div:first-child{
+        width: 95%;
+    }
+
+    #TopRating>div:last-child >div:last-child {
+        width: 95%;
+        display: block;
+        
+    }
+    #TopRating>div:last-child >div:last-child .item{
+        width: 94%;
+        margin-left: 3%;
+        padding-bottom: 10px;
+       
+    }
+    #TopRating .first>div:last-child .item>h1{
+        margin-left: 8%;
+    }
+    #newAriivals>div:last-child{
+        width: 99%;
+    }
+    #newAriivals>div:last-child >div{
+        width: 47%;
+    }
+    #BigDiscounts>div:last-child .owl-nav{
+        z-index: 1;
+    }
+    #TopCategories>div:last-child .owl-nav{
+        z-index: 1;
+    }
+    #BigDiscounts>div:last-child{
+        width: 99%;
+    }
+    #Cars{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    #Cars>div:first-child{
+        display: none;
+    }
+    #Cars>div:last-child{
+        width: 98%;
+    }
+    #Cars>div:last-child>div:last-child >div{
+        width: 85%;
+        margin: 10px auto;
+    }
+
+    #Phones{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    #Phones>div:first-child{
+        display: none;
+    }
+    #Phones>div:last-child{
+        width: 98%;
+    }
+    #Phones>div:last-child>div:last-child >div{
+        width: 85%;
+        margin: 10px auto;
+    }
 }

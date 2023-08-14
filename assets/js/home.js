@@ -144,7 +144,7 @@ $("document").ready(function(){
     $('#TopCategories .last .owl-carousel').owlCarousel({
         loop:false,
         margin:10,
-        nav:true,
+        nav:false,
         dots:false,
         responsive:{
             0:{
@@ -161,7 +161,7 @@ $("document").ready(function(){
     $('#TopRating .first .owl-carousel').owlCarousel({
         loop:false,
         margin:10,
-        nav:true,
+        nav:false,
         dots:false,
         responsive:{
             0:{
@@ -172,6 +172,26 @@ $("document").ready(function(){
             },
             1000:{
                 items:4
+            }
+        }
+    })
+    $('#BigDiscounts .owl-carousel').owlCarousel({
+        loop:false,
+        margin:10,
+        nav:true,
+        dots:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            400:{
+                item:2
+            },
+            600:{
+                items:4
+            },
+            1000:{
+                items:6
             }
         }
     })
