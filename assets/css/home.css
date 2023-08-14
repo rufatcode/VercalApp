@@ -1130,7 +1130,9 @@ position: relative;
     width: 30%;
 }
 #Cars>div:last-child>div:last-child >div:hover{
-    border: 1px solid rgba(128, 128, 128, 0.216);
+    -webkit-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
 }
 #Cars>div:last-child>div:last-child >div>div:first-child{
     position: absolute;
@@ -1312,7 +1314,9 @@ position: relative;
     width: 30%;
 }
 #Phones>div:last-child>div:last-child >div:hover{
-    border: 1px solid rgba(128, 128, 128, 0.225);
+    -webkit-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
 }
 #Phones>div:last-child>div:last-child >div>div:first-child{
     position: absolute;
@@ -1394,7 +1398,9 @@ position: relative;
     width: 100%;
     height: 100%;
 }
-
+#Categories{
+    background-color: rgb(236,236,236);
+}
 #Categories>div:first-child{
     display: flex;
     justify-content: space-between;
@@ -1417,7 +1423,174 @@ position: relative;
 #Categories>div:first-child p i{
     margin-left: 10px;
 }
+#Categories>div:last-child{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 0px auto;
+}
+#Categories>div:last-child >div{
+    display: flex;
+    width: 15%;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 10px 1%;
+}
+#Categories>div:last-child >div:hover{
+    -webkit-box-shadow: 0px 0px 38px -1px rgba(128,128,128,1);
+    -moz-box-shadow: 0px 0px 38px -1px rgba(128,128,128,1);
+    box-shadow: 0px 0px 38px -1px rgba(128,128,128,1);
+}
 
+#Categories>div:last-child >div>img{
+    width: 50px;
+    height: 50px;
+}
+#Categories>div:last-child >div>span{
+    height: 50%;
+    margin-top: 7%;
+    margin-left: 2%;
+}
+
+#More{
+    background-color: rgb(236,236,236);
+   
+    padding-top: 50px;
+}
+
+#More>div{
+    width: 85%;
+    margin: 0px auto;
+}
+#More>div>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#More>div>div:first-child h1{
+    font-size: 28px;
+}
+#More>div>div:first-child h1 i{
+    margin-right: 10px;
+}
+#More>div>div:first-child a {
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+#More>div>div:first-child p i{
+    margin-left: 10px;
+}
+#More>div>div:last-child {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#More>div>div:last-child >div{
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 1%;
+    margin-bottom: 30px;
+    width: 23%;
+}
+#More>div>div:last-child >div:hover{
+    -webkit-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+}
+#More>div>div:last-child >div>div:first-child{
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top: 15px;
+    display: none;
+}
+#More>div>div:last-child >div:hover >div:first-child{
+    display: block;
+}
+#More>div>div:last-child >div>div:first-child i{
+    cursor: pointer;
+}
+#More>div>div:last-child >div .percent{
+    color: white;
+    background-color: rgba(172, 15, 15, 0.769);
+    padding: 5px 10px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 11px;
+    margin-top: 10px;
+}
+#More>div>div:last-child >div >img{
+    width: 80%;
+    height: 180px;
+    transform: scale(1.2);
+    margin-left: 12%;
+    cursor: pointer;
+}
+#More>div>div:last-child >div>h1{
+    font-size: 14px;
+    margin-top: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#More>div>div:last-child >div>p{
+    position: relative;
+    margin-top: 5px;
+}
+#More>div>div:last-child >div>p>del{
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}
+#More>div>div:last-child >div>p>i{
+    border: 0.5px solid rgba(255, 0, 0, 0.375);
+    color: red;
+    padding: 5px;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+#More>div>div:last-child >div>p>i:hover{
+    background-color: red;
+    color: white;
+}
+#Info{
+    background-color: rgb(236,236,236);
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+#Info>div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 10px auto;
+    margin-bottom: 50px;
+}
+#Info>div>div{
+    width: 23%;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#Info>div>div>svg{
+    background-color: rgba(128, 128, 128, 0.143);
+    padding: 15px;
+    border-radius: 50%;
+}
+#Info>div>div>p{
+    margin-top: 20px;
+    font-weight: bold;
+}
 footer{
     background-color: rgba(15, 38, 77, 0.961);
     margin-bottom: 0px;
@@ -1509,6 +1682,28 @@ footer>div>div h3{
         padding-left: 0px;
         padding-right: 0px;
     }
+    #Categories>div:first-child{
+        width: 92%;
+    }
+    #Categories>div:last-child{
+        width: 92%;
+    }
+    #Categories>div:last-child >div{
+        width: 22%;
+    }
+    #More>div{
+        width: 92%;
+    }
+    #More>div>div:last-child >div{
+        width: 31%;
+    }
+    #Info>div{
+        width: 92%;
+    }
+    #Info>div>div{
+        width: 31%;
+    }
+    
     
     
     
@@ -1638,6 +1833,27 @@ footer>div>div h3{
     }
     #img>div:last-child{
         width: 92%;
+    }
+    #Categories>div:first-child{
+        width: 95%;
+    }
+    #Categories>div:last-child{
+        width: 95%;
+    }
+    #Categories>div:last-child >div{
+        width: 31%;
+    }
+    #More>div{
+        width: 95%;
+    }
+    #More>div>div:last-child >div{
+        width: 45%;
+    }
+    #Info>div{
+        width: 95%;
+    }
+    #Info>div>div{
+        width: 45%;
     }
     
 }
@@ -1782,5 +1998,28 @@ footer>div>div h3{
     #img>div:last-child{
         width: 98%;
         height: 300px;
+    }
+    #Categories>div:first-child{
+        width: 98%;
+    }
+    #Categories>div:last-child{
+        width: 98%;
+    }
+    #Categories>div:last-child >div{
+        width: 47%;
+    }
+    #More>div{
+        width: 98%;
+    }
+    #More>div>div:last-child >div{
+        width: 95%;
+        margin: 20px auto;
+    }
+    #Info>div{
+        width: 98%;
+    }
+    #Info>div>div{
+        width: 90%;
+        margin: 20px auto;
     }
 }
