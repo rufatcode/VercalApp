@@ -7,6 +7,15 @@ export function CheckLocalStorage(dbName){
 export function SetLocalStorage(data,dbName){
     localStorage.setItem(dbName,JSON.stringify(data));
 }
+export function CheckSesionStorage(dbName){
+    if (sessionStorage.getItem(dbName)==null) {
+        sessionStorage.setItem(dbName,JSON.stringify([]));
+    }
+    return JSON.parse(sessionStorage.getItem(dbName));
+}
+export function SetSesionStorage(data,dbName){
+    sessionStorage.setItem(dbName,JSON.stringify(data));
+}
 export function CheckPassword(password){
     if(password.length<8||password.length>16){
         return null;
@@ -29,7 +38,7 @@ export function CheckEmail(email,signUp){
 }
 export function CheckPhone(phone,signUp){
     let db=CheckLocalStorage(signUp);
-    let phoneFormat=/^(50|51|55|70|77|99)+\d{7}$/;
+    let phoneFormat=/^\+994(50|51|55|70|77|99)+\d{7}$/;
     for (let i = 0; i < db.length; i++) {
         if (db[i].Phone==phone) {
             return null;

@@ -15,13 +15,13 @@
         <form action="">
             <label for="email">Email or Phone Number</label>
             <input autocomplete="off" name="email" id="email" type="email" required placeholder="example.gamil.com">
-            <span class="wrong">email is required</span>
+            <span class="wrong">email is not valid</span>
             <div>
                 <label for="password">Password</label>
                 <i class="fa-solid fa-eye visible"></i>
                 <i class="fa-solid fa-eye-slash unvisible"></i>
                 <input autocomplete="off" name="password" id="password" type="password" placeholder="********" required>
-                <span class="wrong">password is required</span>
+                <span class="wrong">password is not valid</span>
             </div>
             <button  type="button">Login</button>
             <span>
@@ -50,5 +50,5 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
-  <script src="./js/signIn.js"></script>
+  <script type="module"  src="./js/signIn.js"></script>
 </html>

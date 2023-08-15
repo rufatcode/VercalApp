@@ -5,8 +5,10 @@ $("document").ready(function(){
     let userEmail=$("body>div>form #email");
     let userPassword=$("body>div>form #password");
     let userRePassword=$("body>div>form #Repassword");
+    let policyInput=$("body>div>form #policy")
     $("body>div>form>button:first-of-type").click(function(){
         let user={}
+        console.log(policyInput.attr('checked'));
         if(userName.val()==""||userName.val().length<5){
             userName.next().css({
                 display:"block"
@@ -19,7 +21,7 @@ $("document").ready(function(){
                 display:"none"
             })
         }
-        if(CheckEmail(userEmail.val(),"signUp1")==null){
+        if(CheckEmail(userEmail.val(),"signUp1")==null&&CheckPhone(userEmail.val(),"signUp1")==null){
             userEmail.next().css({
                 display:"block"
                 
@@ -72,19 +74,31 @@ $("document").ready(function(){
                 
             })
         }
-        console.log(user.Id);
-        if(user.Id==undefined){
+        if(dbSignUp.length==0){
             user.Id=1;
         }
         else{
             user.Id=dbSignUp[dbSignUp.length-1].Id+1;
         }
+        if(policyInput.prop("checked") == true){
+            policyInput.next().css({
+                color:"gray"
+            })
+        }
+        else if(policyInput.prop("checked") == false){
+            policyInput.next().css({
+                color:"red"
+            })
+            return
+        }
+        
+        
         user.Name=userName.val();
         user.Email=userEmail.val();
         user.Password=userPassword.val();
         dbSignUp.push(user);
         SetLocalStorage(dbSignUp,"signUp1");
-        window.location.replace("./signIn.js");
+        window.location.replace("../../assets/signIn.html");
 
     })
     $("body>div>form>div .visible").click(function(){

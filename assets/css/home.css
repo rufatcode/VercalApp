@@ -67,7 +67,7 @@ nav a{
     font-family: 'Calistoga', cursive;
 
 }
-nav .profileAndBasket i{
+nav .profileAndBasket i:first-of-type{
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.07);
     border-radius: 50%;
@@ -1590,6 +1590,142 @@ position: relative;
 #Info>div>div>p{
     margin-top: 20px;
     font-weight: bold;
+}
+#signIn{
+    background-color:rgba(128, 128, 128, 0.869);
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    display: none;
+}
+#signIn>div{
+    width: 550px;
+    margin: 70px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 30px;
+}
+#signIn>div>h1{
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+}
+#signIn>div>p{
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 2.25rem;
+    color: rgb(43, 52, 69);
+    text-align: center;
+}
+#signIn>div>form{
+    margin-top: 20px;
+}
+#signIn>div>form label{
+    width: 80%;
+    display: block;
+    margin: 6px auto;
+    font-size: 0.975rem;
+    cursor: default;
+    color: rgb(43, 52, 69);
+}
+#signIn>div>form input{
+    width: 80%;
+    padding: 8px 12px;
+    height: 40px;
+    color: rgb(43, 52, 69);
+    border-radius: 5px;
+    border: 1px solid rgb(218, 225, 231);
+    outline: none;
+    display: block;
+    margin: 10px auto;
+    margin-bottom: 5px;
+}
+#signIn>div>form input:focus{
+    border-color: rgb(233, 69, 96);
+}
+#signIn>div>form>div{
+    position: relative;
+}
+#signIn>div>form .wrong{
+    width: 80%;
+    margin: 0px auto;
+    color: rgb(233, 69, 96);
+    margin-top: 0.25rem;
+    font-size: 14px;
+    display: none;
+}
+#signIn>div>form>div>i{
+    position: absolute;
+    right: 12%;
+    top: 40px;
+    display: block;
+}
+#signIn>div>form>div>.unvisible{
+    display: none;
+}
+#signIn>div>form>button{
+    width: 80%;
+    display: block;
+    margin: 15px auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+#signIn>div>form>button>i{
+    margin-right: 10px;
+    background-color: white;
+    color: rgb(59, 89, 152);
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+#signIn>div>form>button:first-of-type{
+    background-color: rgb(233, 69, 96);
+}
+#signIn>div>form>button:nth-of-type(2){
+    background-color: rgb(59, 89, 152);
+}
+#signIn>div>form>button:nth-of-type(3){
+    background-color: rgb(66, 133, 244);
+}
+#signIn>div>form>span:last-of-type{
+    display: flex;
+    width: 40%;
+    margin: 15px auto;
+    border: 0;
+    color: rgba(43, 52, 69, 0.389);
+}
+#signIn>div>form>span>hr{
+    width: 43%;
+    height: 2px;
+    display: inline-block;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top:8px;
+    border-color: rgba(43, 52, 69, 0.178);
+}
+#signIn>div>form>p{
+    font-size: 17px;
+    color: rgb(125, 135, 156);
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+}
+#signIn>div>form>p>a{
+    color: rgb(43, 52, 69);
+    margin-left: 5px;
+}
+#signIn>div>form>p:last-child{
+    height: 60px;
+    background-color:rgba(128, 128, 128, 0.037);
+    width: 100%;
+    padding-top: 20px;
 }
 footer{
     background-color: rgba(15, 38, 77, 0.961);
