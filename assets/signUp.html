@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/signUp.css">
+    <title>SignUp</title>
+</head>
+<body>
+  <div>
+    <h1>Create Your Account</h1>
+    <p>Please fill all forms to continued</p>
+    <form action="">
+        <label for="name">Full Name</label>
+        <input autocomplete="off" name="name" id="name" type="text" required placeholder="Rufat Ismayilov">
+        <span class="wrong">name is required</span>
+        <label for="email">Email or Phone Number</label>
+        <input autocomplete="off" name="email" id="email" type="email" required placeholder="example.gamil.com">
+        <span class="wrong">email is required</span>
+        <div>
+            <label for="password">Password</label>
+            <i class="fa-solid fa-eye visible"></i>
+            <i class="fa-solid fa-eye-slash unvisible"></i>
+            <input autocomplete="off" name="password" id="password" type="password" placeholder="********" required>
+            <span class="wrong">password is required</span>
+        </div>
+        <div>
+          <label for="Repassword">Confirm Password</label>
+          <i class="fa-solid fa-eye visible"></i>
+          <i class="fa-solid fa-eye-slash unvisible"></i>
+          <input autocomplete="off" name="Repassword" id="Repassword" type="password" placeholder="********" required>
+          <span class="wrong">Please re-type password</span>
+          <span class="wrong">Password is not same</span>
+      </div>
+      
+      <input name="policy" id="policy" type="checkbox" >
+      <label  for="policy">By signing up, you agree to
+        <a href="">Terms & Condtion</a></label>
+        <button  type="button">Create Account</button>
+        <span>
+            <hr>
+            On
+            <hr>
+        </span>
+        <button type="button">
+            <i class="fa-brands fa-facebook-f"></i>
+            Continue with Facebook
+        </button>
+        <button type="button">
+            <i class="fa-brands fa-google"></i>
+            Continue with Google
+        </button>
+        <p>Don’t have account? <a href="./signUp.html">Sign Up</a> </p>
+        <p>Forgot your password? <a href="./home.html">Reset It</a> </p>
+            
+    </form>
+    
+  </div>
+</body>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script type="module" src="./js/signUp.js"></script>
+</html>
