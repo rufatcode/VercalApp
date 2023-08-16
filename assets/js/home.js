@@ -308,8 +308,14 @@ $("document").ready(function(){
     let pruducts=CheckLocalStorage("Basket");
     
     document.querySelector("nav>div>div:last-child >span").innerHTML=0;
+    let count=0;
+    for (let i = 0; i < pruducts.length; i++) {
+       count+=pruducts[i].Count
+    }
+    document.querySelector("nav>div>div:last-child >span").innerHTML=count;
     for (let i = 0; i < arrPlus.length; i++) {
         // pruducts.push({
+        //     Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML,
         //     Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
         //     Sale:parseInt(arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.split("%")[0]),
         //     Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
@@ -326,23 +332,23 @@ $("document").ready(function(){
         arrPlus[i].addEventListener("click",function(){
             arrPlus[i].parentElement.firstElementChild.style.display="block";
             arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="block"
-            document.querySelector("nav>div>div:last-child >span").innerHTML=parseInt(document.querySelector("nav>div>div:last-child >span").innerHTML)+1;
             arrPlus[i].parentElement.style.top="-48px";
             pruducts[i].Count+=1;
             arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count;
             SetLocalStorage(pruducts,"Basket");
+            window.location.reload();
         })
         arrPlus[i].parentElement.firstElementChild.addEventListener("click",function(){
             pruducts[i].Count-=1;
             arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count;
             SetLocalStorage(pruducts,"Basket");
-            document.querySelector("nav>div>div:last-child >span").innerHTML=parseInt(document.querySelector("nav>div>div:last-child >span").innerHTML)-1;
             if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
                 arrPlus[i].parentElement.firstElementChild.style.display="none";
                 arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
                 
                 arrPlus[i].parentElement.style.top="0px";
             }
+            window.location.reload();
             
         })
         
