@@ -1,4 +1,4 @@
-import{CheckLocalStorage,CheckEmail,CheckSesionStorage,SetSesionStorage} from "./base.js"
+import{CheckLocalStorage,SetLocalStorage,CheckSesionStorage,SetSesionStorage} from "./base.js"
 $("document").ready(function(){
     
     $("#headling .catagory>span").click(function(){
@@ -303,5 +303,50 @@ $("document").ready(function(){
             display:"none"
         })
     })
+    let arrPlus=document.querySelectorAll("p>span:last-of-type>.fa-plus");
+    let arrMinus=document.querySelectorAll("p>span:last-of-type>.fa-minus");
+    let pruducts=CheckLocalStorage("Basket");
+    
+    document.querySelector("nav>div>div:last-child >span").innerHTML=0;
+    for (let i = 0; i < arrPlus.length; i++) {
+        // pruducts.push({
+        //     Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
+        //     Sale:parseInt(arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.split("%")[0]),
+        //     Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+        //     ImgSrc:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.src,
+        //     OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+        // })
+        arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count
+        if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
+            arrPlus[i].parentElement.firstElementChild.style.display="none";
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
+            
+            arrPlus[i].parentElement.style.top="0px";
+        }
+        arrPlus[i].addEventListener("click",function(){
+            arrPlus[i].parentElement.firstElementChild.style.display="block";
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="block"
+            document.querySelector("nav>div>div:last-child >span").innerHTML=parseInt(document.querySelector("nav>div>div:last-child >span").innerHTML)+1;
+            arrPlus[i].parentElement.style.top="-48px";
+            pruducts[i].Count+=1;
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count;
+            SetLocalStorage(pruducts,"Basket");
+        })
+        arrPlus[i].parentElement.firstElementChild.addEventListener("click",function(){
+            pruducts[i].Count-=1;
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count;
+            SetLocalStorage(pruducts,"Basket");
+            document.querySelector("nav>div>div:last-child >span").innerHTML=parseInt(document.querySelector("nav>div>div:last-child >span").innerHTML)-1;
+            if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
+                arrPlus[i].parentElement.firstElementChild.style.display="none";
+                arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
+                
+                arrPlus[i].parentElement.style.top="0px";
+            }
+            
+        })
+        
+    }
+    
     
 })

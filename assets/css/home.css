@@ -522,15 +522,25 @@ position: relative;
     color: gray;
     margin-left: 5px;
 }
-#FlashDeals>div:last-child .item>p>i{
+#FlashDeals>div:last-child .item>p>span:last-of-type{
+    position: absolute;
+    right: 5%;
+    top: -50px;
+    text-align: center;
+}
+#FlashDeals>div:last-child .item>p>span:last-of-type >span{
+    margin-top: 2px;
+    display: block;
+    margin-bottom: 2px;
+}
+#FlashDeals>div:last-child .item>p>span>i{
     border: 0.5px solid rgba(255, 0, 0, 0.375);
     color: red;
     padding: 5px;
-    position: absolute;
-    right: 5%;
     cursor: pointer;
+    display: block;
 }
-#FlashDeals>div:last-child .item>p>i:hover{
+#FlashDeals>div:last-child .item>p>span>i:hover{
     background-color: red;
     color: white;
 }
@@ -1178,15 +1188,25 @@ position: relative;
     color: gray;
     margin-left: 5px;
 }
-#Cars>div:last-child>div:last-child >div>p>i{
+#Cars>div:last-child>div:last-child >div>p>span:last-of-type{
+    position: absolute;
+    right: 5%;
+    top: -48px;
+    text-align: center;
+}
+#Cars>div:last-child>div:last-child >div>p>span:last-of-type >span{
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+#Cars>div:last-child>div:last-child >div>p>span:last-of-type >i{
     border: 0.5px solid rgba(255, 0, 0, 0.375);
     color: red;
     padding: 5px;
-    position: absolute;
-    right: 5%;
+    display: block;
     cursor: pointer;
 }
-#Cars>div:last-child>div:last-child >div>p>i:hover{
+#Cars>div:last-child>div:last-child >div>p>span>i:hover{
     background-color: red;
     color: white;
 }
@@ -1362,15 +1382,25 @@ position: relative;
     color: gray;
     margin-left: 5px;
 }
-#Phones>div:last-child>div:last-child >div>p>i{
+#Phones>div:last-child>div:last-child >div>p>span:last-of-type{
+    position: absolute;
+    right: 5%;
+    top: -48px;
+    text-align: center;
+}
+#Phones>div:last-child>div:last-child >div>p>span:last-of-type >span{
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+#Phones>div:last-child>div:last-child >div>p>span:last-of-type >i{
     border: 0.5px solid rgba(255, 0, 0, 0.375);
     color: red;
     padding: 5px;
-    position: absolute;
-    right: 5%;
+    display: block;
     cursor: pointer;
 }
-#Phones>div:last-child>div:last-child >div>p>i:hover{
+#Phones>div:last-child>div:last-child >div>p>span>i:hover{
     background-color: red;
     color: white;
 }
@@ -1548,15 +1578,25 @@ position: relative;
     color: gray;
     margin-left: 5px;
 }
-#More>div>div:last-child >div>p>i{
+#More>div>div:last-child >div>p>span:last-of-type{
+    position: absolute;
+    right: 5%;
+    top: -48px;
+    text-align: center;
+}
+#More>div>div:last-child >div>p>span:last-of-type >span{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: block;
+}
+#More>div>div:last-child >div>p>span:last-of-type >i{
     border: 0.5px solid rgba(255, 0, 0, 0.375);
     color: red;
     padding: 5px;
-    position: absolute;
-    right: 5%;
+    display: block;
     cursor: pointer;
 }
-#More>div>div:last-child >div>p>i:hover{
+#More>div>div:last-child >div>p>span>i:hover{
     background-color: red;
     color: white;
 }
@@ -1660,7 +1700,7 @@ position: relative;
 #signIn>div>form>div>i{
     position: absolute;
     right: 12%;
-    top: 40px;
+    top: 44px;
     display: block;
 }
 #signIn>div>form>div>.unvisible{
