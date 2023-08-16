@@ -67,6 +67,9 @@ nav a{
     font-family: 'Calistoga', cursive;
 
 }
+nav .profileAndBasket i{
+    cursor: pointer;
+}
 nav .profileAndBasket i:first-of-type{
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.07);
@@ -1777,6 +1780,7 @@ position: relative;
     right: 0;
     display: flex;
     justify-content: end;
+    display: none;
 
 }
 #basket>div{
@@ -1858,6 +1862,10 @@ position: relative;
 #basket>div>button:nth-of-type(2):hover{
     background-color: rgba(189, 4, 4, 0.8);
     color: white;
+}
+#basket>div>.content{
+    height: 500px;
+    overflow: scroll;
 }
 #basket>div>.content>div{
     width: 100%;

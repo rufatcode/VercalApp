@@ -313,6 +313,12 @@ $("document").ready(function(){
        count+=pruducts[i].Count
     }
     document.querySelector("nav>div>div:last-child >span").innerHTML=count;
+    document.querySelector("#basket>div>h1>span").innerHTML=count+" item";
+    if (count==0) {
+        $("#basket>div>.first").css({
+            display:"block"
+        })
+    }
     for (let i = 0; i < arrPlus.length; i++) {
         // pruducts.push({
         //     Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML,
@@ -352,6 +358,82 @@ $("document").ready(function(){
             
         })
         
+    }
+
+    $("nav .profileAndBasket i:first-of-type").next().click(function(){
+        $("#basket").css({
+            display:"flex"
+        })
+        
+    })
+    $("#basket>div>button:last-of-type").click(function(){
+        $("#basket").css({
+            display:"none",
+        })
+    })
+    let totalValue=0;
+    for (let i = 0; i < pruducts.length; i++) {
+
+        if (pruducts[i].Count>0) {
+            let content=$("#basket>div>.content");
+            
+            let div=$("<div>");
+            let ProductCountSpan=$("<span>");
+            let plusIcon=$("<i>");
+            plusIcon.addClass("fa-solid fa-plus");
+            let childCount=$("<span>");
+            childCount.html(pruducts[i].Count);
+            let minusIcon=$("<i>");
+            minusIcon.addClass("fa-solid fa-minus");
+            ProductCountSpan.append(plusIcon,childCount,minusIcon);
+            let img=$("<img>");
+            img.attr("src",pruducts[i].ImgSrc);
+            let productDiv=$("<div>");
+            let productName=$("<h1>");
+            productName.html(pruducts[i].Name);
+            let Price=$("<span>");
+            Price.html(`$ ${pruducts[i].Price} x`);
+            let childCount1=$("<span>");
+            childCount1.html(pruducts[i].Count);
+            Price.append(childCount1);
+            let totalPrice=$("<p>");
+            totalPrice.html(parseInt(pruducts[i].Price)*pruducts[i].Count);
+            productDiv.append(productName,Price,totalPrice);
+            let removeIcon=$("<i>");
+            removeIcon.addClass("fa-solid fa-xmark");
+            div.append(ProductCountSpan,img,productDiv,removeIcon)
+            totalValue+=parseInt(pruducts[i].Price)*pruducts[i].Count;
+            $("#basket>div>button:first-of-type >span").html(`($ ${totalValue})`);
+            if (pruducts[i].Count==1) {
+            minusIcon.css({
+                "background-color": "rgba(128, 128, 128, 0.275)",
+                color:"gray",
+                border:"0"
+            })
+            }
+            plusIcon.click(function(){
+            pruducts[i].Count=parseInt(pruducts[i].Count)+1;
+            SetLocalStorage(pruducts,"Basket");
+            window.location.reload();
+            })
+            minusIcon.click(function(){
+            if (pruducts[i].Count>1) {
+                pruducts[i].Count=parseInt(pruducts[i].Count)-1;
+                SetLocalStorage(pruducts,"Basket");
+                window.location.reload();
+            }
+            
+            })
+            removeIcon.click(function(){
+            pruducts[i].Count=0;
+            SetLocalStorage(pruducts,"Basket");
+            window.location.reload();
+            })
+            
+            content.append(div);
+            
+
+        }
     }
     
     
