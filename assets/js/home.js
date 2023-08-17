@@ -359,7 +359,6 @@ $("document").ready(function(){
         })
         
     }
-
     $("nav .profileAndBasket i:first-of-type").next().click(function(){
         $("#basket").css({
             display:"flex"
@@ -435,6 +434,11 @@ $("document").ready(function(){
 
         }
     }
-    
+    $("#headling .catagory  table td").click(function(){
+        window.location.replace("../../assets/product.html");
+    })
+    $("#headling .catagory>.catagories>ul>li  li").click(function(){
+        window.location.replace("../../assets/product.html");
+    })
     
 })
