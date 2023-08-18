@@ -12,7 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/bootstrap.css" />
-    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/details.css">
     <title>Cart</title>
 </head>
 <body>
@@ -1450,56 +1450,82 @@
                     <button>4. Review</button>
                 </div>
                 <div class="content">
-                    <!-- <div>
-                        <img src="./img/phone8.webp" alt="">
-                        <div>
-                            <h1>Silver High Neck Sweater</h1>
-                            <p>
-                                <span>$210.00 x <span>1</span></span>
-                                <span>$210.00 </span>
-                            </p>
-                        </div>
-                        <i class="fa-solid fa-xmark"></i>
-                        <span>
-                            <i class="fa-solid fa-minus"></i>
-                            <span>0</span>
-                            <i class="fa-solid fa-plus"></i>
-                            
-                        </span>
-                    </div> -->
+                   <div>
+                    <h1>Shipping Address</h1>
+                    <label for="fullName">Full Name</label>
+                    <input name="fullName" id="fullName" type="text">
+                    <label for="phoneNumbers">Phone Number</label>
+                    <input type="tel" name="phoneNumbers" id="phoneNumbers">
+                    <label for="ZipCode">Zip Code</label>
+                    <input id="ZipCode" type="text">
+                    <label for="Address1">Address 1</label>
+                    <input id="Address 1" type="text">
+                   </div>
+                   <div>
+                    <label for="EmailAddress">Email Address</label>
+                    <input name="EmailAddress" id="EmailAddress" type="email">
+                    <label for="Company">Company</label>
+                    <input type="text" name="Company" id="Company">
+                    <div >
+                      <label for="Country">Country</label>
+                      <input autocomplete="off" list="countiries" name="country" id="country" placeholder="Select country">
+                      <datalist id="countiries">
+                        
+                      </datalist>
+                      <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <label for="Address2">Address 2</label>
+                    <input id="Address 2" type="text">
+                   </div>
                 </div>
+                <div class="content">
+                  <div class="d-none">
+                    <h1>Billing Address</h1>
+                    <input type="checkbox" name="" id="same" >
+                    <label for="same" >Same as shipping address</label>
+                  </div>
+                  <div>
+                    <h1>Billing Address</h1>
+                    <input type="checkbox" name="" id="same">
+                    <label for="same">Same as shipping address</label>
+                   <label for="fullName">Full Name</label>
+                   <input name="fullName" id="fullName" type="text">
+                   <label for="phoneNumbers">Phone Number</label>
+                   <input type="tel" name="phoneNumbers" id="phoneNumbers">
+                   <label for="ZipCode">Zip Code</label>
+                   <input id="ZipCode" type="text">
+                   <label for="Address1">Address 1</label>
+                   <input id="Address 1" type="text">
+                  </div>
+                  <div>
+                   <label for="EmailAddress">Email Address</label>
+                   <input name="EmailAddress" id="EmailAddress" type="email">
+                   <label for="Company">Company</label>
+                   <input type="text" name="Company" id="Company">
+                   <div >
+                    <label for="Country">Country</label>
+                     <input autocomplete="off" list="countiries" name="country" id="country" placeholder="Select country">
+                     <datalist id="countiries">
+                       
+                     </datalist>
+                     <span><i class="fa-solid fa-chevron-down"></i></span>
+                   </div>
+                   <label for="Address2">Address 2</label>
+                   <input id="Address 2" type="text">
+                  </div>
+               </div>
+               <button>Back to Cart</button>
+               <button>Proceed to Payment</button>
             </div>
             <div>
-                <h1>Total: <span>$1230.00</span></h1>
-                <hr>
-                <label for="commet">Additional Comments <span>Note</span></label>
-                <textarea name="commet" id="commet"  rows="5"></textarea>
-                <hr>
-                <input type="text" placeholder="Voucher">
-                <button>Apply Voucher</button>
-                <hr>
-                <h2>Shipping Estimates</h2>
-                <label for="country">Country</label>
-                <div >
-                  <input autocomplete="off" list="countiries" name="country" id="country" placeholder="Select country">
-                  <datalist id="countiries">
-                    
-                  </datalist>
-                  <span><i class="fa-solid fa-chevron-down"></i></span>
-                </div>
-                <label for="city">City</label>
-                <div >
-                  <input autocomplete="off" list="cities" name="city" id="city" placeholder="Select State">
-                  <datalist id="cities">
-                    
-                  </datalist>
-                  <span><i class="fa-solid fa-chevron-down"></i></span>
-                </div>
-                
-                <label for="zipCode">Zip Code</label>
-                <input id="zipCode" name="zipCode" type="text" placeholder="3100">
-                <button>Calculate Shipping</button>
-                <button>Checkout Now</button>
+               <p>Subtotal: <span>$2610. 00</span></p>
+               <p>Shipping: <span>-</span></p>
+               <p>Tax: <span>$40. 00</span></p>
+               <p>Discount: <span>-</span></p>
+               <hr>
+               <h2>$2610.00</h2>
+               <input type="text" part="Voucher">
+               <button>Apply Voucher</button>
             </div>
         </div>
       </section>
@@ -1626,5 +1652,5 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     ></script>
-    <script  type="module"  src="./js/cart.js"></script>
+    <script  type="module"  src="./js/details.js"></script>
 </html>

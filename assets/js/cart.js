@@ -252,13 +252,13 @@ $("document").ready(function(){
             childCount1.html(pruducts[i].Count);
             Price.append(childCount1);
             let totalPrice=$("<p>");
-            totalPrice.html(parseInt(pruducts[i].Price)*pruducts[i].Count);
+            totalPrice.html(`$ ${parseInt(pruducts[i].Price)*pruducts[i].Count}.00`);
             productDiv.append(productName,Price,totalPrice);
             let removeIcon=$("<i>");
             removeIcon.addClass("fa-solid fa-xmark");
             div.append(ProductCountSpan,img,productDiv,removeIcon)
             totalValue+=parseInt(pruducts[i].Price)*pruducts[i].Count;
-            $("#basket>div>button:first-of-type >span").html(`($ ${totalValue})`);
+            $("#basket>div>button:first-of-type >span").html(`($ ${totalValue}.00)`);
             if (pruducts[i].Count==1) {
             minusIcon.css({
                 "background-color": "rgba(128, 128, 128, 0.275)",
@@ -290,11 +290,112 @@ $("document").ready(function(){
 
         }
     }
+    $("#basket>div>button:first-of-type").next().click(function(){
+        window.location.replace("../../assets/cart.html");
+    })
+    $("#basket>div>button:first-of-type").click(function(){
+        window.location.replace("../../assets/details.html");
+    })
+    $("#main>div>div:last-child >h1>span").html(`$ ${totalValue}.00`);
     $("#headling .catagory  table td").click(function(){
         window.location.replace("../../assets/product.html");
     })
     $("#headling .catagory>.catagories>ul>li  li").click(function(){
         window.location.replace("../../assets/product.html");
     })
-    
+    let countrySelect=document.querySelector("#main>div>div:last-child >div:first-of-type >datalist");
+    let citySelect=document.querySelector("#main>div>div:last-child >div:last-of-type >datalist");
+    $.ajax({
+        method: "get",
+        url: "https://countriesnow.space/api/v0.1/countries/",
+        success: function (data) {
+           
+            data.data.forEach(item => {
+                let option=document.createElement("option");
+                option.innerHTML=item.country;
+                option.setAttribute("value",item.country);
+                countrySelect.appendChild(option);
+            });
+        },
+        error:function(error){
+            console.log(error);
+        }
+    });
+    let countryInput=document.querySelector("#main>div>div:last-child >div:first-of-type >input");
+    countryInput.addEventListener("change",function(){
+        citySelect.innerHTML="";
+        $.ajax({
+            method: "get",
+            url: "https://countriesnow.space/api/v0.1/countries/",
+            success: function (data) {
+                let city=data.data.filter(item=>item.country==countryInput.value);
+                city[0].cities.forEach(item=>{
+                    let option=document.createElement("option");
+                    option.innerHTML=item;
+                    option.setAttribute("value",item);
+                    citySelect.append(option);
+                })
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+    })
+    let cartContent=document.querySelector("#main>div>div:first-child >.content");
+    for (let i = 0; i < pruducts.length; i++) {
+        if (pruducts[i].Count>0) {
+            let div=document.createElement("div");
+            let img=document.createElement("img");
+            img.src=pruducts[i].ImgSrc;
+            let infoDiv=document.createElement("div");
+            let h1=document.createElement("h1");
+            h1.innerHTML=pruducts[i].Name;
+            let price=document.createElement("p");
+            let priceSpan=document.createElement("span");
+            priceSpan.innerHTML=`$ ${pruducts[i].Price}.00 x `;
+            let countSpan=document.createElement("span");
+            countSpan.innerHTML=pruducts[i].Count;
+            priceSpan.append(countSpan);
+            let priceSpanDemo=document.createElement("span");
+            priceSpanDemo.innerHTML=`$ ${pruducts[i].Price*pruducts[i].Count}.00`;
+            price.append(priceSpan,priceSpanDemo);
+            infoDiv.append(h1,price);
+            let removeIcon=document.createElement("i");
+            removeIcon.classList.add("fa-solid","fa-xmark");
+            removeIcon.addEventListener("click",function(){
+                pruducts[i].Count=0;
+                SetLocalStorage(pruducts,"Basket");
+                window.location.reload();
+            })
+            let AddRemoveSpan=document.createElement("span");
+            let minusIcon=document.createElement("i");
+            minusIcon.classList.add("fa-solid","fa-minus");
+            let countProduct=document.createElement("span");
+            countProduct.innerHTML=pruducts[i].Count;
+            let plusIcon=document.createElement("i");
+            plusIcon.classList.add("fa-solid","fa-plus");
+            if (pruducts[i].Count==1) {
+                minusIcon.style.background="rgb(218, 225, 231)";
+                minusIcon.style.color="rgb(125, 135, 156)";
+                minusIcon.style.border="1px solid rgb(218, 225, 231)";
+            }
+            plusIcon.addEventListener("click",function(){
+                pruducts[i].Count+=1;
+                SetLocalStorage(pruducts,"Basket");
+                window.location.reload();
+            })
+            minusIcon.addEventListener("click",function(){
+                if (pruducts[i].Count>1) {
+                    pruducts[i].Count-=1;
+                    SetLocalStorage(pruducts,"Basket");
+                    window.location.reload();
+                }
+               
+            })
+            AddRemoveSpan.append(minusIcon,countProduct,plusIcon);
+            div.append(img,infoDiv,removeIcon,AddRemoveSpan);
+            cartContent.append(div);
+        }
+        
+    }
 })

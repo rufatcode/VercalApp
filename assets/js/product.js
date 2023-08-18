@@ -302,14 +302,23 @@ $("document").ready(function(){
         })
     }
     for (let i = 0; i < arrPlus.length; i++) {
-        // pruducts.push({
-        //     Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.innerHTML,
-        //     Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
-        //     Sale:parseInt(arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.split("%")[0]),
-        //     Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
-        //     ImgSrc:arrPlus[i].parentElement.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.src,
-        //     OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
-        // })
+        let find=false;
+        for (let j = 0; j < pruducts.length; j++) {
+            if (pruducts[j].ImgSrc==arrPlus[i].parentElement.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.src) {
+                find=true;
+            }
+        }
+        if (find==false) {
+            pruducts.push({
+                Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.innerHTML,
+                Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
+                Sale:parseInt(arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.split("%")[0]),
+                Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+                ImgSrc:arrPlus[i].parentElement.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.src,
+                OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+            })
+        }
+       
         arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+44].Count;
         arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+44].Count;
         if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
@@ -371,6 +380,7 @@ $("document").ready(function(){
         })
         
     }
+    SetLocalStorage(pruducts,"Basket");
     $("nav .profileAndBasket i:first-of-type").next().click(function(){
         $("#basket").css({
             display:"flex"
@@ -408,13 +418,13 @@ $("document").ready(function(){
             childCount1.html(pruducts[i].Count);
             Price.append(childCount1);
             let totalPrice=$("<p>");
-            totalPrice.html(parseInt(pruducts[i].Price)*pruducts[i].Count);
+            totalPrice.html(`$ ${parseInt(pruducts[i].Price)*pruducts[i].Count}`);
             productDiv.append(productName,Price,totalPrice);
             let removeIcon=$("<i>");
             removeIcon.addClass("fa-solid fa-xmark");
             div.append(ProductCountSpan,img,productDiv,removeIcon)
             totalValue+=parseInt(pruducts[i].Price)*pruducts[i].Count;
-            $("#basket>div>button:first-of-type >span").html(`($ ${totalValue})`);
+            $("#basket>div>button:first-of-type >span").html(`($ ${totalValue}.00)`);
             if (pruducts[i].Count==1) {
             minusIcon.css({
                 "background-color": "rgba(128, 128, 128, 0.275)",
@@ -446,6 +456,12 @@ $("document").ready(function(){
 
         }
     }
+    $("#basket>div>button:first-of-type").next().click(function(){
+        window.location.replace("../../assets/cart.html");
+    })
+    $("#basket>div>button:first-of-type").click(function(){
+        window.location.replace("../../assets/details.html");
+    })
     $("#headling .catagory  table td").click(function(){
         window.location.replace("../../assets/product.html");
     })

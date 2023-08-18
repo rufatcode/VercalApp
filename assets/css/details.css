@@ -427,6 +427,10 @@ position: relative;
     background-color: rgba(186, 2, 2, 0.793);
     color: white;
 }
+#main>div>div:first-child >.head >button:nth-of-type(2){
+    background-color: rgba(186, 2, 2, 0.793);
+    color: white;
+}
 #main>div>div:first-child >.head >span{
     display: inline-block;
     width: 8%;
@@ -434,204 +438,94 @@ position: relative;
     background-color: rgba(255, 0, 0, 0.146);
     margin-top: 16px;
 }
-#main>div>div:first-child >.content>div{
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+#main>div>div:first-child >.head >span:first-of-type{
+    background-color: rgba(186, 2, 2, 0.793);
+}
+#main>div>div:first-child >.content{
     display: flex;
-    padding-top: 20px;
-    padding-bottom: 5px;
+    width: 90%;
     background-color: white;
     border-radius: 10px;
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 10px;
+}
+#main>div>div:first-child >.content>div{
+    padding: 15px;
+    width: 100%;
+
+}
+#main>div>div:first-child >.content>div>h1{
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    color: rgb(43, 52, 69);
+}
+#main>div>div:first-child >.content>div>label{
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 15px;
+    font-size: 0.875rem;
+    color: rgb(43, 52, 69);
+}
+#main>div>div:first-child >.content>div>input{
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    border: 1px solid rgba(128, 128, 128, 0.399);
+    border-radius: 5px;
 }
 #main>div>div:first-child >.content>div>div{
-   margin-left: 5%;
-}
-#main>div>div:first-child >.content>div>div>h1{
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 18px;
-    color: rgb(43, 52, 69);
-    margin-bottom: 0;
+    position: relative;
 }
 #main>div>div:first-child >.content>div>div>span{
-    font-size: 10px;
-    color: rgb(125, 135, 156);
-    font-size: 12px;
+    position: absolute;
+    border-left: 1px solid rgba(128, 128, 128, 0.511);
+    top: 30px;
+    right: 4%;
+    padding-left: 8px;
 }
-#main>div>div:first-child >.content>div>div>p{
-    margin-top: 70px;
-    color: red;
-    font-size: 14px;
+#main>div>div:first-child >.content>div:last-child{
+    margin-top: 18px;
 }
-#main>div>div:first-child >.content>div>div>p>span:first-of-type{
-    color: gray;
+#main>div>div:first-child >.content>div>div>input{
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    border: 1px solid rgba(128, 128, 128, 0.399);
+    border-radius: 5px;
+    
 }
-#main>div>div:first-child >.content>div>div>p>span:last-of-type{
+#main>div>div:first-child >.content>div>input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+#main>div>div:first-child >.content>div>label[for=same]{
+    display: inline-block;
     margin-left: 10px;
+
 }
-#main>div>div:first-child >.content>div>span{
-    width: 80px;
-    height: 35px;
-    display: flex;
-    text-align: center;
-    position: absolute;
-    right: 30px;
-    bottom: 20px;
-}
-#main>div>div:first-child >.content>div>span>i{
-    text-align: center;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 9px;
-    padding-right: 9px;
-    border: 1px solid rgba(255, 0, 0, 0.101);
-    color: red;
-    font-size: 17px;
-    cursor: pointer;
-}
-#main>div>div:first-child >.content>div>span>i:hover{
-    background-color: red;
-    color: white;
-}
-#main>div>div:first-child >.content>div>span>span{
-    margin-top: 5px;
-    margin-left: 8px;
-    margin-right: 8px;
+#main>div>div:first-child >.content>div>div>label{
     display: block;
+    margin-bottom: 6px;
+    margin-top: 15px;
+    font-size: 0.875rem;
+    color: rgb(43, 52, 69);   
 }
-#main>div>div:first-child >.content>div>span>i{
-    display: block;
+#main>div>div:first-child >.content>div>div>input:focus{
+    border-color: rgba(191, 2, 2, 0.814);
 }
-#main>div>div:first-child >.content>div>img{
-    cursor: pointer;
-    width:120px;
-    height: 120px;
-}
-#main>div>div:first-child >.content>div>i{
-    color: gray;
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 20px;
+#main>div>div:first-child >.content>div>input:focus{
+    border-color: rgba(191, 2, 2, 0.814);
 }
 #main>div>div:last-child{
     width: 30%;
-    height: 800px;
     background-color: white;
     border-radius: 10px;
     margin-top: 95px;
     padding: 20px;
     margin-bottom: 30px;
 }
-#main>div>div:last-child >h1{
-    font-size: 15px;
-    color: gray;
-    font-weight: 300;
-    position: relative;
-}
-#main>div>div:last-child >textarea{
-    width: 100%;
-}
-#main>div>div:last-child >h1>span{
-    position: absolute;
-    right: 0px;
-    color: black;
-    font-size: 18px;
-    font-weight: 500;
-}
-#main>div>div:last-child >hr{
-    margin-top: 20px;
-    color: rgba(128, 128, 128, 0.37);
-}
-#main>div>div:last-child >label:first-of-type{
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: rgb(43, 52, 69);
-    margin-bottom: 15px;
-}
-#main>div>div:last-child >label:first-of-type >span{
-    font-size: 12px;
-    color: rgb(233, 69, 96);
-    background-color: rgb(255, 225, 230);
-    display: inline-block;
-    padding: 5px 10px;
-    margin-left: 10px;
-}
-#main>div>div:last-child >textarea{
-    border-color: rgba(128, 128, 128, 0.381);
-    border-radius: 5px;
-}
-#main>div>div:last-child >input{
-    width: 100%;
-    padding: 8px;
-    padding-left: 15px;
-    border-radius: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.381);;
-}
-#main>div>div:last-child >button{
-    width: 100%;
-    text-align: center;
-    padding: 6px;
-    color: rgba(226, 2, 2, 0.718);
-    border: 1px solid rgba(226, 2, 2, 0.718);
-    border-radius: 5px;
-    background-color: white;
-    margin-top: 20px;
-    font-size: 14px;
-    font-weight: 600;
-}
-#main>div>div:last-child >button:hover{
-    background-color:rgba(226, 2, 2, 0.718) ;
-    color: white;
-}
-#main>div>div:last-child >button:last-of-type{
-    background-color:rgba(226, 2, 2, 0.718) ;
-    color: white;
-}
-#main>div>div:last-child h2{
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 14px;
-    color: rgb(43, 52, 69);
-}
-#main>div>div:last-child >label{
-    display: block;
-    font-size: 0.875rem;
-    margin-bottom: 6px;
-    margin-top: 10px;
-    color: rgb(43, 52, 69);
-}
-#main>div>div:last-child >div{
-    position: relative;
-}
-#main>div>div:last-child >div{
-    position: relative;
-    width: 100%;
-}
-#main>div>div:last-child >div>input{
-    width: 100%;
-    padding: 5px;
-    padding-left: 10px;
-    outline: none;
-    border: 1px solid rgba(128, 128, 128, 0.307);
-}
 
-#main>div>div:last-child >div>span{
-    position: absolute;
-    height: 22px;
-    padding-left: 10px;
-    border-left:1px solid rgba(128, 128, 128, 0.601);
-    right: 3%;
-    top: 7px;
-    color: rgba(128, 128, 128, 0.353);
-}
 #signIn{
     background-color:rgba(128, 128, 128, 0.869);
     position: fixed;

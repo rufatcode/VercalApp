@@ -77,150 +77,6 @@ $("document").ready(function(){
         $(" nav>div>.searchContent input").removeClass("rounded-end-pill");
     }
     
-    $('#stock .owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        autoplay:true,
-        autoplayTimeout:3000,
-        smartSpeed:500,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        }
-    })
-    $('#FlashDeals .owl-carousel').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:true,
-        dots:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            400:{
-                items:2
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:4
-            }
-        }
-    })
-    $('#TopCategories .owl-carousel').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:true,
-        dots:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:3
-            }
-        }
-    })
-    $('#TopCategories .last .owl-carousel').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:false,
-        dots:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:2
-            }
-        }
-    })
-    $('#TopRating .first .owl-carousel').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:false,
-        dots:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:4
-            }
-        }
-    })
-    $('#BigDiscounts .owl-carousel').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:true,
-        dots:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            400:{
-                item:2
-            },
-            600:{
-                items:4
-            },
-            1000:{
-                items:6
-            }
-        }
-    })
-    $("#Phones>div:first-child >h1>span:last-child").click(function(){
-        $("#Phones>div:first-child >button").css({
-            display:"none"
-        })
-        $("#Phones>div:first-child >div").css({
-            display:"block"
-        })
-        $(this).css({
-            color:"black"
-        })
-        $(this).prev().prev().css({
-            color:"rgba(128, 128, 128, 0.361)"
-        })
-        $("#Phones>div:first-child").css({
-            height:"420px"
-        })
-    })
-    $("#Phones>div:first-child >h1>span:first-child").click(function(){
-        $("#Phones>div:first-child >button").css({
-            display:"block"
-        })
-        $("#Phones>div:first-child >div").css({
-            display:"none"
-        })
-        $(this).css({
-            color:"black"
-        })
-        $(this).next().next().css({
-            color:"rgba(128, 128, 128, 0.361)"
-        })
-        $("#Phones>div:first-child").css({
-            height:"560px"
-        })
-    })
     
     let dbSignIn=CheckSesionStorage("signIn1");
     let dbSignUp=CheckLocalStorage("signUp1")
@@ -320,23 +176,14 @@ $("document").ready(function(){
         })
     }
     for (let i = 0; i < arrPlus.length; i++) {
-        let finded=false;
-        for (let j = 0; j < pruducts.length; j++) {
-            if (pruducts[j].ImgSrc==arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.src) {
-                finded=true;
-            }
-        }
-        if (finded==false) {
-            pruducts.push({
-                Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML,
-                Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
-                Sale:parseInt(arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.split("%")[0]),
-                Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
-                ImgSrc:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.src,
-                OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
-            })
-        }
-       
+        // pruducts.push({
+        //     Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML,
+        //     Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
+        //     Sale:parseInt(arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.split("%")[0]),
+        //     Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+        //     ImgSrc:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.src,
+        //     OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+        // })
         arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count
         if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
             arrPlus[i].parentElement.firstElementChild.style.display="none";
@@ -368,7 +215,6 @@ $("document").ready(function(){
         })
         
     }
-    SetLocalStorage(pruducts,"Basket");
     $("nav .profileAndBasket i:first-of-type").next().click(function(){
         $("#basket").css({
             display:"flex"
@@ -450,11 +296,30 @@ $("document").ready(function(){
     $("#basket>div>button:first-of-type").click(function(){
         window.location.replace("../../assets/details.html");
     })
+    $("#main>div>div:last-child >h1>span").html(`$ ${totalValue}.00`);
     $("#headling .catagory  table td").click(function(){
         window.location.replace("../../assets/product.html");
     })
     $("#headling .catagory>.catagories>ul>li  li").click(function(){
         window.location.replace("../../assets/product.html");
     })
+   
+    let countrySelect=document.querySelector("#main>div>div:first-child >.content>div:last-child>div>datalist");
+    $.ajax({
+        method: "get",
+        url: "https://countriesnow.space/api/v0.1/countries/",
+        success: function (data) {
+           
+            data.data.forEach(item => {
+                let option=document.createElement("option");
+                option.innerHTML=item.country;
+                option.setAttribute("value",item.country);
+                countrySelect.appendChild(option);
+            });
+        },
+        error:function(error){
+            console.log(error);
+        }
+    });
     
 })
