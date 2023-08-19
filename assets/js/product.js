@@ -319,8 +319,8 @@ $("document").ready(function(){
             })
         }
        
-        arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+44].Count;
-        arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+44].Count;
+        arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+45].Count;
+        arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+45].Count;
         if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
             arrPlus[i].parentElement.firstElementChild.style.display="none";
             arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
@@ -332,14 +332,14 @@ $("document").ready(function(){
             arrPlus[i].parentElement.firstElementChild.style.display="block";
             arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="block"
             arrPlus[i].parentElement.style.top="-48px";
-            pruducts[i+44].Count+=1;
-            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+44].Count;
+            pruducts[i+45].Count+=1;
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+45].Count;
             SetLocalStorage(pruducts,"Basket");
             window.location.reload();
         })
         arrPlus[i].parentElement.firstElementChild.addEventListener("click",function(){
-            pruducts[i+44].Count-=1;
-            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+44].Count;
+            pruducts[i+45].Count-=1;
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+45].Count;
             SetLocalStorage(pruducts,"Basket");
             if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
                 arrPlus[i].parentElement.firstElementChild.style.display="none";
@@ -360,14 +360,14 @@ $("document").ready(function(){
             arrMinusBar[i].style.display="block";
             arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.style.display="block"
             arrMinusBar[i].parentElement.style.top="-48px";
-            pruducts[i+44].Count-=1;
-            arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+44].Count;
+            pruducts[i+45].Count-=1;
+            arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+45].Count;
             SetLocalStorage(pruducts,"Basket");
             window.location.reload();
         })
         arrMinusBar[i].parentElement.firstElementChild.addEventListener("click",function(){
-            pruducts[i+44].Count+=1;
-            arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+44].Count;
+            pruducts[i+45].Count+=1;
+            arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+45].Count;
             SetLocalStorage(pruducts,"Basket");
             if (arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
                 arrMinusBar[i].style.display="none";

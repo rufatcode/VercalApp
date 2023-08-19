@@ -336,7 +336,6 @@ $("document").ready(function(){
                 OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
             })
         }
-       
         arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count
         if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
             arrPlus[i].parentElement.firstElementChild.style.display="none";
