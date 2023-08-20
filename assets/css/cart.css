@@ -427,6 +427,9 @@ position: relative;
     background-color: rgba(186, 2, 2, 0.793);
     color: white;
 }
+#main>div>div:first-child >.head >button:nth-of-type(4){
+    cursor:no-drop;
+}
 #main>div>div:first-child >.head >span{
     display: inline-block;
     width: 8%;
