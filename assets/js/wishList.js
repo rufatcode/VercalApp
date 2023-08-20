@@ -159,6 +159,8 @@ $("document").ready(function(){
             display:"none"
         })
     })
+    let arrPlus=document.querySelectorAll("p>span:last-of-type>.fa-plus");
+    let arrMinus=document.querySelectorAll("p>span:last-of-type>.fa-minus");
     let pruducts=CheckLocalStorage("Basket");
     
     document.querySelector("nav>div>div:last-child >span").innerHTML=0;
@@ -173,7 +175,58 @@ $("document").ready(function(){
             display:"block"
         })
     }
-    
+    for (let i = 0; i < arrPlus.length; i++) {
+        let find=false;
+        for (let j = 0; j < pruducts.length; j++) {
+            if (pruducts[j].ImgSrc==arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.src) {
+                find=true;
+            }
+        }
+        if (find==false) {
+            pruducts.push({
+                Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.innerHTML,
+                Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
+                Sale:0,
+                Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+                ImgSrc:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.src,
+                OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+            })
+        }
+       
+        arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+54].Count;
+        if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
+            arrPlus[i].parentElement.firstElementChild.style.display="none";
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
+            
+            arrPlus[i].parentElement.style.top="0px";
+        }
+        
+        arrPlus[i].addEventListener("click",function(){
+            arrPlus[i].parentElement.firstElementChild.style.display="block";
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="block"
+            arrPlus[i].parentElement.style.top="-48px";
+            pruducts[i+54].Count+=1;
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+54].Count;
+            SetLocalStorage(pruducts,"Basket");
+            window.location.reload();
+        })
+        arrPlus[i].parentElement.firstElementChild.addEventListener("click",function(){
+            pruducts[i+54].Count-=1;
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+54].Count;
+            SetLocalStorage(pruducts,"Basket");
+            if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
+                arrPlus[i].parentElement.firstElementChild.style.display="none";
+                arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
+                
+                arrPlus[i].parentElement.style.top="0px";
+            }
+            window.location.reload();
+            
+        })
+        
+        
+    }
+    SetLocalStorage(pruducts,"Basket");
     $("nav .profileAndBasket i:first-of-type").next().click(function(){
         $("#basket").css({
             display:"flex"
@@ -261,152 +314,75 @@ $("document").ready(function(){
     $("#headling .catagory>.catagories>ul>li  li").click(function(){
         window.location.replace("../../assets/product.html");
     })
-   
-    let countrySelect=document.querySelector("#main>div>div:first-child >.content>div:last-child>div>datalist");
-    $.ajax({
-        method: "get",
-        url: "https://countriesnow.space/api/v0.1/countries/",
-        success: function (data) {
-           
-            data.data.forEach(item => {
-                let option=document.createElement("option");
-                option.innerHTML=item.country;
-                option.setAttribute("value",item.country);
-                countrySelect.appendChild(option);
-            });
-        },
-        error:function(error){
-            console.log(error);
-        }
-    });
-    $("#main>div>div:first-child >.head >button:first-of-type").click(function(){
-        window.location.replace("../../assets/cart.html");
-    })
-    $("#main>div>div:first-child >.head >button:first-of-type").next().next().click(function(){
-        window.location.replace("../../assets/details.html");
-    })
-    $("#main>div>div:first-child >.head >button:first-of-type").next().next().next().next().click(function(){
-        window.location.replace("../../assets/payment.html");
-    })
-    let checkCondition1=$("#main>div>div:first-child >.content:last-of-type>div:nth-of-type(2)>input[type=checkbox]");
-    let checkCondition2=$("#main>div>div:first-child >.content:last-of-type>div:nth-of-type(1)>input");
-    checkCondition1.click(function(){
-        if($(this).is(":checked")){
-            $(this).parent().css({
-                display:"none"
-            })
-            $(this).parent().next().css({
-                display:"none"
-            })
-            $(this).parent().prev().css({
-                display:"block"
-            })
-            checkCondition2.prop("checked",true);
-
-        }
-        
-    })
-    checkCondition2.click(function(){
-        if($(this).is(":not(:checked)")){
-            $(this).parent().css({
-                display:"none"
-            })
-            $(this).parent().next().css({
-                display:"block"
-            })
-            $(this).parent().next().next().css({
-                display:"block"
-            })
-            checkCondition1.prop("checked",false);
-        }
-    })
-    let tax=totalValue*2/100;
-    if (totalValue>1000&&totalValue<2000) {
-        tax/=2;
-    }
-    else if (totalValue>2000) {
-        tax=0;
-    }
-    $("#main>div>div:last-child >p:nth-of-type(1)>span").html(`$ ${totalValue}.00`);
-    $("#main>div>div:last-child >p:nth-of-type(3)>span").html(`$ ${tax}`);
-    if (totalValue>=2000) {
-        $("#main>div>div:last-child >p:nth-of-type(5)>span").html(`$ ${tax+totalValue}.00`)
-    }
-    else{
-        $("#main>div>div:last-child >p:nth-of-type(5)>span").html(`$ ${tax+totalValue}`)
-    }
-    $("#main>div>div:first-child>button:first-of-type").click(function(){
-        window.location.replace("../../assets/cart.html");
-    })
-    $("#main>div>div:first-child>button:last-of-type").click(function(){
-        let fullName=$("#main>div>div:first-child >.content1>div:first-of-type>input:nth-of-type(1)");
-        let phoneNumber=$("#main>div>div:first-child >.content1>div:first-of-type>input:nth-of-type(2)");
-        let zibCode=$("#main>div>div:first-child >.content1>div:first-of-type>input:nth-of-type(3)");
-        let address=$("#main>div>div:first-child >.content1>div:first-of-type>input:nth-of-type(4)");
-        let email=$("#main>div>div:first-child >.content1>div:last-of-type>input:nth-of-type(1)");
-        let country=$("#main>div>div:first-child >.content1>div:last-of-type>div>input");
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        let phoneFormat=/^\+994(50|51|55|70|77|99)+\d{7}$/;
-        if (fullName.val()=="") {
-            fullName.next().css({
-                display:"block"
+    $("#main>div>div:last-child>div:first-child>i").click(function(){
+        if ($(" #main>div>div:first-child").css("display")=="none") {
+            $(" #main>div>div:first-child").css({
+                display: "block",
             })
         }
         else{
-            fullName.next().css({
-                display:"none"
+            $(" #main>div>div:first-child").css({
+                display: "none",
             })
-            if (phoneNumber.val()==""||phoneNumber.val().match(phoneFormat)==null) {
-                phoneNumber.next().css({
-                    display:"block"
-                })
-            }
-            else{
-                phoneNumber.next().css({
-                    display:"none"
-                })
-                if (zibCode.val()=="") {
-                    zibCode.next().css({
-                        display:"block"
-                    })
-                }
-                else{
-                    zibCode.next().css({
-                        display:"none"
-                    })
-                    if (address.val()=="") {
-                        address.next().css({
-                            display:"block"
-                        })
-                    }
-                    else{
-                        address.next().css({
-                            display:"none"
-                        })
-                        if (email.val()==""||email.val().match(mailformat)==null) {
-                            email.next().css({
-                                display:"block"
-                            })
-                        }
-                        else{
-                            email.next().css({
-                                display:"none"
-                            })
-                            if (country.val()=="") {
-                                country.next().css({
-                                    display:"block"
-                                })
-                            }
-                            else{
-                                country.next().css({
-                                    display:"none"
-                                })
-                                window.location.replace("../../assets/payment.html");
-                            }
-                        }
-                    }
-                }
-            }
         }
     })
+    $("#main>div>div:last-child >div:last-of-type span").eq(1).css({
+        color:"red",
+        border: "0.5px solid black",
+        "border-color":"red",
+    })
+    $("#main>div>div:last-child >div:last-of-type span").slice(1,6).click(function(){
+        $("#main>div>div:last-child >div:last-of-type span").slice(1,6).css({
+            color:"black",
+            border:"0",
+        })
+        $(this).css({
+            color:"red",
+            border: "0.5px solid black",
+            "border-color":"red",
+
+        })
+        if ($(this).html()=="1") {
+            $("#main>div>div:last-child >div:last-of-type span").eq(0).css({
+                opacity:"0.4"
+            })
+        }
+        else{
+            $("#main>div>div:last-child >div:last-of-type span").eq(0).css({
+                opacity:"1"
+            })
+        }
+        if ($(this).html()=="5") {
+            $("#main>div>div:last-child >div:last-of-type span").eq(6).css({
+                opacity:"0.4"
+            })
+        }
+        else{
+            $("#main>div>div:last-child >div:last-of-type span").eq(6).css({
+                opacity:"1"
+            })
+        }
+        
+    })
+    $("#main>div>div:last-child >div:last-of-type span").eq(0).click(function(){
+       let arr=$("#main>div>div:last-child >div:last-of-type span").slice(1,6);
+        arr.each(index => {
+            if(arr[index].style.color=="red"&&index>0){
+                
+                arr[index-1].click();
+                
+             }
+        });
+    })
+    $("#main>div>div:last-child >div:last-of-type span").eq(6).click(function(){
+        let arr=$("#main>div>div:last-child >div:last-of-type span").slice(1,6);
+        arr.each(index => {
+            if(arr[index].style.color=="red"&&index<4){
+                arr[index+1].click();
+                return false;
+            }
+        });
+        
+    })
+    
 })

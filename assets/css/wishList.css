@@ -411,7 +411,7 @@ position: relative;
     justify-content: space-between;
 }
 #main>div>div:first-child{
-    width: 29%;
+    width: 27%;
     height: 420px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -438,7 +438,7 @@ position: relative;
     padding-right: 25px;
     
 }
-#main>div>div:first-child>a:first-of-type{
+#main>div>div:first-child>a:nth-of-type(2){
     border-left: 4px solid rgb(188, 2, 2);
     color: rgb(201, 1, 1);
     padding-left: 21px;
@@ -456,123 +456,146 @@ position: relative;
     position: absolute;
     right: 20px;
 }
+
+
 #main>div>div:last-child{
-    width: 69%;
+    width: 71%;
 }
-#main>div>div:last-child>h1{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 10px;
-    position: relative;
-}
-#main>div>div:last-child>h1>i{
-    margin-right: 15px;
-}
-#main>div>div:last-child>h1>i:last-of-type{
-    position: absolute;
-    right: 10px;
-    display: none;
-}
-#main>div>div:last-child>div:first-of-type{
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    padding-left: 20px;
-    background-color: transparent;
-    border: 0;
-}
-#main>div>div:last-child>div{
-    background-color: white;
-    border-radius: 12px;
-    padding: 14px 20px;
+#main>div>div:last-child>div:first-child{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    padding-right: 20px;
+    position: relative;
 }
-#main>div>div:last-child>div:first-of-type>span{
-    font-weight: 600;
-    font-size: 16px;
-    color: rgb(125, 135, 156);
-    cursor:unset;
+#main>div>div:last-child>div:first-child h1{
+    font-size: 25px;
+    margin-left: 12px;
+    font-weight: bold;
+    width: 40%;
 }
-#main>div>div:last-child>div>span{
-    cursor: pointer;
-    color: rgb(43, 52, 69);
-    font-size: 14px;
-}
-#main>div>div:last-child>div>span>i{
-    display: block;
-    padding: 10px;
-    margin-top: -10px;
-}
-#main>div>div:last-child>div>span>i:hover{
-    border-radius: 50%;
-    background-color:rgba(43, 52, 69, 0.104) ;
-}
-#main>div>div:last-child>div>span:first-of-type{
-    font-weight: 600;
-    font-size: 16px;
-}
-#main>div>div:last-child>div:nth-of-type(2)>span:nth-of-type(2){
-    padding: 0.25rem 1rem;
-    border-radius: 25px;
-    font-size: 12px;
-    color: rgb(15, 52, 96);
-    background-color: rgba(15, 52, 96, 0.2);
-}
-#main>div>div:last-child>div:nth-of-type(3)>span:nth-of-type(2){
-    padding: 0.25rem 1rem;
-    border-radius: 25px;
-    font-size: 12px;
-    color: rgb(15, 52, 96);
-    background-color: rgba(15, 52, 96, 0.2);
-}
-#main>div>div:last-child>div:nth-of-type(4)>span:nth-of-type(2){
-    padding: 0.25rem 1rem;
-    border-radius: 25px;
-    font-size: 12px;
-    color: rgb(51, 208, 103);
-    background-color: rgba(51, 208, 103, 0.15);
-}
-#main>div>div:last-child>div:nth-of-type(5)>span:nth-of-type(2){
-    padding: 0.25rem 1rem;
-    border-radius: 25px;
-    font-size: 12px;
-    color: rgb(51, 208, 103);
-    background-color: rgba(51, 208, 103, 0.15);
-}
-#main>div>div:last-child>div:nth-of-type(6)>span:nth-of-type(2){
-    padding: 0.25rem 1rem;
-    border-radius: 25px;
-    font-size: 12px;
-    color: rgb(233, 69, 96);
-    background-color: rgb(255, 225, 230);
-}
-#main>div>div:last-child>div:last-of-type{
-    width: 100px;
-    background-color: transparent;
-    margin: 20px auto;
-}
-#main>div>div:last-child>div:last-of-type>span{
-    padding: 3px 10px;
-    color: rgba(255, 0, 0, 0.215);
-    border: 1px solid rgba(255, 0, 0, 0.278);
-    border-radius: 50%;
-    margin-right: 5px;
-    cursor: none;
-}
-#main>div>div:last-child>div:last-of-type>span:nth-of-type(2){
-    color: rgba(255, 0, 0, 0.784);
-    border: 1px solid rgba(255, 0, 0, 0.752);
-}
-#main>div>div:last-child>div:last-of-type>span>i{
-    font-size: 13px;
-    padding: 0;
-    margin-top: 1px;
+#main>div>div:last-child>div:first-child h1 i{
+    margin-right: 10px;
 }
 
+#main>div>div:last-child>div:first-child>i{
+    position: absolute;
+    right: 0;
+    display: none;
+}
+#main>div>div:last-child>div:first-child>p>span{
+    color: rgb(233, 69, 96);
+    background: rgb(255, 225, 230);
+    padding: 9px 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+#main>div>div:last-child>div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#main>div>div:last-child>div:nth-of-type(2) >div{
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    width: 32%;
+    padding-left: 18px;
+}
+#main>div>div:last-child>div:nth-of-type(2) >div:hover{
+    -webkit-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+}
+#main>div>div:last-child>div:nth-of-type(2) >div>div:first-child{
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top: 15px;
+    display: none;
+}
+#main>div>div:last-child>div:nth-of-type(2) >div:hover >div:first-child{
+    display: block;
+}
+#main>div>div:last-child>div:nth-of-type(2) >div>div:first-child i{
+    cursor: pointer;
+}
+
+#main>div>div:last-child>div:nth-of-type(2) >div >img{
+    width: 80%;
+    height: 220px;
+    transform: scale(1.2);
+    margin-left: 6%;
+    cursor: pointer;
+    margin-top: 30px;
+}
+#main>div>div:last-child>div:nth-of-type(2) >div>h1{
+    font-size: 14px;
+    margin-top: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#main>div>div:last-child>div:nth-of-type(2) >div>p{
+    position: relative;
+    margin-top: 5px;
+}
+
+#main>div>div:last-child>div:nth-of-type(2) >div>p>span:last-of-type{
+    position: absolute;
+    right: 5%;
+    top: -48px;
+    text-align: center;
+}
+#main>div>div:last-child>div:nth-of-type(2) >div>p>span:last-of-type >span{
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+#main>div>div:last-child>div:nth-of-type(2) >div>p>span:last-of-type >i{
+    border: 0.5px solid rgba(255, 0, 0, 0.375);
+    color: red;
+    padding: 5px;
+    display: block;
+    cursor: pointer;
+}
+#main>div>div:last-child>div:nth-of-type(2) >div>p>span>i:hover{
+    background-color: red;
+    color: white;
+}
+#main>div>div:last-child >div:last-of-type{
+    width: 40%;
+    margin: 20px auto;
+}
+#main>div>div:last-child >div:last-of-type >span{
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+#main>div>div:last-child >div:last-of-type >span:hover{
+    border: 0.1px solid red;
+    color: red;
+    border-radius: 50%;
+}
+#main>div>div:last-child >div:last-of-type >span:first-of-type{
+    border: 0.1px solid red;
+    color: red;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+#main>div>div:last-child >div:last-of-type >span:nth-of-type(2){
+    border: 0.1px solid red;
+    color: red;
+    border-radius: 50%;
+}
+#main>div>div:last-child >div:last-of-type >span:last-of-type{
+    border: 0.1px solid red;
+    color: red;
+    border-radius: 50%;
+}
 #signIn{
     background-color:rgba(128, 128, 128, 0.869);
     position: fixed;
@@ -950,6 +973,9 @@ footer>div>div h3{
     #main>div{
         width: 95%;
     }
+    #main>div>div:last-child>div:nth-of-type(2) >div{
+        width: 45%;
+    }
 }
 @media screen and (min-width:560px) and (max-width:850px) {
     footer>div>div{
@@ -988,17 +1014,32 @@ footer>div>div h3{
     #signIn>div{
         width: 80%;
     }
+    #main>div{
+        width: 100%;
+    }
+    #main>div>div:last-child>div:nth-of-type(2) >div{
+        width: 45%;
+    }
+    #main>div>div:first-child{
+        display: none;
+    }
     #main>div>div:last-child{
         width: 90%;
         margin: 10px auto;
     }
-    #main>div{
-        width: 98%;
-        margin: 10px auto;
-        display: block;
+    #main>div>div:last-child>div:first-child{
+        flex-wrap: wrap;
     }
-    #main>div>div:last-child>h1>i:last-of-type{
-        display: inline-block;
+   
+    #main>div>div:last-child>div:first-child>p{
+        width: 90%;
+        margin-top: 20px;
+    }
+    #main>div>div:last-child>div:first-child>i{
+        display: block;
+        z-index: 9999999;
+        color: rgba(128, 128, 128, 0.685);
+        font-size: 22px;
     }
     #main>div>div:first-child{
         display: none;
@@ -1019,9 +1060,13 @@ footer>div>div h3{
         height: 100vh;
         background-color: rgba(128, 128, 128, 0.685);
     }
-    #main>div>div:last-child>h1>i:last-of-type{
-        z-index: 9999999;
-        color: rgba(128, 128, 128, 0.685);
+    #main>div>div:last-child >div:last-of-type{
+        width: 50%;
+        margin: 20px auto;
+    }
+    #main>div>div:last-child >div:last-of-type>span{
+        margin-bottom: 10px;
+        display: inline-block;
     }
   
 }
@@ -1063,13 +1108,34 @@ footer>div>div h3{
     #signIn>div{
         width: 95%;
     }
-    #main>div>div:last-child{
+    #main>div{
         width: 100%;
     }
-    #main>div{
-        width: 98%;
+    #main>div>div:last-child>div:nth-of-type(2) >div{
+        width: 95%;
+        margin: 20px auto;
+    }
+    #main>div>div:first-child{
+        display: none;
+    }
+    #main>div>div:last-child{
+        width: 100%;
         margin: 10px auto;
+        padding-left: 10px;
+    }
+    #main>div>div:last-child>div:first-child{
+        flex-wrap: wrap;
+    }
+    #main>div>div:last-child>div:first-child>p{
+        width: 90%;
+        margin-top: 20px;
+    }
+    #main>div>div:last-child>div:first-child>i{
+        right: 15px;
         display: block;
+        z-index: 9999999;
+        color: rgba(128, 128, 128, 0.685);
+        font-size: 22px;
     }
     #main>div>div:first-child>p{
         font-size: 12px;
@@ -1099,30 +1165,12 @@ footer>div>div h3{
         height: 100vh;
         background-color: rgba(128, 128, 128, 0.685);
     }
-    #main>div>div:last-child>h1>i:last-of-type{
-        z-index: 9999999;
-        color: rgba(128, 128, 128, 0.685);
-    }
-    #main>div>div:last-child>h1>i:last-of-type{
-        display: inline-block;
-    }
-    #main>div>div:last-child>div{
-        margin-top: 15px;
-        flex-wrap: wrap;
-    }
-    #main>div>div:last-child>div>span{
-        margin-top: 15px;
-    }
-    #main>div>div:last-child>div:first-of-type{
-        display: none;
-    }
-    #main>div>div:last-child>div>span:last-of-type{
-        display: none;
-    }
-    #main>div>div:last-child>div:nth-of-type(7){
+    #main>div>div:last-child >div:last-of-type{
         width: 80%;
+        margin: 20px auto;
     }
-    #main>div>div:last-child>div:nth-of-type(7)>span:last-of-type{
+    #main>div>div:last-child >div:last-of-type>span{
+        margin-bottom: 10px;
         display: inline-block;
     }
 }

@@ -159,8 +159,6 @@ $("document").ready(function(){
             display:"none"
         })
     })
-    let arrPlus=document.querySelectorAll("p>span:last-of-type>.fa-plus");
-    let arrMinus=document.querySelectorAll("p>span:last-of-type>.fa-minus");
     let pruducts=CheckLocalStorage("Basket");
     
     document.querySelector("nav>div>div:last-child >span").innerHTML=0;
@@ -175,46 +173,8 @@ $("document").ready(function(){
             display:"block"
         })
     }
-    for (let i = 0; i < arrPlus.length; i++) {
-        // pruducts.push({
-        //     Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML,
-        //     Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
-        //     Sale:parseInt(arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.split("%")[0]),
-        //     Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
-        //     ImgSrc:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.src,
-        //     OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
-        // })
-        arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count
-        if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
-            arrPlus[i].parentElement.firstElementChild.style.display="none";
-            arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
-            
-            arrPlus[i].parentElement.style.top="0px";
-        }
-        arrPlus[i].addEventListener("click",function(){
-            arrPlus[i].parentElement.firstElementChild.style.display="block";
-            arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="block"
-            arrPlus[i].parentElement.style.top="-48px";
-            pruducts[i].Count+=1;
-            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count;
-            SetLocalStorage(pruducts,"Basket");
-            window.location.reload();
-        })
-        arrPlus[i].parentElement.firstElementChild.addEventListener("click",function(){
-            pruducts[i].Count-=1;
-            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i].Count;
-            SetLocalStorage(pruducts,"Basket");
-            if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
-                arrPlus[i].parentElement.firstElementChild.style.display="none";
-                arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
-                
-                arrPlus[i].parentElement.style.top="0px";
-            }
-            window.location.reload();
-            
-        })
-        
-    }
+    
+    
     $("nav .profileAndBasket i:first-of-type").next().click(function(){
         $("#basket").css({
             display:"flex"
