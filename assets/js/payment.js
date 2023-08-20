@@ -296,145 +296,277 @@ $("document").ready(function(){
     $("#basket>div>button:first-of-type").click(function(){
         window.location.replace("../../assets/details.html");
     })
-    $("#main>div>div:last-child >h1>span").html(`$ ${totalValue}.00`);
     $("#headling .catagory  table td").click(function(){
         window.location.replace("../../assets/product.html");
     })
     $("#headling .catagory>.catagories>ul>li  li").click(function(){
         window.location.replace("../../assets/product.html");
     })
-    let countrySelect=document.querySelector("#main>div>div:last-child >div:first-of-type >datalist");
-    let citySelect=document.querySelector("#main>div>div:last-child >div:last-of-type >datalist");
-    $.ajax({
-        method: "get",
-        url: "https://countriesnow.space/api/v0.1/countries/",
-        success: function (data) {
-           
-            data.data.forEach(item => {
-                let option=document.createElement("option");
-                option.innerHTML=item.country;
-                option.setAttribute("value",item.country);
-                countrySelect.appendChild(option);
-            });
-        },
-        error:function(error){
-            console.log(error);
-        }
-    });
-    let countryInput=document.querySelector("#main>div>div:last-child >div:first-of-type >input");
-    countryInput.addEventListener("change",function(){
-        citySelect.innerHTML="";
-        $.ajax({
-            method: "get",
-            url: "https://countriesnow.space/api/v0.1/countries/",
-            success: function (data) {
-                let city=data.data.filter(item=>item.country==countryInput.value);
-                city[0].cities.forEach(item=>{
-                    let option=document.createElement("option");
-                    option.innerHTML=item;
-                    option.setAttribute("value",item);
-                    citySelect.append(option);
-                })
-            },
-            error:function(error){
-                console.log(error);
-            }
-        });
+   
+    
+    $("#main>div>div:first-child >.head >button:first-of-type").click(function(){
+        window.location.replace("../../assets/cart.html");
     })
-    let cartContent=document.querySelector("#main>div>div:first-child >.content");
-    for (let i = 0; i < pruducts.length; i++) {
-        if (pruducts[i].Count>0) {
-            let div=document.createElement("div");
-            let img=document.createElement("img");
-            img.src=pruducts[i].ImgSrc;
-            let infoDiv=document.createElement("div");
-            let h1=document.createElement("h1");
-            h1.innerHTML=pruducts[i].Name;
-            let price=document.createElement("p");
-            let priceSpan=document.createElement("span");
-            priceSpan.innerHTML=`$ ${pruducts[i].Price}.00 x `;
-            let countSpan=document.createElement("span");
-            countSpan.innerHTML=pruducts[i].Count;
-            priceSpan.append(countSpan);
-            let priceSpanDemo=document.createElement("span");
-            priceSpanDemo.innerHTML=`$ ${pruducts[i].Price*pruducts[i].Count}.00`;
-            price.append(priceSpan,priceSpanDemo);
-            infoDiv.append(h1,price);
-            let removeIcon=document.createElement("i");
-            removeIcon.classList.add("fa-solid","fa-xmark");
-            removeIcon.addEventListener("click",function(){
-                pruducts[i].Count=0;
-                SetLocalStorage(pruducts,"Basket");
-                window.location.reload();
-            })
-            let AddRemoveSpan=document.createElement("span");
-            let minusIcon=document.createElement("i");
-            minusIcon.classList.add("fa-solid","fa-minus");
-            let countProduct=document.createElement("span");
-            countProduct.innerHTML=pruducts[i].Count;
-            let plusIcon=document.createElement("i");
-            plusIcon.classList.add("fa-solid","fa-plus");
-            if (pruducts[i].Count==1) {
-                minusIcon.style.background="rgb(218, 225, 231)";
-                minusIcon.style.color="rgb(125, 135, 156)";
-                minusIcon.style.border="1px solid rgb(218, 225, 231)";
-            }
-            plusIcon.addEventListener("click",function(){
-                pruducts[i].Count+=1;
-                SetLocalStorage(pruducts,"Basket");
-                window.location.reload();
-            })
-            minusIcon.addEventListener("click",function(){
-                if (pruducts[i].Count>1) {
-                    pruducts[i].Count-=1;
-                    SetLocalStorage(pruducts,"Basket");
-                    window.location.reload();
-                }
-               
-            })
-            AddRemoveSpan.append(minusIcon,countProduct,plusIcon);
-            div.append(img,infoDiv,removeIcon,AddRemoveSpan);
-            cartContent.append(div);
-        }
-        
-    }
     $("#main>div>div:first-child >.head >button:first-of-type").next().next().click(function(){
         window.location.replace("../../assets/details.html");
     })
-    $("#main>div>div:last-child >button:last-of-type").click(function(){
-       if ($("#main>div>div:last-child >div:first-of-type >input").val()=="") {
-        $("#main>div>div:last-child >div:first-of-type >input").next().css({
-            display:"block"
-        })
-       }
-       else{
-            if ($("#main>div>div:last-child >div:last-of-type >input").val()=="") {
-                $("#main>div>div:last-child >div:last-of-type >input").next().css({
+    $("#main>div>div:first-child >.head >button:first-of-type").next().next().next().next().click(function(){
+        window.location.replace("../../assets/payment.html");
+    })
+  
+    let tax=totalValue*2/100;
+    if (totalValue>1000&&totalValue<2000) {
+        tax/=2;
+    }
+    else if (totalValue>2000) {
+        tax=0;
+    }
+    $("#main>div>div:last-child >p:nth-of-type(1)>span").html(`$ ${totalValue}.00`);
+    $("#main>div>div:last-child >p:nth-of-type(3)>span").html(`$ ${tax}`);
+    if (totalValue<=1000||totalValue>=2000) {
+        $("#main>div>div:last-child >p:nth-of-type(5)>span").html(`$ ${tax+totalValue}.00`)
+    }
+    else{
+        $("#main>div>div:last-child >p:nth-of-type(5)>span").html(`$ ${tax+totalValue}`)
+    }
+    $("#main>div>div:first-child>button:first-of-type").click(function(){
+        window.location.replace("../../assets/details.html");
+    })
+    
+    let cardNumberInput=$("#cartNumber");
+    let cardNameInput=$("#cartName");
+    let expDateInput=$("#expDate");
+    let userCvv=$("#userCvv");
+    let userEmail=$("#userEmail");
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let payCartSubmit=$("#main>div>div:first-child >.content>button:first-of-type");
+    let paypalSubmit=$("#main>div>div:first-child >.content>button:nth-of-type(2)");
+    let creditCard=$("#main>div>div:first-child >.content>input:nth-of-type(1)");
+    let paypal=$("#main>div>div:first-child >.content>input:nth-of-type(2)");
+    let delivery=$("#main>div>div:first-child >.content>input:nth-of-type(4)");
+    paypalSubmit.click(function(){
+        if(paypal.is(":checked")){
+            if (userEmail.val().match(mailformat)==null) {
+                userEmail.next().next().css({
                     display:"block"
-                })
-                $("#main>div>div:last-child >div:first-of-type >input").next().css({
-                    display:"none"
                 })
             }
             else{
-                if ($("#main>div>div:last-child #zipCode").val()=="") {
-                    $("#main>div>div:last-child >p").css({
+                userEmail.next().next().css({
+                    display:"none"
+                })
+                swal({
+                    text: `$ ${tax+totalValue} paid successfully`,
+                    title:"Patment Info",
+                    icon:"success"
+                  });
+            }
+        }
+    })
+    payCartSubmit.click(function(){
+        if (creditCard.is(":checked")) {
+            cardNumberInput.val(cardNumberInput.val().split(" ").join(""));
+            if (cardNumberInput.val().length!=16||isNaN(cardNumberInput.val())) {
+                cardNumberInput.next().css({
+                    display:"block"
+                })
+            }
+            else{
+                cardNumberInput.next().css({
+                    display:"none"
+                })
+                let str="";
+                for (let i = 0; i < cardNumberInput.val().length; i++) {
+                    str+=cardNumberInput.val()[i];
+                    if (i==3||i==7||i==11) {
+                        str+=" ";
+                    }
+                }
+                cardNumberInput.attr("type","text");
+                cardNumberInput.val(str);
+                if (cardNameInput.val()=="") {
+                    cardNameInput.next().css({
                         display:"block"
                     })
-                    $("#main>div>div:last-child >div:last-of-type >input").next().css({
-                        display:"none"
-                    })
-                    $("#main>div>div:last-child >div:first-of-type >input").next().css({
-                        display:"none"
-                    })
+                    
                 }
                 else{
-                    window.location.replace("../../assets/details.html");
+                    cardNameInput.next().css({
+                        display:"none"
+                    })
+                    if (expDateInput.val()=="") {
+                        expDateInput.next().css({
+                            display:"block"
+                        })
+                    }
+                    else{
+                        expDateInput.next().css({
+                            display:"none"
+                        })
+                        if (userCvv.val().length!=3) {
+                            userCvv.next().css({
+                                display:"block"
+                            })
+                        }
+                        else{
+                            userCvv.next().css({
+                                display:"none"
+                            })
+                            swal({
+                                text: `$ ${tax+totalValue} paid successfully`,
+                                title:"Patment Info",
+                                icon:"success"
+                              });
+                        }
+                    }
                 }
-               
             }
-           
-       }
+        }
         
+    })
+    $("#main>div>div:first-child>button:last-of-type").click(function(){
+        if (creditCard.is(":checked")) {
+            cardNumberInput.val(cardNumberInput.val().split(" ").join(""));
+            if (cardNumberInput.val().length!=16||isNaN(cardNumberInput.val())) {
+                cardNumberInput.next().css({
+                    display:"block"
+                })
+            }
+            else{
+                cardNumberInput.next().css({
+                    display:"none"
+                })
+                let str="";
+                for (let i = 0; i < cardNumberInput.val().length; i++) {
+                    str+=cardNumberInput.val()[i];
+                    if (i==3||i==7||i==11) {
+                        str+=" ";
+                    }
+                }
+                cardNumberInput.attr("type","text");
+                cardNumberInput.val(str);
+                if (cardNameInput.val()=="") {
+                    cardNameInput.next().css({
+                        display:"block"
+                    })
+                    
+                }
+                else{
+                    cardNameInput.next().css({
+                        display:"none"
+                    })
+                    if (expDateInput.val()=="") {
+                        expDateInput.next().css({
+                            display:"block"
+                        })
+                    }
+                    else{
+                        expDateInput.next().css({
+                            display:"none"
+                        })
+                        if (userCvv.val().length!=3) {
+                            userCvv.next().css({
+                                display:"block"
+                            })
+                        }
+                        else{
+                            userCvv.next().css({
+                                display:"none"
+                            })
+                            window.location.replace("../../assets/orders.html");
+                        }
+                    }
+                }
+            }
+        }
+        else if(paypal.is(":checked")){
+            if (userEmail.val().match(mailformat)==null) {
+                userEmail.next().next().css({
+                    display:"block"
+                })
+            }
+            else{
+                userEmail.next().next().css({
+                    display:"none"
+                })
+                window.location.replace("../../assets/orders.html");
+            }
+        }
+        else{
+            window.location.replace("../../assets/orders.html");
+        }
+        
+    })
+    creditCard.click(function(){
+        paypal.next().next().next().css({
+            display:"none"
+        })
+        paypal.next().next().next().next().css({
+            display:"none"
+        })
+        paypal.next().next().next().next().next().css({
+            display:"none"
+        })
+        paypal.next().next().next().next().next().next().css({
+            display:"none"
+        })
+        paypal.prev().css({
+            display:"block"
+        })
+        paypal.prev().prev().css({
+            display:"block"
+        })
+        paypal.prev().prev().prev().css({
+            display:"flex"
+        })
+        
+
+    })
+    paypal.click(function(){
+        $(this).next().next().next().css({
+            display:"block"
+        })
+        $(this).next().next().next().next().css({
+            display:"inline"
+        })
+        $(this).next().next().next().next().next().css({
+            display:"inline"
+        })
+        $(this).next().next().next().next().next().next().next().css({
+            display:"block"
+        })
+        $(this).prev().css({
+            display:"none"
+        })
+        $(this).prev().prev().css({
+            display:"none"
+        })
+        $(this).prev().prev().prev().css({
+            display:"none"
+        })
+
+    })
+    delivery.click(function(){
+        paypal.next().next().next().css({
+            display:"none"
+        })
+        paypal.next().next().next().next().css({
+            display:"none"
+        })
+        paypal.next().next().next().next().next().css({
+            display:"none"
+        })
+        paypal.next().next().next().next().next().next().css({
+            display:"none"
+        })
+        paypal.prev().css({
+            display:"none"
+        })
+        paypal.prev().prev().css({
+            display:"none"
+        })
+        paypal.prev().prev().prev().css({
+            display:"none"
+        })
     })
 })

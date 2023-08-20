@@ -522,7 +522,7 @@ position: relative;
 }
 #main>div>div:last-child{
     width: 30%;
-    height: 800px;
+    height: 840px;
     background-color: white;
     border-radius: 10px;
     margin-top: 95px;
@@ -567,13 +567,23 @@ position: relative;
 #main>div>div:last-child >textarea{
     border-color: rgba(128, 128, 128, 0.381);
     border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    padding-left: 10px;
+}
+#main>div>div:last-child >textarea:focus{
+    border: 1px solid rgba(226, 2, 2, 0.718);
 }
 #main>div>div:last-child >input{
     width: 100%;
     padding: 8px;
     padding-left: 15px;
     border-radius: 5px;
+    outline: none;
     border: 1px solid rgba(128, 128, 128, 0.381);;
+}
+#main>div>div:last-child >input:focus{
+    border: 1px solid rgba(226, 2, 2, 0.718);
 }
 #main>div>div:last-child >button{
     width: 100%;
@@ -621,8 +631,26 @@ position: relative;
     padding-left: 10px;
     outline: none;
     border: 1px solid rgba(128, 128, 128, 0.307);
+    border-radius: 5px;
+}
+#main>div>div:last-child >div>p{
+    font-size: 13px;
+    color: red;
+    margin-top: 5px;
+    margin-left: 10px;
+    display: none;
 }
 
+#main>div>div:last-child >p{
+    font-size: 13px;
+    color: red;
+    margin-top: 5px;
+    margin-left: 10px;
+    display: none;
+}
+#main>div>div:last-child >div>input:focus{
+    border: 1px solid rgba(226, 2, 2, 0.718);
+}
 #main>div>div:last-child >div>span{
     position: absolute;
     height: 22px;
@@ -1129,6 +1157,7 @@ footer>div>div h3{
         width: 100%;
         padding-top: 20px;
         padding-left: 1%;
+        flex-wrap: wrap;
     }
     #main>div>div:first-child >.head>button{
         font-size: 11px;

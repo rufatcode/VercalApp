@@ -12,7 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/bootstrap.css" />
-    <link rel="stylesheet" href="./css/details.css">
+    <link rel="stylesheet" href="./css/payment.css">
     <title>Cart</title>
 </head>
 <body>
@@ -1449,79 +1449,43 @@
                     <span></span>
                     <button>4. Review</button>
                 </div>
-                <div class="content content1">
+                <div class="content">
+                    <input checked type="radio" name="radio" id="creditCard" value="creditCard">
+                    <label for="creditCard" class="radio">Pay with credit card</label>
+                   <hr>
                    <div>
-                    <h1>Shipping Address</h1>
-                    <label for="fullName">Full Name</label>
-                    <input name="fullName" id="fullName" type="text">
-                    <p>please enter full name</p>
-                    <label for="phoneNumbers">Phone Number</label>
-                    <input type="tel" name="phoneNumbers" id="phoneNumbers">
-                    <p>please enter full phone number</p>
-                    <label for="ZipCode">Zip Code</label>
-                    <input id="ZipCode" type="text">
-                    <p>please enter zip code</p>
-                    <label for="Address1">Address 1</label>
-                    <input id="Address 1" type="text">
-                    <p>please enter first address</p>
+                        <div>
+                            <label for="cartNumber">Card Number</label>
+                            <input id="cartNumber" type="number" name="cartNumber" placeholder="Card Number">
+                            <p>please enter card number</p>
+                            <label for="cartName">Name on Card</label>
+                            <input type="text" name="cartName" id="cartName" placeholder="Name on Card">
+                            <p>please enter card name</p>
+                       </div>
+                       <div>
+                            <label for="expDate">Exp Date</label>
+                            <input id="expDate" type="date" name="expDate">
+                            <p>please enter card number</p>
+                            <label for="userCvv">Cvv</label>
+                            <input type="number" name="userCvv" id="userCvv" placeholder="cvv">
+                            <p>please enter card name</p>
+                       </div>
                    </div>
-                   <div>
-                    <label for="EmailAddress">Email Address</label>
-                    <input name="EmailAddress" id="EmailAddress" type="email">
-                    <p>please enter email</p>
-                    <label for="Company">Company</label>
-                    <input type="text" name="Company" id="Company">
-                    <div >
-                      <label for="Country">Country</label>
-                      <input autocomplete="off" list="countiries" name="country" id="country" placeholder="select...">
-                      <p>please enter Country</p>
-                      <datalist id="countiries">
-                        
-                      </datalist>
-                      <span><i class="fa-solid fa-chevron-down"></i></span>
-                    </div>
-                    <label for="Address2">Address 2</label>
-                    <input id="Address 2" type="text">
-                   </div>
+                   <button>Submit</button>
+                   <hr>
+                   <input type="radio" name="radio" id="paypal" value="paypal">
+                   <label for="paypal" class="radio">Pay with Paypal </label>
+                   <hr>
+                   <label  for="paypalEmail " class="mx-4">Paypal Email</label>
+                   <input id="userEmail" type="email" placeholder="Paypal email">
+                   <button>Submit</button>
+                   <p style="margin-left: 25px;">please enter card number</p>
+                   <hr>
+                   <input type="radio" name="radio" id="delivery">
+                   <label for="delivery" class="radio">Cash On Delivery</label>
                 </div>
-                <div class="content content2">
-                  <div >
-                    <h1>Billing Address</h1>
-                    <input type="checkbox" name="" id="same" >
-                    <label for="same" >Same as shipping address</label>
-                  </div>
-                  <div>
-                    <h1>Billing Address</h1>
-                    <input  type="checkbox" name="" id="same">
-                    <label for="same">Same as shipping address</label>
-                   <label for="fullName">Full Name</label>
-                   <input name="fullName" id="fullName" type="text">
-                   <label for="phoneNumbers">Phone Number</label>
-                   <input type="tel" name="phoneNumbers" id="phoneNumbers">
-                   <label for="ZipCode">Zip Code</label>
-                   <input id="ZipCode" type="text">
-                   <label for="Address1">Address 1</label>
-                   <input id="Address 1" type="text">
-                  </div>
-                  <div>
-                   <label for="EmailAddress">Email Address</label>
-                   <input name="EmailAddress" id="EmailAddress" type="email">
-                   <label for="Company">Company</label>
-                   <input type="text" name="Company" id="Company">
-                   <div >
-                    <label for="Country">Country</label>
-                     <input autocomplete="off" list="countiries" name="country" id="country" placeholder="select...">
-                     <datalist id="countiries">
-                       
-                     </datalist>
-                     <span><i class="fa-solid fa-chevron-down"></i></span>
-                   </div>
-                   <label for="Address2">Address 2</label>
-                   <input id="Address 2" type="text">
-                  </div>
-               </div>
-               <button>Back to Cart</button>
-               <button>Proceed to Payment</button>
+               <button>Back to checkout details</button>
+               <button>Review</button>
             </div>
             <div>
                <p>Subtotal: <span>$2610. 00</span></p>
@@ -1530,8 +1494,6 @@
                <p>Discount: <span>-</span></p>
                <hr>
                <p><span>$2610.00</span></p>
-               <input type="text" placeholder="Voucher">
-               <button>Apply Voucher</button>
             </div>
         </div>
       </section>
@@ -1652,11 +1614,12 @@
         </div>
       </footer>
 </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
     integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     ></script>
-    <script  type="module"  src="./js/details.js"></script>
+    <script  type="module"  src="./js/payment.js"></script>
 </html>

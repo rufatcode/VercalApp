@@ -431,6 +431,13 @@ position: relative;
     background-color: rgba(186, 2, 2, 0.793);
     color: white;
 }
+#main>div>div:first-child >.head >button:nth-of-type(3){
+    background-color: rgba(186, 2, 2, 0.793);
+    color: white;
+}
+#main>div>div:first-child >.head >button:nth-of-type(4){
+    cursor:no-drop;
+}
 #main>div>div:first-child >.head >span{
     display: inline-block;
     width: 8%;
@@ -441,101 +448,114 @@ position: relative;
 #main>div>div:first-child >.head >span:first-of-type{
     background-color: rgba(186, 2, 2, 0.793);
 }
+#main>div>div:first-child >.head >span:nth-of-type(2){
+    background-color: rgba(186, 2, 2, 0.793);
+}
 #main>div>div:first-child >.content{
-    display: flex;
     width: 95%;
     background-color: white;
     border-radius: 10px;
-    padding: 10px;
     margin-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
-
 #main>div>div:first-child >.content>div{
     padding: 15px;
     width: 100%;
-
+    display: flex;
+    justify-content: space-between;
 }
-#main>div>div:first-child >.content>div>h1{
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 14px;
-    color: rgb(43, 52, 69);
+#main>div>div:first-child >.content>div>div{
+    width: 47%;
+    margin-left: 2%;
 }
-#main>div>div:first-child >.content>div p{
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-    margin-left: 5px;
-    display: none;
+#main>div>div:first-child >.content>input[type=radio]{
+    width: 20px;
+    height: 20px;
+    margin: 10px 10px 10px 15px;
+    display: inline-block;
+    cursor: pointer;
 }
-#main>div>div:first-child >.content>div>label{
-    display: block;
+#main>div>div:first-child >.content label{
     margin-bottom: 6px;
-    margin-top: 15px;
     font-size: 0.875rem;
     color: rgb(43, 52, 69);
 }
-#main>div>div:first-child >.content>div>input{
-    width: 100%;
-    outline: none;
-    padding: 5px 10px;
-    border: 1px solid rgba(128, 128, 128, 0.399);
-    border-radius: 5px;
-}
-#main>div>div:first-child >.content>div>div{
-    position: relative;
-}
-#main>div>div:first-child >.content>div>div>span{
-    position: absolute;
-    border-left: 1px solid rgba(128, 128, 128, 0.511);
-    top: 30px;
-    right: 4%;
-    padding-left: 8px;
-}
-#main>div>div:first-child >.content>div:last-child{
-    margin-top: 18px;
+#main>div>div:first-child >.content p{
+    color: red;
+    font-size: 13px;
+    margin-left: 10px;
+    margin-top: 5px;
+    display: none;
 }
 #main>div>div:first-child >.content>div>div>input{
     width: 100%;
-    outline: none;
-    padding: 5px 10px;
-    border: 1px solid rgba(128, 128, 128, 0.399);
-    border-radius: 5px;
-    
-}
-#main>div>div:first-child >.content>div>input[type=checkbox]{
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-}
-
-#main>div>div:first-child >.content>div>label[for=same]{
-    display: inline-block;
-    margin-left: 10px;
-    font-size: 18px;
-
-}
-#main>div>div:first-child >.content>div>div>label{
     display: block;
-    margin-bottom: 6px;
-    margin-top: 15px;
-    font-size: 0.875rem;
-    color: rgb(43, 52, 69);   
+    padding: 5px 10px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.613);
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 #main>div>div:first-child >.content>div>div>input:focus{
-    border-color: rgba(191, 2, 2, 0.814);
+    border: 2px solid rgba(186, 2, 2, 0.793);
 }
-#main>div>div:first-child >.content>div>input:focus{
-    border-color: rgba(191, 2, 2, 0.814);
+#main>div>div:first-child >.content>.radio{
+    font-weight: 600;
+    font-size: 18px;
 }
-#main>div>div:first-child >.content:last-of-type >div:first-child{
+#main>div>div:first-child >.content>hr{
+    color: rgba(128, 128, 128, 0.366);
+}
+#main>div>div:first-child >.content>button:first-of-type{
+    margin-left: 27px;
+    color: rgba(186, 2, 2, 0.793);
+    border: 1px solid rgba(186, 2, 2, 0.793);
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#main>div>div:first-child >.content>button:first-of-type:hover{
+    background-color: rgba(186, 2, 2, 0.793);
+    color: white;
+}
+#main>div>div:first-child >.content>input{
+    width: 80%;
+    padding: 7px 10px;
+    margin-top: 10px;
+    margin-left: 22px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.484);
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+#main>div>div:first-child >.content>input:focus{
+    border: 1px solid rgba(186, 2, 2, 0.793);
+}
+#main>div>div:first-child >.content>button:nth-of-type(2){
+    background-color: white;
+    padding: 7px 10px;
+    color: rgba(186, 2, 2, 0.793);
+    border: 1px solid rgba(186, 2, 2, 0.793);
+    border-radius: 5px;
+    margin-left: 10px;
+}
+#main>div>div:first-child >.content>button:nth-of-type(2):hover{
+    background-color: rgba(186, 2, 2, 0.793);
+    color: white;
+}
+#main>div>div:first-child >.content>label:nth-of-type(3){
     display: none;
 }
-#main>div>div:first-child >.content:last-of-type >div>h1{
-   margin-bottom: 10px;
+#main>div>div:first-child >.content>input:nth-of-type(3){
+    display: none;
 }
-#main>div>div:first-child >.content:last-of-type >div:last-child{
-    margin-top: 75px;
+#main>div>div:first-child >.content>button:nth-of-type(2){
+    display: none;
+}
+#main>div>div:first-child >.content>hr:nth-of-type(4){
+    display: none;
 }
 #main>div>div:first-child>button{
     width: 42%;
@@ -562,7 +582,7 @@ position: relative;
 }
 #main>div>div:last-child{
     width: 32%;
-    height: 370px;
+    height: 250px;
     background-color: white;
     border-radius: 10px;
     margin-top: 95px;
@@ -589,32 +609,7 @@ position: relative;
     font-size: 24px;
 }
 
-#main>div>div:last-child >input{
-    width: 100%;
-    padding: 5px;
-    display: block;
-    border-radius: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.601);
-    padding-left: 10px;
-    outline: none;
-}
-#main>div>div:last-child >input:focus{
-    border: 1px solid rgb(233, 69, 96); 
-}
-#main>div>div:last-child >button{
-    width: 100%;
-    padding: 7px;
-    text-align: center;
-    background-color: white;
-    border: 1px solid rgb(233, 69, 96); 
-    color: rgb(233, 69, 96);
-    margin-top: 15px;
-    border-radius: 5px;
-}
-#main>div>div:last-child >button:hover{
-    background-color:rgb(233, 69, 96) ;
-    color: white;
-}
+
 #signIn{
     background-color:rgba(128, 128, 128, 0.869);
     position: fixed;
@@ -1057,6 +1052,9 @@ footer>div>div h3{
         font-size: 13px;
         padding: 5px 15px;
     }
+    #main>div>div:first-child >.content>input{
+        width: 70%;
+    }
 }
 @media screen and (max-width:560px)  {
     footer>div>div{
@@ -1126,17 +1124,13 @@ footer>div>div h3{
         display: block;
         margin-bottom: 10px;
     }
-    #main>div>div:first-child >.content{
-        display: block;
-    }
-    #main>div>div:first-child >.content>div>span{
-        bottom: 60px;
-    }
     #main>div>div:first-child >.content>div{
         display: block;
     }
-    #main>div>div:first-child >.content>div>img{
-        width: 90%;
-        height: 70%;
+    #main>div>div:first-child >.content>div>div{
+        width: 95%;
+    }
+    #main>div>div:first-child >.content>input{
+        width: 50%;
     }
 }
