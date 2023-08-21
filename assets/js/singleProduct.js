@@ -82,6 +82,7 @@ $("document").ready(function(){
     let dbSignUp=CheckLocalStorage("signUp1")
     let emailInput=$("#email");
     let passwordInput=$("#password");
+
     $("#signIn>div>form>button:first-of-type").click(function(){
         let succes=false;
         for (let i = 0; i < dbSignUp.length; i++) {
@@ -121,7 +122,7 @@ $("document").ready(function(){
             Password:existUser.Password
         })
         SetSesionStorage(dbSignIn,"signIn1");
-        window.location.replace("../../assets/profile.html");
+        window.location.reload();
     })
     $("#signIn>div>form>div .visible").click(function(){
         if($(this).css("display")=="block"){
@@ -173,7 +174,6 @@ $("document").ready(function(){
             display:"block"
         })
     }
-    
     $("nav .profileAndBasket i:first-of-type").next().click(function(){
         $("#basket").css({
             display:"flex"
@@ -281,151 +281,4 @@ $("document").ready(function(){
         window.location.replace("../../assets/product.html");
     })
    
-    let countrySelect=document.querySelector("#main>div>div:first-child >.content>div:last-child>div>datalist");
-    $.ajax({
-        method: "get",
-        url: "https://countriesnow.space/api/v0.1/countries/",
-        success: function (data) {
-           
-            data.data.forEach(item => {
-                let option=document.createElement("option");
-                option.innerHTML=item.country;
-                option.setAttribute("value",item.country);
-                countrySelect.appendChild(option);
-            });
-        },
-        error:function(error){
-            console.log(error);
-        }
-    });
-    $("#main>div>div:first-child >.head >button:first-of-type").click(function(){
-        window.location.replace("../../assets/cart.html");
-    })
-    $("#main>div>div:first-child >.head >button:first-of-type").next().next().click(function(){
-        window.location.replace("../../assets/details.html");
-    })
-    $("#main>div>div:first-child >.head >button:first-of-type").next().next().next().next().click(function(){
-        window.location.replace("../../assets/payment.html");
-    })
-    let checkCondition1=$("#main>div>div:first-child >.content:last-of-type>div:nth-of-type(2)>input[type=checkbox]");
-    let checkCondition2=$("#main>div>div:first-child >.content:last-of-type>div:nth-of-type(1)>input");
-    checkCondition1.click(function(){
-        if($(this).is(":checked")){
-            $(this).parent().css({
-                display:"none"
-            })
-            $(this).parent().next().css({
-                display:"none"
-            })
-            $(this).parent().prev().css({
-                display:"block"
-            })
-            checkCondition2.prop("checked",true);
-
-        }
-        
-    })
-    checkCondition2.click(function(){
-        if($(this).is(":not(:checked)")){
-            $(this).parent().css({
-                display:"none"
-            })
-            $(this).parent().next().css({
-                display:"block"
-            })
-            $(this).parent().next().next().css({
-                display:"block"
-            })
-            checkCondition1.prop("checked",false);
-        }
-    })
-    let tax=totalValue*2/100;
-    if (totalValue>1000&&totalValue<2000) {
-        tax/=2;
-    }
-    else if (totalValue>2000) {
-        tax=0;
-    }
-    $("#main>div>div:last-child >p:nth-of-type(1)>span").html(`$ ${totalValue}.00`);
-    $("#main>div>div:last-child >p:nth-of-type(3)>span").html(`$ ${tax}`);
-    if (totalValue>=2000) {
-        $("#main>div>div:last-child >p:nth-of-type(5)>span").html(`$ ${tax+totalValue}.00`)
-    }
-    else{
-        $("#main>div>div:last-child >p:nth-of-type(5)>span").html(`$ ${tax+totalValue}`)
-    }
-    $("#main>div>div:first-child>button:first-of-type").click(function(){
-        window.location.replace("../../assets/cart.html");
-    })
-    $("#main>div>div:first-child>button:last-of-type").click(function(){
-        let fullName=$("#main>div>div:first-child >.content1>div:first-of-type>input:nth-of-type(1)");
-        let phoneNumber=$("#main>div>div:first-child >.content1>div:first-of-type>input:nth-of-type(2)");
-        let zibCode=$("#main>div>div:first-child >.content1>div:first-of-type>input:nth-of-type(3)");
-        let address=$("#main>div>div:first-child >.content1>div:first-of-type>input:nth-of-type(4)");
-        let email=$("#main>div>div:first-child >.content1>div:last-of-type>input:nth-of-type(1)");
-        let country=$("#main>div>div:first-child >.content1>div:last-of-type>div>input");
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        let phoneFormat=/^\+994(50|51|55|70|77|99)+\d{7}$/;
-        if (fullName.val()=="") {
-            fullName.next().css({
-                display:"block"
-            })
-        }
-        else{
-            fullName.next().css({
-                display:"none"
-            })
-            if (phoneNumber.val()==""||phoneNumber.val().match(phoneFormat)==null) {
-                phoneNumber.next().css({
-                    display:"block"
-                })
-            }
-            else{
-                phoneNumber.next().css({
-                    display:"none"
-                })
-                if (zibCode.val()=="") {
-                    zibCode.next().css({
-                        display:"block"
-                    })
-                }
-                else{
-                    zibCode.next().css({
-                        display:"none"
-                    })
-                    if (address.val()=="") {
-                        address.next().css({
-                            display:"block"
-                        })
-                    }
-                    else{
-                        address.next().css({
-                            display:"none"
-                        })
-                        if (email.val()==""||email.val().match(mailformat)==null) {
-                            email.next().css({
-                                display:"block"
-                            })
-                        }
-                        else{
-                            email.next().css({
-                                display:"none"
-                            })
-                            if (country.val()=="") {
-                                country.next().css({
-                                    display:"block"
-                                })
-                            }
-                            else{
-                                country.next().css({
-                                    display:"none"
-                                })
-                                window.location.replace("../../assets/payment.html");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    })
 })

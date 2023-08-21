@@ -181,9 +181,7 @@ $("document").ready(function(){
         
     })
     $("#basket>div>button:last-of-type").click(function(){
-        $("#basket").css({
-            display:"none",
-        })
+        window.location.reload();
     })
     let totalValue=0;
     for (let i = 0; i < pruducts.length; i++) {
@@ -225,23 +223,44 @@ $("document").ready(function(){
                 border:"0"
             })
             }
+            let totalPriceDemo=totalValue;
+            let demoCount=count;
             plusIcon.click(function(){
-            pruducts[i].Count=parseInt(pruducts[i].Count)+1;
-            SetLocalStorage(pruducts,"Basket");
-            window.location.reload();
+                pruducts[i].Count=parseInt(pruducts[i].Count)+1;
+                plusIcon.next().html(pruducts[i].Count);
+                plusIcon.parent().next().next().find(">:first-child").next().find(">:first-child").html(pruducts[i].Count);
+                plusIcon.parent().next().next().find(">:first-child").next().next().html(`$ ${pruducts[i].Count*pruducts[i].Price}.00`);
+                totalPriceDemo+=pruducts[i].Price;
+                demoCount++;
+                document.querySelector("nav>div>div:last-child >span").innerHTML=demoCount;
+                document.querySelector("#basket>div>h1>span").innerHTML=demoCount+" item";
+                $("#basket>div>button:first-of-type >span").html(`($ ${totalPriceDemo}.00)`);
+                SetLocalStorage(pruducts,"Basket");
             })
             minusIcon.click(function(){
             if (pruducts[i].Count>1) {
                 pruducts[i].Count=parseInt(pruducts[i].Count)-1;
+                plusIcon.next().html(pruducts[i].Count);
+                plusIcon.parent().next().next().find(">:first-child").next().find(">:first-child").html(pruducts[i].Count);
+                plusIcon.parent().next().next().find(">:first-child").next().next().html(`$ ${pruducts[i].Count*pruducts[i].Price}.00`);
+                totalPriceDemo-=pruducts[i].Price;
+                demoCount--;
+                document.querySelector("nav>div>div:last-child >span").innerHTML=demoCount;
+                document.querySelector("#basket>div>h1>span").innerHTML=demoCount+" item";
+                $("#basket>div>button:first-of-type >span").html(`($ ${totalPriceDemo}.00)`);
                 SetLocalStorage(pruducts,"Basket");
-                window.location.reload();
             }
             
             })
             removeIcon.click(function(){
-            pruducts[i].Count=0;
-            SetLocalStorage(pruducts,"Basket");
-            window.location.reload();
+                demoCount-=pruducts[i].Count;
+                totalPriceDemo-=pruducts[i].Count*pruducts[i].Price;
+                pruducts[i].Count=0;
+                document.querySelector("nav>div>div:last-child >span").innerHTML=demoCount;
+                document.querySelector("#basket>div>h1>span").innerHTML=demoCount+" item";
+                $("#basket>div>button:first-of-type >span").html(`($ ${totalPriceDemo}.00)`);
+                plusIcon.parent().parent().remove();
+                SetLocalStorage(pruducts,"Basket");
             })
             
             content.append(div);
@@ -275,8 +294,41 @@ $("document").ready(function(){
     })
     $("#main>div>div:last-child>div:last-child>div:first-of-type>i").click(function(){
         $("#main>div>div:last-child>div:last-child>input").click();
-        $("#main>div>div:last-child>div:last-child>input").change(function(){
-            for (const file of event.target.files) {
+        if (dbSignIn.length>0) {
+            $("#main>div>div:last-child>div:last-child>input").change(function(){
+                for (const file of event.target.files) {
+                    let fileReader=new FileReader();
+                    fileReader.onload=function(e){
+                        let newDbSignUp=dbSignUp.find(x=>x.Email==dbSignIn[dbSignIn.length-1].Email);
+                        newDbSignUp.Img=e.target.result
+                        for (let i = 0; i < dbSignUp.length; i++) {
+                            if (dbSignUp[i].Email==newDbSignUp.Email) {
+                                dbSignUp[i]=newDbSignUp;
+                            }
+                        }
+                        $("#main>div>div:last-child>div:last-child>button").on("click",function(){
+                            SetLocalStorage(dbSignUp,"signUp1");
+                            window.location.reload();
+                        })
+                       
+                    }
+                    fileReader.readAsDataURL(file);
+                    
+                }
+                
+            })
+        }
+        
+        
+    })
+    let area=document.querySelector("#main>div>div:last-child>div:last-child>div:first-of-type");
+    area.ondragover=function(e){
+        e.preventDefault();
+    }
+    area.ondrop=function(e){
+        e.preventDefault();
+        if (dbSignIn.length>0) {
+            for (const file of e.dataTransfer.files) {
                 let fileReader=new FileReader();
                 fileReader.onload=function(e){
                     let newDbSignUp=dbSignUp.find(x=>x.Email==dbSignIn[dbSignIn.length-1].Email);
@@ -290,71 +342,49 @@ $("document").ready(function(){
                         SetLocalStorage(dbSignUp,"signUp1");
                         window.location.reload();
                     })
-                   
                 }
                 fileReader.readAsDataURL(file);
-                
             }
-            
-        })
-    })
-    let area=document.querySelector("#main>div>div:last-child>div:last-child>div:first-of-type");
-    area.ondragover=function(e){
-        e.preventDefault();
-    }
-    area.ondrop=function(e){
-        e.preventDefault();
-        for (const file of e.dataTransfer.files) {
-            let fileReader=new FileReader();
-            fileReader.onload=function(e){
-                let newDbSignUp=dbSignUp.find(x=>x.Email==dbSignIn[dbSignIn.length-1].Email);
-                newDbSignUp.Img=e.target.result
-                for (let i = 0; i < dbSignUp.length; i++) {
-                    if (dbSignUp[i].Email==newDbSignUp.Email) {
-                        dbSignUp[i]=newDbSignUp;
-                    }
-                }
-                $("#main>div>div:last-child>div:last-child>button").on("click",function(){
-                    SetLocalStorage(dbSignUp,"signUp1");
-                    window.location.reload();
-                })
-            }
-            fileReader.readAsDataURL(file);
         }
+        
+        
     }
     $("#main>div>div:last-child>div:last-child>button").on("click",function(){
-        let firstNameInput=$("#firstName");
-        let editEmailInput=$("#editEmail");
-        let birthDayInput=$("#birthDay");
-        let lastNameInput=$("#lastName");
-        let PhoneInput=$("#Phone");
-        let newDbSignUp=dbSignUp.find(x=>x.Email==dbSignIn[dbSignIn.length-1].Email);
-        if (firstNameInput.val().trim()!="") {
-            let secondPart=newDbSignUp.Name.split(" ")[1];
-            newDbSignUp.Name=firstNameInput.val()+" "+secondPart;
-        }
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (editEmailInput.val().match(mailformat)!=null) {
-            newDbSignUp.Email1=editEmailInput.val();
-        }
-        if (birthDayInput.val()!="") {
-            newDbSignUp.BirthDay=birthDayInput.val();
-        }
-        if (lastNameInput.val().trim()!="") {
-            let firstPart=newDbSignUp.Name.split(" ")[0];
-            newDbSignUp.Name=firstPart+" "+lastNameInput.val();
-        }
-        let phoneFormat=/^\+994(50|51|55|70|77|99)+\d{7}$/;
-        if (PhoneInput.val().match(phoneFormat)!=null) {
-            newDbSignUp.Phone=PhoneInput.val();
-        }
-        for (let i = 0; i < dbSignUp.length; i++) {
-            if (dbSignUp[i].Email==newDbSignUp.Email) {
-                dbSignUp[i]=newDbSignUp;
-                SetLocalStorage(dbSignUp,"signUp1");
-                window.location.reload();
+        if (dbSignIn.length>0) {
+            let firstNameInput=$("#firstName");
+            let editEmailInput=$("#editEmail");
+            let birthDayInput=$("#birthDay");
+            let lastNameInput=$("#lastName");
+            let PhoneInput=$("#Phone");
+            let newDbSignUp=dbSignUp.find(x=>x.Email==dbSignIn[dbSignIn.length-1].Email);
+            if (firstNameInput.val().trim()!="") {
+                let secondPart=newDbSignUp.Name.split(" ")[1];
+                newDbSignUp.Name=firstNameInput.val()+" "+secondPart;
+            }
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (editEmailInput.val().match(mailformat)!=null) {
+                newDbSignUp.Email1=editEmailInput.val();
+            }
+            if (birthDayInput.val()!="") {
+                newDbSignUp.BirthDay=birthDayInput.val();
+            }
+            if (lastNameInput.val().trim()!="") {
+                let firstPart=newDbSignUp.Name.split(" ")[0];
+                newDbSignUp.Name=firstPart+" "+lastNameInput.val();
+            }
+            let phoneFormat=/^\+994(50|51|55|70|77|99)+\d{7}$/;
+            if (PhoneInput.val().match(phoneFormat)!=null) {
+                newDbSignUp.Phone=PhoneInput.val();
+            }
+            for (let i = 0; i < dbSignUp.length; i++) {
+                if (dbSignUp[i].Email==newDbSignUp.Email) {
+                    dbSignUp[i]=newDbSignUp;
+                    SetLocalStorage(dbSignUp,"signUp1");
+                   
+                }
             }
         }
+        window.location.reload();
 
     })
     if (dbSignIn.length>0) {
