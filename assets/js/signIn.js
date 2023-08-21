@@ -44,7 +44,7 @@ $("document").ready(function(){
             Password:existUser.Password
         })
         SetSesionStorage(dbSignIn,"signIn1");
-        window.location.replace("../../assets/profile.html");
+        window.location.replace("../profile.html");
     })
     $("body>div>form>div .visible").click(function(){
         if($(this).css("display")=="block"){
