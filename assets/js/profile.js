@@ -329,7 +329,7 @@ $("document").ready(function(){
         let lastNameInput=$("#lastName");
         let PhoneInput=$("#Phone");
         let newDbSignUp=dbSignUp.find(x=>x.Email==dbSignIn[dbSignIn.length-1].Email);
-        if (firstNameInput.val()!="") {
+        if (firstNameInput.val().trim()!="") {
             let secondPart=newDbSignUp.Name.split(" ")[1];
             newDbSignUp.Name=firstNameInput.val()+" "+secondPart;
         }
@@ -340,7 +340,7 @@ $("document").ready(function(){
         if (birthDayInput.val()!="") {
             newDbSignUp.BirthDay=birthDayInput.val();
         }
-        if (lastNameInput.val()!="") {
+        if (lastNameInput.val().trim()!="") {
             let firstPart=newDbSignUp.Name.split(" ")[0];
             newDbSignUp.Name=firstPart+" "+lastNameInput.val();
         }

@@ -1934,6 +1934,36 @@ position: relative;
     right: 20px;
     top: 60px;
 }
+#smallBar{
+    position: fixed;
+    bottom: 0;
+    display: none;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 99;
+}
+#smallBar>a{
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(43, 52, 69);
+    display: block;
+    text-align: center;
+}
+#smallBar>a>i{
+    font-size: 25px;
+    display: block;
+    margin-bottom: 10px;
+}
+#smallBar>a>svg{
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
 footer{
     background-color: rgba(15, 38, 77, 0.961);
     margin-bottom: 0px;
@@ -2201,6 +2231,9 @@ footer>div>div h3{
     #signIn>div{
         width: 80%;
     }
+    #smallBar{
+        display: flex;
+    }
     
 }
 @media screen and (max-width:560px)  {
@@ -2370,5 +2403,20 @@ footer>div>div h3{
     }
     #signIn>div{
         width: 95%;
+    }
+    #smallBar{
+        display: flex;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    #smallBar>a{
+        font-size: 14px;
+    }
+    #smallBar>a>i{
+        font-size: 18px;
+    }
+    #smallBar>a>svg{
+        width: 21px;
+        height: 21px;
     }
 }

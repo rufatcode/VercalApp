@@ -604,7 +604,6 @@ position: relative;
 #main>div>div:last-child>div:last-child>div:first-of-type>i{
     position: absolute;
     padding: 10px;
-    z-index: 9999;
     border-radius: 50%;
     background: rgb(227, 233, 239);
     color: rgb(15, 52, 96);
@@ -945,6 +944,35 @@ position: relative;
     right: 20px;
     top: 60px;
 }
+#smallBar{
+    position: fixed;
+    bottom: 0;
+    display: none;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#smallBar>a{
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(43, 52, 69);
+    display: block;
+    text-align: center;
+}
+#smallBar>a>i{
+    font-size: 25px;
+    display: block;
+    margin-bottom: 10px;
+}
+#smallBar>a>svg{
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
 footer{
     background-color: rgba(15, 38, 77, 0.961);
     margin-bottom: 0px;
@@ -1112,6 +1140,9 @@ footer>div>div h3{
         width: 28%;
         margin-top: 15px;
     }
+    #smallBar{
+        display: flex;
+    }
   
 }
 @media screen and (max-width:560px)  {
@@ -1220,5 +1251,19 @@ footer>div>div h3{
     #main>div>div:last-child>div:last-child>div:last-of-type>div{
         width: 100%;
     }
-   
+    #smallBar{
+        display: flex;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    #smallBar>a{
+        font-size: 14px;
+    }
+    #smallBar>a>i{
+        font-size: 18px;
+    }
+    #smallBar>a>svg{
+        width: 21px;
+        height: 21px;
+    }
 }
