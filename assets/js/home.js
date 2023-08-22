@@ -223,7 +223,8 @@ $("document").ready(function(){
     })
     
     let dbSignIn=CheckSesionStorage("signIn1");
-    let dbSignUp=CheckLocalStorage("signUp1")
+    let dbSignUp=CheckLocalStorage("signUp1");
+    let singleProducts=CheckSesionStorage("SingleProduct");
     let emailInput=$("#email");
     let passwordInput=$("#password");
     $("#signIn>div>form>button:first-of-type").click(function(){
@@ -343,6 +344,20 @@ $("document").ready(function(){
             
             arrPlus[i].parentElement.style.top="0px";
         }
+        arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.addEventListener("click",function(){
+            if (singleProducts.length>0) {
+                singleProducts.pop();
+            }
+           singleProducts.push({
+                    ImgSrc:this.getAttribute("src"),
+                    Brand:"Electronic Equipments",
+                    Name:this.nextElementSibling.innerHTML,
+                    Price:this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML,
+                    Count:this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.innerHTML,
+                })
+                SetSesionStorage(singleProducts,"SingleProduct"); 
+                window.location.replace("../../assets/singleProduct.html");
+        })
         arrPlus[i].addEventListener("click",function(){
             arrPlus[i].parentElement.firstElementChild.style.display="block";
             arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="block"

@@ -399,7 +399,116 @@ position: relative;
     color: rgba(0, 0, 0, 0.665);
 }
 
+#main{
+    background: rgb(246, 249, 252);
+}
+#main>div{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0px auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#main>div>div:first-of-type{
+    width: 45%;
+    text-align: center;
+}
 
+#main>div>div:first-of-type>.head>img{
+    width: 300px;
+    height: 300px;
+}
+#main>div>div:first-of-type>.head>img:last-of-type{
+    display: none;
+}
+#main>div>div:first-of-type>.changeImg{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 30px;
+}
+#main>div>div:first-of-type>.changeImg>div{
+    padding: 10px;
+    background-color: white;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid rgba(128, 128, 128, 0.236);
+}
+#main>div>div:first-of-type>.changeImg>div:first-of-type{
+    border: 1px solid rgba(173, 1, 1, 0.631);
+}
+#main>div>div:first-of-type>.changeImg>div>img{
+    width: 80px;
+    height: 80px;
+}
+#main>div>div:last-of-type h1{
+    font-size: 30px;
+    margin-bottom: 1rem;
+    color: rgb(43, 52, 69);
+    line-height: 1.5;
+    font-weight: bold;
+}
+#main>div>div:last-of-type>p{
+    font-size: 14px;
+    color: rgb(125, 135, 156);
+}
+#main>div>div:last-of-type>p>span{
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 8px;
+    color: rgb(43, 52, 69);
+}
+#main>div>div:last-of-type>h2{
+    font-size: 25px;
+    line-height: 1;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: rgb(233, 69, 96);
+}
+#main>div>div:last-of-type>span:first-of-type{
+    font-size: 14px;
+    color: rgb(43, 52, 69);
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 15px;
+}
+#main>div>div:last-of-type>button{
+    text-align: center;
+    border: 0;
+    color: white;
+    padding: 11px 1.5rem;
+    background: rgb(233, 69, 96);
+    font-size: 14px;
+    margin-bottom: 36px;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+#main>div>div:last-of-type>span:last-of-type{
+    font-size: 20px;
+    margin-bottom: 25px;
+    display: none;
+}
+#main>div>div:last-of-type>span:last-of-type>i{
+    padding: 10px;
+    border: 1px solid rgba(183, 2, 2, 0.776);
+    color: rgba(179, 1, 1, 0.828);
+    border-radius: 5px;
+    cursor: pointer;
+}
+#main>div>div:last-of-type>span:last-of-type>i:first-of-type{
+    margin-right: 10px;
+}
+#main>div>div:last-of-type>span:last-of-type>i:last-of-type{
+    margin-left: 10px;
+}
+#main>div>div:last-of-type>span:last-of-type>i:hover{
+    background-color:rgba(183, 2, 2, 0.776) ;
+    color: white;
+}
 #signIn{
     background-color:rgba(128, 128, 128, 0.869);
     position: fixed;

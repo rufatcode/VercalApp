@@ -280,5 +280,91 @@ $("document").ready(function(){
     $("#headling .catagory>.catagories>ul>li  li").click(function(){
         window.location.replace("../../assets/product.html");
     })
-   
+    
+    let singleProducts=CheckSesionStorage("SingleProduct");
+    for (let i = 0; i < pruducts.length; i++) {
+        if (pruducts[i].ImgSrc.split("/")[pruducts[i].ImgSrc.split("/").length-1]==singleProducts[0].ImgSrc.split("/")[singleProducts[0].ImgSrc.split("/").length-1]) {
+            singleProducts[0].Count=pruducts[i].Count;
+            SetLocalStorage(pruducts,"Basket");
+            SetSesionStorage(singleProducts,"SingleProduct"); 
+        }
+    }
+    $("#main>div>div:last-of-type h1").html(singleProducts[0].Name);
+    $("#main>div>div:last-of-type>p:first-of-type>span").html(singleProducts[0].Brand);
+    $("#main>div>div:last-of-type>h2").html(singleProducts[0].Price);
+    $("#main>div>div:last-of-type>span:last-of-type>span").html(singleProducts[0].Count);
+    $("#main>div>div:first-of-type img").attr("src",singleProducts[0].ImgSrc);
+    $("#main>div>div:last-of-type>button").click(function(){
+        singleProducts[0].Count=1;
+        for (let i = 0; i < pruducts.length; i++) {
+            if (pruducts[i].ImgSrc.split("/")[pruducts[i].ImgSrc.split("/").length-1]==singleProducts[0].ImgSrc.split("/")[singleProducts[0].ImgSrc.split("/").length-1]) {
+                pruducts[i].Count=1;
+                SetLocalStorage(pruducts,"Basket");
+                SetSesionStorage(singleProducts,"SingleProduct"); 
+                window.location.reload();
+            }
+        }
+    })
+    if (singleProducts[0].Count>0) {
+        $("#main>div>div:last-of-type>h2").html(`$ ${singleProducts[0].Price.split("$")[1]*singleProducts[0].Count}.00`);
+        $("#main>div>div:last-of-type>button").css({
+            display:"none"
+        })
+        $("#main>div>div:last-of-type>span:last-of-type").css({
+            display:"block"
+        })
+        $("#main>div>div:last-of-type>span:last-of-type>i:last-of-type").click(function(){
+            singleProducts[0].Count+=1;
+            for (let i = 0; i < pruducts.length; i++) {
+                if (pruducts[i].ImgSrc.split("/")[pruducts[i].ImgSrc.split("/").length-1]==singleProducts[0].ImgSrc.split("/")[singleProducts[0].ImgSrc.split("/").length-1]) {
+                    pruducts[i].Count+=1;
+                    SetLocalStorage(pruducts,"Basket");
+                    SetSesionStorage(singleProducts,"SingleProduct"); 
+                    window.location.reload();
+                }
+            }
+        })
+        $("#main>div>div:last-of-type>span:last-of-type>i:first-of-type").click(function(){
+            singleProducts[0].Count-=1;
+            for (let i = 0; i < pruducts.length; i++) {
+                if (pruducts[i].ImgSrc.split("/")[pruducts[i].ImgSrc.split("/").length-1]==singleProducts[0].ImgSrc.split("/")[singleProducts[0].ImgSrc.split("/").length-1]) {
+                    pruducts[i].Count-=1;
+                    SetLocalStorage(pruducts,"Basket");
+                    SetSesionStorage(singleProducts,"SingleProduct"); 
+                    window.location.reload();
+                }
+            }
+        })
+
+    }
+
+    $("#main>div>div:last-of-type>span:last-of-type")
+    $("#main>div>div:first-of-type>.changeImg>div:first-of-type").click(function(){
+        $(this).css({
+            border: "1px solid rgba(173, 1, 1, 0.631)"
+        })
+        $(this).next().css({
+            border:"1px solid rgba(128, 128, 128, 0.236)"
+        })
+        $("#main>div>div:first-of-type>.head>img:last-of-type").css({
+            display:"none"
+        })
+        $("#main>div>div:first-of-type>.head>img:first-of-type").css({
+            display:"inline"
+        })
+    })
+    $("#main>div>div:first-of-type>.changeImg>div:last-of-type").click(function(){
+        $(this).css({
+            border: "1px solid rgba(173, 1, 1, 0.631)"
+        })
+        $(this).prev().css({
+            border:"1px solid rgba(128, 128, 128, 0.236)"
+        })
+        $("#main>div>div:first-of-type>.head>img:first-of-type").css({
+            display:"none"
+        })
+        $("#main>div>div:first-of-type>.head>img:last-of-type").css({
+            display:"inline"
+        })
+    })
 })

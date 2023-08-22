@@ -206,6 +206,7 @@ $("document").ready(function(){
 
     let dbSignIn=CheckSesionStorage("signIn1");
     let dbSignUp=CheckLocalStorage("signUp1")
+    let singleProducts=CheckSesionStorage("SingleProduct");
     let emailInput=$("#email");
     let passwordInput=$("#password");
     $("#signIn>div>form>button:first-of-type").click(function(){
@@ -318,7 +319,20 @@ $("document").ready(function(){
                 OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
             })
         }
-       
+       arrPlus[i].parentElement.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.addEventListener("click",function(){
+            if (singleProducts.length>0) {
+                singleProducts.pop();
+            }
+           singleProducts.push({
+                    ImgSrc:this.getAttribute("src"),
+                    Brand:"Glasses",
+                    Name:this.nextElementSibling.firstElementChild.innerHTML,
+                    Price:this.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.innerHTML,
+                    Count:this.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.innerHTML,
+                })
+                SetSesionStorage(singleProducts,"SingleProduct");  
+                window.location.replace("../../assets/singleProduct.html");
+       })
         arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+45].Count;
         arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+45].Count;
         if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
@@ -356,6 +370,21 @@ $("document").ready(function(){
             
             arrMinusBar[i].parentElement.style.top="0px";
         }
+        arrMinusBar[i].parentElement.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.addEventListener("click",function(){
+            
+            if (singleProducts.length>0) {
+                singleProducts.pop();
+            }
+           singleProducts.push({
+                    ImgSrc:this.getAttribute("src"),
+                    Brand:"Glasses",
+                    Name:this.nextElementSibling.firstElementChild.nextElementSibling.innerHTML,
+                    Price:this.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML,
+                    Count:this.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.innerHTML
+                })
+                SetSesionStorage(singleProducts,"SingleProduct"); 
+                window.location.replace("../../assets/singleProduct.html");
+       })
         arrMinusBar[i].addEventListener("click",function(){
             arrMinusBar[i].style.display="block";
             arrMinusBar[i].parentElement.firstElementChild.nextElementSibling.style.display="block"
