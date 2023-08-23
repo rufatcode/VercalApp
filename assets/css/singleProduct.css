@@ -402,79 +402,79 @@ position: relative;
 #main{
     background: rgb(246, 249, 252);
 }
-#main>div{
+#main>div:first-of-type{
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 60%;
     margin: 0px auto;
     padding-top: 30px;
     padding-bottom: 30px;
 }
-#main>div>div:first-of-type{
-    width: 45%;
+#main>div:first-of-type>div:first-of-type{
+    width: 50%;
     text-align: center;
 }
 
-#main>div>div:first-of-type>.head>img{
+#main>div:first-of-type>div:first-of-type>.head>img{
     width: 300px;
     height: 300px;
 }
-#main>div>div:first-of-type>.head>img:last-of-type{
+#main>div:first-of-type>div:first-of-type>.head>img:last-of-type{
     display: none;
 }
-#main>div>div:first-of-type>.changeImg{
+#main>div:first-of-type>div:first-of-type>.changeImg{
     display: flex;
     justify-content: space-between;
     width: 50%;
     margin: 0px auto;
     margin-top: 30px;
 }
-#main>div>div:first-of-type>.changeImg>div{
+#main>div:first-of-type>div:first-of-type>.changeImg>div{
     padding: 10px;
     background-color: white;
     border-radius: 7px;
     cursor: pointer;
     border: 1px solid rgba(128, 128, 128, 0.236);
 }
-#main>div>div:first-of-type>.changeImg>div:first-of-type{
+#main>div:first-of-type>div:first-of-type>.changeImg>div:first-of-type{
     border: 1px solid rgba(173, 1, 1, 0.631);
 }
-#main>div>div:first-of-type>.changeImg>div>img{
+#main>div:first-of-type>div:first-of-type>.changeImg>div>img{
     width: 80px;
     height: 80px;
 }
-#main>div>div:last-of-type h1{
+#main>div:first-of-type>div:last-of-type h1{
     font-size: 30px;
     margin-bottom: 1rem;
     color: rgb(43, 52, 69);
     line-height: 1.5;
     font-weight: bold;
 }
-#main>div>div:last-of-type>p{
+#main>div:first-of-type>div:last-of-type>p{
     font-size: 14px;
     color: rgb(125, 135, 156);
 }
-#main>div>div:last-of-type>p>span{
+#main>div:first-of-type>div:last-of-type>p>span{
     font-weight: 600;
     font-size: 14px;
     margin-left: 8px;
     color: rgb(43, 52, 69);
 }
-#main>div>div:last-of-type>h2{
+#main>div:first-of-type>div:last-of-type>h2{
     font-size: 25px;
     line-height: 1;
     margin-bottom: 4px;
     font-weight: bold;
     color: rgb(233, 69, 96);
 }
-#main>div>div:last-of-type>span:first-of-type{
+#main>div:first-of-type>div:last-of-type>span:first-of-type{
     font-size: 14px;
     color: rgb(43, 52, 69);
     line-height: 1.5;
     display: block;
     margin-bottom: 15px;
 }
-#main>div>div:last-of-type>button{
+#main>div:first-of-type>div:last-of-type>button{
     text-align: center;
     border: 0;
     color: white;
@@ -487,27 +487,154 @@ position: relative;
     cursor: pointer;
     margin-top: 25px;
 }
-#main>div>div:last-of-type>span:last-of-type{
+#main>div:first-of-type>div:last-of-type>span:last-of-type{
     font-size: 20px;
     margin-bottom: 25px;
     display: none;
 }
-#main>div>div:last-of-type>span:last-of-type>i{
+#main>div:first-of-type>div:last-of-type>span:last-of-type>i{
     padding: 10px;
     border: 1px solid rgba(183, 2, 2, 0.776);
     color: rgba(179, 1, 1, 0.828);
     border-radius: 5px;
     cursor: pointer;
 }
-#main>div>div:last-of-type>span:last-of-type>i:first-of-type{
+#main>div:first-of-type>div:last-of-type>span:last-of-type>i:first-of-type{
     margin-right: 10px;
 }
-#main>div>div:last-of-type>span:last-of-type>i:last-of-type{
+#main>div:first-of-type>div:last-of-type>span:last-of-type>i:last-of-type{
     margin-left: 10px;
 }
-#main>div>div:last-of-type>span:last-of-type>i:hover{
+#main>div:first-of-type>div:last-of-type>span:last-of-type>i:hover{
     background-color:rgba(183, 2, 2, 0.776) ;
     color: white;
+}
+#main>div:nth-of-type(2){
+    width: 80%;
+    margin: 10px auto;
+}
+#main>div:nth-of-type(2)>.head{
+    display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+}
+#main>div:nth-of-type(2)>.head>span{
+    font-weight: 600;
+    font-size: 16px;
+    padding: 4px 10px;
+    color: rgb(125, 135, 156);
+    cursor: pointer;
+    display: block;
+}
+#main>div:nth-of-type(2)>.head>span:first-of-type{
+    border-bottom: 2px solid rgb(233, 69, 96);
+    color:rgb(233, 69, 96) ;
+    margin-right: 25px;
+}
+
+#main>div:nth-of-type(2)>div:nth-of-type(2)>h1{
+    font-size: 20px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: rgb(43, 52, 69);
+    margin-top: 25px;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(2)>p{
+    font-size: 14px;
+    color: rgb(43, 52, 69);
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3){
+    display: none;
+
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3)>div{
+    margin-top: 40px;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3)>div>div{
+    display: flex;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3)>div>div>img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3)>div>div>h1{
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 10px;
+    color: rgb(43, 52, 69);
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3)>div>div>h1>span:first-of-type{
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 10px;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3)>div>div>h1>span:first-of-type>span{
+    margin-left: 10px;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3)>div>div>h1>span:last-of-type{
+    font-size: 14px;
+    color: rgb(125, 135, 156);
+}
+#main>div:nth-of-type(2)>div:nth-of-type(3)>div>p{
+    width: 50%;
+    color: rgb(75, 86, 107);
+    font-size: 14px;
+    line-height: 1.5;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4){
+    display: none;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4)>h1{
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 55px;
+    color: rgb(43, 52, 69);
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4)>span:first-of-type>i{
+    cursor: pointer;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4)>p{
+    font-weight: 600;
+    font-size: 16px;
+    color: rgb(75, 86, 107);
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4)>p>span{
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(233, 69, 96);
+    margin-left: 6px;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4)>textarea{
+    outline: none;
+    width: 100%;
+    height: 180px;
+    border: 1px solid rgba(128, 128, 128, 0.329);
+    border-radius: 5px;
+    padding: 10px;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4)>textarea:focus{
+    border-color: rgb(233, 69, 96);
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4)>span:last-of-type{
+    display: none;
+    color: rgb(233, 69, 96);
+    margin-top: 0.25rem;
+    margin-left: 0.25rem;
+    font-size: smaller;
+}
+#main>div:nth-of-type(2)>div:nth-of-type(4)>button{
+    display: block;
+    background-color: rgb(218, 225, 231);
+    color: rgb(125, 135, 156);
+    padding: 11px 1.5rem;
+    border-radius: 5px;
+    border: 0;
+    margin-top: 20px;
+    cursor: pointer;
 }
 #signIn{
     background-color:rgba(128, 128, 128, 0.869);

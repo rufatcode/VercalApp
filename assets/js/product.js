@@ -459,39 +459,68 @@ $("document").ready(function(){
                 border:"0"
             })
             }
-            let totalPriceDemo=totalValue;
-            let demoCount=count;
             plusIcon.click(function(){
                 pruducts[i].Count=parseInt(pruducts[i].Count)+1;
                 plusIcon.next().html(pruducts[i].Count);
                 plusIcon.parent().next().next().find(">:first-child").next().find(">:first-child").html(pruducts[i].Count);
                 plusIcon.parent().next().next().find(">:first-child").next().next().html(`$ ${pruducts[i].Count*pruducts[i].Price}.00`);
-                totalPriceDemo+=pruducts[i].Price;
-                demoCount++;
+                let demoCount=0;
+                let totalPriceDemo=0
+                for (let i = 0; i < pruducts.length; i++) {
+                   demoCount+=pruducts[i].Count;
+                   totalPriceDemo+=pruducts[i].Count*pruducts[i].Price;
+                }
                 document.querySelector("nav>div>div:last-child >span").innerHTML=demoCount;
                 document.querySelector("#basket>div>h1>span").innerHTML=demoCount+" item";
                 $("#basket>div>button:first-of-type >span").html(`($ ${totalPriceDemo}.00)`);
+                minusIcon.css({
+                    "background-color": "white",
+                    color:"red",
+                    border:"1px solid rgba(255, 0, 0, 0.428)"
+                })
                 SetLocalStorage(pruducts,"Basket");
             })
             minusIcon.click(function(){
-            if (pruducts[i].Count>1) {
-                pruducts[i].Count=parseInt(pruducts[i].Count)-1;
-                plusIcon.next().html(pruducts[i].Count);
-                plusIcon.parent().next().next().find(">:first-child").next().find(">:first-child").html(pruducts[i].Count);
-                plusIcon.parent().next().next().find(">:first-child").next().next().html(`$ ${pruducts[i].Count*pruducts[i].Price}.00`);
-                totalPriceDemo-=pruducts[i].Price;
-                demoCount--;
-                document.querySelector("nav>div>div:last-child >span").innerHTML=demoCount;
-                document.querySelector("#basket>div>h1>span").innerHTML=demoCount+" item";
-                $("#basket>div>button:first-of-type >span").html(`($ ${totalPriceDemo}.00)`);
-                SetLocalStorage(pruducts,"Basket");
-            }
+                if (pruducts[i].Count>1) {
+                    pruducts[i].Count=parseInt(pruducts[i].Count)-1;
+                    plusIcon.next().html(pruducts[i].Count);
+                    plusIcon.parent().next().next().find(">:first-child").next().find(">:first-child").html(pruducts[i].Count);
+                    plusIcon.parent().next().next().find(">:first-child").next().next().html(`$ ${pruducts[i].Count*pruducts[i].Price}.00`);
+                    let demoCount=0;
+                    let totalPriceDemo=0
+                    for (let i = 0; i < pruducts.length; i++) {
+                        demoCount+=pruducts[i].Count;
+                        totalPriceDemo+=pruducts[i].Count*pruducts[i].Price;
+                    }
+                    document.querySelector("nav>div>div:last-child >span").innerHTML=demoCount;
+                    document.querySelector("#basket>div>h1>span").innerHTML=demoCount+" item";
+                    $("#basket>div>button:first-of-type >span").html(`($ ${totalPriceDemo}.00)`);
+                    if (pruducts[i].Count==1) {
+                        minusIcon.css({
+                            "background-color": "rgba(128, 128, 128, 0.275)",
+                            color:"gray",
+                            border:"0"
+                        })
+                    }
+                    else{
+                        minusIcon.css({
+                            "background-color": "white",
+                            color:"red",
+                            border:"1px solid rgba(255, 0, 0, 0.428)"
+                        })
+                    }
+                    SetLocalStorage(pruducts,"Basket");
+                }
             
             })
             removeIcon.click(function(){
-                demoCount-=pruducts[i].Count;
-                totalPriceDemo-=pruducts[i].Count*pruducts[i].Price;
                 pruducts[i].Count=0;
+                let demoCount=0;
+                let totalPriceDemo=0
+                for (let i = 0; i < pruducts.length; i++) {
+                   demoCount+=pruducts[i].Count;
+                   totalPriceDemo+=pruducts[i].Count*pruducts[i].Price;
+                }
                 document.querySelector("nav>div>div:last-child >span").innerHTML=demoCount;
                 document.querySelector("#basket>div>h1>span").innerHTML=demoCount+" item";
                 $("#basket>div>button:first-of-type >span").html(`($ ${totalPriceDemo}.00)`);
