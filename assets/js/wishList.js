@@ -79,7 +79,8 @@ $("document").ready(function(){
     
     
     let dbSignIn=CheckSesionStorage("signIn1");
-    let dbSignUp=CheckLocalStorage("signUp1")
+    let dbSignUp=CheckLocalStorage("signUp1");
+    let singleProducts=CheckSesionStorage("SingleProduct");
     let emailInput=$("#email");
     let passwordInput=$("#password");
     $("#signIn>div>form>button:first-of-type").click(function(){
@@ -192,7 +193,20 @@ $("document").ready(function(){
                 OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
             })
         }
-       
+        arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.addEventListener("click",function(){
+            if (singleProducts.length>0) {
+                singleProducts.pop();
+            }
+           singleProducts.push({
+                    ImgSrc:this.getAttribute("src"),
+                    Brand:"Whish List",
+                    Name:this.nextElementSibling.innerHTML,
+                    Price:this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML,
+                    Count:this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.innerHTML,
+                })
+                SetSesionStorage(singleProducts,"SingleProduct");  
+                window.location.replace("../../assets/singleProduct.html");
+       })
         arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+54].Count;
         if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
             arrPlus[i].parentElement.firstElementChild.style.display="none";

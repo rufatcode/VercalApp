@@ -122,7 +122,7 @@ $("document").ready(function(){
             Password:existUser.Password
         })
         SetSesionStorage(dbSignIn,"signIn1");
-        window.location.reload();
+        window.location.replace('../../assets/profile.html');
     })
     $("#signIn>div>form>div .visible").click(function(){
         if($(this).css("display")=="block"){
@@ -435,4 +435,235 @@ $("document").ready(function(){
             border:"0"
         })
     })
+    
+    $("#main>div:nth-of-type(2)>div:nth-of-type(4)>textarea").on("keyup",function(){
+        if ($("#main>div:nth-of-type(2)>div:nth-of-type(4)>textarea").val().trim()!="") {
+            $("#main>div:nth-of-type(2)>div:nth-of-type(4)>button").css({
+                "background-color":"rgba(255, 166, 0, 0.907)",
+                color: "white"
+            })
+        }
+        else{
+            $("#main>div:nth-of-type(2)>div:nth-of-type(4)>button").css({
+                "background-color":"rgb(218, 225, 231)",
+                 color: "rgb(125, 135, 156)"
+            })
+        }
+    })
+    let starIcons=$("#main>div:nth-of-type(2)>div:nth-of-type(4)>span:first-of-type>i");
+    for (let i = 0; i < starIcons.length; i++) {
+        
+    }
+    starIcons.click(function(){
+        let active=$(this);
+        
+        for (let i = 0; i <= $(this).index(); i++) {
+            active.removeClass("fa-regular");
+            active.addClass("fa-solid");
+            active=active.prev();
+        }
+        let next=$(this).next();
+        for (let i = $(this).index()+1; i <= 5; i++) {
+            next.addClass("fa-regular");
+            next.removeClass("fa-solid");
+            next=next.next();
+        }
+    })
+
+    $("#main>div:nth-of-type(2)>div:nth-of-type(4)>button").click(function(){
+        if ($("#main>div:nth-of-type(2)>div:nth-of-type(4)>textarea").val().trim()!="") {
+            let element=$("#main>div:nth-of-type(2)>div:nth-of-type(3)");
+            let div=$("<div>");
+            if (dbSignIn.length==0) {
+                sweetAlert("Oops...", "LogIn please!", "error");
+                return;
+            }
+            let imgSrc='../../assets/img/profileImg.jpeg';
+            let user=dbSignUp.find(item=>item.Email==dbSignIn[dbSignIn.length-1].Email);
+            if (user.Img!=undefined) {
+                imgSrc=user.Img;
+            }
+            div.html(`
+                <div>
+                    <img src="${imgSrc}" alt="">
+                    <h1>
+                    <p>${user.Name}</p>
+                    <span>
+                    </span>
+                    <span>1 minuts ago</span>
+                    </h1>
+                </div>
+                <p>${$("#main>div:nth-of-type(2)>div:nth-of-type(4)>textarea").val()}</p>
+            `)
+            element.append(div);
+            let classList=[];
+            for (let i = 0; i < 5; i++) {
+                let temp=starIcons[i];
+                classList.push(temp.className);
+                let starIconsComment=$("<i>");
+                starIconsComment.css({
+                    color:"#f2cf09"
+                })
+                starIconsComment.addClass(temp.className);
+                div.children().first().children().next().children().first().next().append(starIconsComment);
+            }
+            for (let i = 0; i < pruducts.length; i++) {
+                if (pruducts[i].ImgSrc.split("/")[pruducts[i].ImgSrc.split("/").length-1]==singleProducts[0].ImgSrc.split("/")[singleProducts[0].ImgSrc.split("/").length-1]) {
+                    if (pruducts[i].Comment==undefined) {
+                        pruducts[i].Comment=[];
+                    }
+                    pruducts[i].Comment.push({
+                            ProfileImg:imgSrc,
+                            StarIcon:classList,
+                            UserName:user.Name,
+                            Content:$("#main>div:nth-of-type(2)>div:nth-of-type(4)>textarea").val(),
+                            CommentDate:Date.now()/1000/60
+                        })
+                    $("#main>div:nth-of-type(2)>.head>span:last-of-type>span").html(`(${pruducts[i].Comment.length+3})`)
+                    SetLocalStorage(pruducts,"Basket"); 
+                }
+            }
+            
+            $("#main>div:nth-of-type(2)>div:nth-of-type(4)>textarea").val("");
+            $("#main>div:nth-of-type(2)>div:nth-of-type(4)>button").css({
+                "background-color":"rgb(218, 225, 231)",
+                 color: "rgb(125, 135, 156)"
+            })
+            for (let i = 0; i < 5; i++) {
+                starIcons[i].className="fa-star fa-regular";
+            }
+        }
+    })
+    if (singleProducts!=null) {
+        let element=$("#main>div:nth-of-type(2)>div:nth-of-type(3)");
+            
+        let imgSrc='../../assets/img/profileImg.jpeg';
+        let user=dbSignUp.find(item=>item.Email==dbSignIn[dbSignIn.length-1].Email);
+        if (user.Img!=undefined) {
+            imgSrc=user.Img;
+        }
+        for (let i = 0; i < pruducts.length; i++) {
+            if (pruducts[i].ImgSrc.split("/")[pruducts[i].ImgSrc.split("/").length-1]==singleProducts[0].ImgSrc.split("/")[singleProducts[0].ImgSrc.split("/").length-1]) {
+                if (pruducts[i].Comment!=undefined) {
+                    $("#main>div:nth-of-type(2)>.head>span:last-of-type>span").html(`(${pruducts[i].Comment.length+3})`)
+                for (let k = 0; k < pruducts[i].Comment.length; k++) {
+                    let div=$("<div>");
+                    imgSrc=pruducts[i].Comment[k].ProfileImg;
+                    div.html(`
+                        <div>
+                            <img src="${imgSrc}" alt="">
+                            <h1>
+                                <p>${pruducts[i].Comment[k].UserName}</p>
+                                <span>
+                                </span>
+                                <span>1 minuts ago</span>
+                            </h1>
+                        </div>
+                        <p>${pruducts[i].Comment[k].Content}</p>
+                    `)
+                    element.append(div);
+                    if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<60) {
+                        div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60-pruducts[i].Comment[k].CommentDate)} minuts ago`);
+                    }
+                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>60 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<3600) {
+                        div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60/60-pruducts[i].Comment[k].CommentDate/60)} hours ago`);
+                    }
+                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>3600 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<86400) {
+                        div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60/60/24-pruducts[i].Comment[k].CommentDate/60/24)} day ago`);
+                    }
+                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>86400 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<2592000) {
+                        div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60/60/24/30-pruducts[i].Comment[k].CommentDate/60/24/30)} month ago`);
+                    }
+                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>2592000 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<31104000) {
+                        div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60/60/24/30/12-pruducts[i].Comment[k].CommentDate/60/24/30/12)} years ago`);
+                    }
+                    
+                    for (let j = 0; j < 5; j++) {
+                        let starIconsComment=$("<i>");
+                        starIconsComment.css({
+                            color:"#f2cf09"
+                        })
+                        starIconsComment.addClass(pruducts[i].Comment[k].StarIcon[j]);
+                        div.children().first().children().next().children().first().next().append(starIconsComment);
+                    }
+                }
+                }
+                
+            }
+        }
+        
+    }
+    let arrPlus=document.querySelectorAll("p>span:last-of-type>.fa-plus");
+    document.querySelector("nav>div>div:last-child >span").innerHTML=0;
+    document.querySelector("nav>div>div:last-child >span").innerHTML=count;
+    document.querySelector("#basket>div>h1>span").innerHTML=count+" item";
+    if (count==0) {
+        $("#basket>div>.first").css({
+            display:"block"
+        })
+    }
+    for (let i = 0; i < arrPlus.length; i++) {
+        let finded=false;
+        for (let j = 0; j < pruducts.length; j++) {
+            if (pruducts[j].ImgSrc==arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.src) {
+                finded=true;
+            }
+        }
+        if (finded==false) {
+            pruducts.push({
+                Name:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML,
+                Count:parseInt(arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML),
+                Sale:parseInt(arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.split("%")[0]),
+                Price:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+                ImgSrc:arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.src,
+                OldPrice:parseInt(arrPlus[i].parentElement.parentElement.firstElementChild.nextElementSibling.innerHTML.slice(1,arrPlus[i].parentElement.parentElement.firstElementChild.innerHTML.length)),
+            })
+        }
+        arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+60].Count
+        if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
+            arrPlus[i].parentElement.firstElementChild.style.display="none";
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
+            
+            arrPlus[i].parentElement.style.top="0px";
+        }
+        arrPlus[i].parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.addEventListener("click",function(){
+            if (singleProducts.length>0) {
+                singleProducts.pop();
+            }
+           singleProducts.push({
+                    ImgSrc:this.getAttribute("src"),
+                    Brand:"Electronic Equipments",
+                    Name:this.nextElementSibling.innerHTML,
+                    Price:this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML,
+                    Count:this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.innerHTML,
+                })
+                SetSesionStorage(singleProducts,"SingleProduct"); 
+                window.location.replace("../../assets/singleProduct.html");
+        })
+        arrPlus[i].addEventListener("click",function(){
+            arrPlus[i].parentElement.firstElementChild.style.display="block";
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="block"
+            arrPlus[i].parentElement.style.top="-48px";
+            pruducts[i+60].Count+=1;
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+60].Count;
+            SetLocalStorage(pruducts,"Basket");
+            window.location.reload();
+        })
+        arrPlus[i].parentElement.firstElementChild.addEventListener("click",function(){
+            pruducts[i+60].Count-=1;
+            arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML=pruducts[i+60].Count;
+            SetLocalStorage(pruducts,"Basket");
+            if (arrPlus[i].parentElement.firstElementChild.nextElementSibling.innerHTML==0) {
+                arrPlus[i].parentElement.firstElementChild.style.display="none";
+                arrPlus[i].parentElement.firstElementChild.nextElementSibling.style.display="none"
+                
+                arrPlus[i].parentElement.style.top="0px";
+            }
+            window.location.reload();
+            
+        })
+        
+    }
+    SetLocalStorage(pruducts,"Basket");
+    
 })

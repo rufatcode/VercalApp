@@ -401,6 +401,7 @@ position: relative;
 
 #main{
     background: rgb(246, 249, 252);
+    padding-bottom: 30px;
 }
 #main>div:first-of-type{
     display: flex;
@@ -511,7 +512,7 @@ position: relative;
 }
 #main>div:nth-of-type(2){
     width: 80%;
-    margin: 10px auto;
+    margin: 0px auto;
 }
 #main>div:nth-of-type(2)>.head{
     display: flex;
@@ -530,7 +531,6 @@ position: relative;
     color:rgb(233, 69, 96) ;
     margin-right: 25px;
 }
-
 #main>div:nth-of-type(2)>div:nth-of-type(2)>h1{
     font-size: 20px;
     margin-bottom: 1rem;
@@ -635,6 +635,260 @@ position: relative;
     border: 0;
     margin-top: 20px;
     cursor: pointer;
+    
+}
+#products{
+    background: rgb(246, 249, 252);
+    margin-top: -5px;
+}
+#products>div:first-of-type{
+    width: 80%;
+    margin: 0px auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+#products>div:first-of-type>h1{
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: rgb(43, 52, 69);
+    font-weight: bold;
+}
+#products>div:first-of-type>div{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+#products>div:first-of-type>div>div{
+    width: 16%;
+    background-color: white;
+    border-radius: 8px;
+    padding-bottom: 15px;
+    
+}
+#products>div:first-of-type>div>div>div{
+    position: relative;
+    width: 90%;
+    height: 160px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+#products>div:first-of-type>div>div>div>div{
+    background-color: rgba(128, 128, 128, 0.548);
+    position: absolute;
+    border-radius: 7px;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#products>div:first-of-type>div>div>div>img{
+    width: 100%;
+    height: 160px;
+}
+#products>div:first-of-type>div>div>div:hover >div{
+    display: block;
+}
+#products>div:first-of-type>div>div>p{
+    font-size: 14px;
+    margin-bottom: 0.25rem;
+    color: rgb(43, 52, 69);
+    cursor: pointer;
+    margin-left: 15px;
+}
+#products>div:first-of-type>div>div>span{
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 0.25rem;
+    color: rgb(233, 69, 96);
+    cursor: pointer;
+    margin-left: 15px;
+}
+#products>div:first-of-type>div>div>span>del{
+    text-decoration:line-through;
+    font-size: 14px;
+    color: rgb(125, 135, 156);
+}
+#products>div:first-of-type>div>span{
+    font-size: 25px;
+    margin: 0px 0.5rem;
+    color: rgb(125, 135, 156);
+    display: block;
+}
+#products>div:first-of-type>div>div:last-of-type{
+    width: 24%;
+    text-align: center;
+    height: 250px;
+    padding-top: 80px;
+}
+#products>div:first-of-type>div>div:last-of-type>p:first-of-type{
+    font-size: 20px;
+    color: rgb(233, 69, 96);
+    font-weight: bold;
+}
+#products>div:first-of-type>div>div:last-of-type>p:last-of-type{
+    font-size: 14px;
+    margin-bottom: 1rem;
+    color: rgb(125, 135, 156);
+}
+#products>div:first-of-type>div>div:last-of-type>button{
+    padding: 11px 1.2rem;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#products>div:first-of-type>div>div:last-of-type>button:first-of-type{
+    background: rgb(233, 69, 96);
+    color: rgb(255, 255, 255);
+}
+#products>div:first-of-type>div>div:last-of-type>button:last-of-type{
+    background-color: white;
+    color:rgb(233, 69, 96) ;
+    border: 1px solid rgb(233, 69, 96);
+}
+#products>div:first-of-type>div>div:last-of-type>button:last-of-type:hover{
+    background: rgb(233, 69, 96);
+    color: rgb(255, 255, 255);
+}
+#products>div:nth-of-type(2){
+    width: 80%;
+    margin: 20px auto;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+}
+#products>div:nth-of-type(2)>h1{
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    color: rgb(43, 52, 69);
+    font-weight: bold;
+}
+#products>div:nth-of-type(2)>div{
+    display: flex;
+}
+#products>div:nth-of-type(2)>div>div{
+    background-color: white;
+    border-radius: 7px;
+    padding:15px 0;
+    margin-right: 20px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+
+}
+#products>div:nth-of-type(2)>div>div>img{
+    width: 48px;
+    height: 48px;
+}
+#products>div:nth-of-type(2)>div>div>p{
+    margin-top: 0.75rem;
+    color: rgb(55, 63, 80);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+#products{
+    background-color: rgb(236,236,236);
+   
+    padding-top: 50px;
+}
+
+#products>div:nth-of-type(3){
+    width: 80%;
+    margin: 0px auto;
+}
+#products>div:nth-of-type(3)>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#products>div:nth-of-type(3)>div:first-child h1{
+    font-size: 28px;
+}
+#products>div:nth-of-type(3)>div:last-child {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#products>div:nth-of-type(3)>div:last-child >div{
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 1%;
+    margin-bottom: 30px;
+    width: 23%;
+}
+#products>div:nth-of-type(3)>div:last-child >div:hover{
+    -webkit-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 38px -1px rgba(0,0,0,0.75);
+}
+#products>div:nth-of-type(3)>div:last-child >div>div:first-child{
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top: 15px;
+    display: none;
+}
+#products>div:nth-of-type(3)>div:last-child >div:hover >div:first-child{
+    display: block;
+}
+#products>div:nth-of-type(3)>div:last-child >div>div:first-child i{
+    cursor: pointer;
+}
+#products>div:nth-of-type(3)>div:last-child >div .percent{
+    color: white;
+    background-color: rgba(172, 15, 15, 0.769);
+    padding: 5px 10px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 11px;
+    margin-top: 10px;
+}
+#products>div:nth-of-type(3)>div:last-child >div >img{
+    width: 80%;
+    height: 180px;
+    transform: scale(1.2);
+    margin-left: 12%;
+    cursor: pointer;
+}
+#products>div:nth-of-type(3)>div:last-child >div>h1{
+    font-size: 14px;
+    margin-top: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#products>div:nth-of-type(3)>div:last-child >div>p{
+    position: relative;
+    margin-top: 5px;
+}
+#products>div:nth-of-type(3)>div:last-child >div>p>del{
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}
+#products>div:nth-of-type(3)>div:last-child >div>p>span:last-of-type{
+    position: absolute;
+    right: 5%;
+    top: -48px;
+    text-align: center;
+}
+#products>div:nth-of-type(3)>div:last-child >div>p>span:last-of-type >span{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: block;
+}
+#products>div:nth-of-type(3)>div:last-child >div>p>span:last-of-type >i{
+    border: 0.5px solid rgba(255, 0, 0, 0.375);
+    color: red;
+    padding: 5px;
+    display: block;
+    cursor: pointer;
+}
+#products>div:nth-of-type(3)>div:last-child >div>p>span>i:hover{
+    background-color: red;
+    color: white;
 }
 #signIn{
     background-color:rgba(128, 128, 128, 0.869);
@@ -1039,6 +1293,36 @@ footer>div>div h3{
     #Info>div>div{
         width: 31%;
     }
+    #main>div:first-of-type{
+        width: 90%;
+    }
+    #products>div:first-of-type{
+        width: 90%;
+    }
+    #products>div:first-of-type>div{
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    #products>div:first-of-type>div>div{
+        width: 22%;
+        margin-bottom: 20px;
+        
+    }
+    #products>div:first-of-type>div>div:last-of-type{
+        width: 35%;
+    }
+    #products>div:first-of-type>div>div:last-of-type>button:last-of-type{
+        margin-top: 10px;
+    }
+    #products>div:nth-of-type(2){
+        width: 90%;
+    }
+    #products>div:nth-of-type(3){
+        width: 92%;
+    }
+    #products>div:nth-of-type(3)>div:last-child >div{
+        width: 31%;
+    }
 }
 @media screen and (min-width:560px) and (max-width:850px) {
     footer>div>div{
@@ -1080,7 +1364,57 @@ footer>div>div h3{
     #smallBar{
         display: flex;
     }
-  
+    #main>div:first-of-type{
+        width: 100%;
+        display: block;
+    }
+    #main>div:first-of-type>div:first-of-type{
+        width: 80%;
+        margin: 20px auto;
+    }
+    #main>div:first-of-type>div:last-of-type{
+        width: 80%;
+        margin: 20px auto;
+        text-align: center;
+    }
+    #main>div:first-of-type>div:last-of-type>button{
+        margin: 30px auto;
+    }
+    #main>div:nth-of-type(2)>div:nth-of-type(3)>div>p{
+        width: 75%;
+    }
+    #products>div:first-of-type{
+        width: 90%;
+    }
+    #products>div:first-of-type>div{
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    #products>div:first-of-type>div>div{
+        width: 28%;
+        margin-bottom: 20px;
+        
+    }
+    #products>div:first-of-type>div>div:last-of-type{
+        width: 50%;
+    }
+    #products>div:nth-of-type(2){
+        width: 100%;
+        padding-left: 15px;
+    }
+    #products>div:nth-of-type(2)>div{
+        flex-wrap: wrap;
+    }
+    #products>div:nth-of-type(2)>div>div{
+        width: 45%;
+        margin-bottom: 20px;
+    }
+    #products>div:nth-of-type(3){
+        width: 95%;
+    }
+    #products>div:nth-of-type(3)>div:last-child >div{
+        width: 45%;
+    }
 }
 @media screen and (max-width:560px)  {
     footer>div>div{
@@ -1135,5 +1469,69 @@ footer>div>div h3{
     #smallBar>a>svg{
         width: 21px;
         height: 21px;
+    }
+    #main>div:first-of-type{
+        width: 100%;
+        display: block;
+    }
+    #main>div:first-of-type>div:first-of-type{
+        width: 100%;
+        margin: 20px auto;
+    }
+    #main>div:first-of-type>div:last-of-type{
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
+    }
+    #main>div:first-of-type>div:first-of-type>.changeImg{
+        width: 70%;
+        justify-content: space-between;
+    }
+    #main>div:first-of-type>div:last-of-type>button{
+        margin: 30px auto;
+    }
+    #main>div:nth-of-type(2){
+        width: 90%;
+
+    }
+    #main>div:nth-of-type(2)>div:nth-of-type(3)>div>p{
+        width: 100%;
+    }
+    #products>div:first-of-type{
+        width: 100%;
+    }
+    #products>div:first-of-type>h1{
+        margin-left: 20px;
+    }
+    #products>div:first-of-type>div{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #products>div:first-of-type>div>div{
+        width: 60%;
+        margin-bottom: 20px;
+        
+    }
+    #products>div:first-of-type>div>div:last-of-type{
+        width: 90%;
+    }
+    #products>div:nth-of-type(2){
+        width: 100%;
+        padding-left: 10px;
+    }
+    #products>div:nth-of-type(2)>div{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #products>div:nth-of-type(2)>div>div{
+        width: 90%;
+        margin-bottom: 15px;
+    }
+    #products>div:nth-of-type(3){
+        width: 98%;
+    }
+    #products>div:nth-of-type(3)>div:last-child >div{
+        width: 95%;
+        margin: 20px auto;
     }
 }
