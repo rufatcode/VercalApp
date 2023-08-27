@@ -1,0 +1,17 @@
+{
+  "address": [
+    {
+      "Name": "Pub",
+      "Location": "Resid Behbudov 46,Baku,Azerbaijan",
+      "Phone": "+994513004484",
+      "id": 1
+    },
+    {
+      "Name": "Work",
+      "Location": "Resid Behbudov 46,Baku,Azerbaijan",
+      "Phone": "+994513004484",
+      "Email": "rft.smayilov@bk.ru",
+      "id": 2
+    }
+  ]
+}

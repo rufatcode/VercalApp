@@ -565,16 +565,16 @@ $("document").ready(function(){
                     if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<60) {
                         div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60-pruducts[i].Comment[k].CommentDate)} minuts ago`);
                     }
-                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>60 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<3600) {
+                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>60 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<1400) {
                         div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60/60-pruducts[i].Comment[k].CommentDate/60)} hours ago`);
                     }
-                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>3600 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<86400) {
+                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>1400 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<43200) {
                         div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60/60/24-pruducts[i].Comment[k].CommentDate/60/24)} day ago`);
                     }
-                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>86400 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<2592000) {
+                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>43200 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<518400) {
                         div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60/60/24/30-pruducts[i].Comment[k].CommentDate/60/24/30)} month ago`);
                     }
-                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>2592000 && Date.now()/1000/60-pruducts[i].Comment[k].CommentDate<31104000) {
+                    else if (Date.now()/1000/60-pruducts[i].Comment[k].CommentDate>518400) {
                         div.children().first().children().next().children().first().next().next().html(`${parseInt(Date.now()/1000/60/60/24/30/12-pruducts[i].Comment[k].CommentDate/60/24/30/12)} years ago`);
                     }
                     
