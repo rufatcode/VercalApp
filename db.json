@@ -8,10 +8,15 @@
     },
     {
       "Name": "Work",
-      "Location": "Resid Behbudov 46,Baku,Azerbaijan",
+      "Location": "Resid Behbudov 44,Baku,Azerbaijan",
       "Phone": "+994513004484",
-      "Email": "rft.smayilov@bk.ru",
       "id": 2
+    },
+    {
+      "Name": "Baku",
+      "Location": "Suleyman Rustem 21,Baku,Azerbaijan",
+      "Phone": "+994513004484",
+      "id": 3
     }
   ]
 }

@@ -373,7 +373,13 @@ $("document").ready(function(){
     let AddressCountry=$("#Country");
     let AddressPhone=$("#Phone");
     let AddressCity=$("#City");
-    $("#main>div>div:last-child>div:last-child>button").click(function(){
+
+    let AddressnNameEdit=$("#FullNameEdit");
+    let AddressStreetEdit=$("#StreetEdit");
+    let AddressCountryEdit=$("#CountryEdit");
+    let AddressPhoneEdit=$("#PhoneEdit");
+    let AddressCityEdit=$("#CityEdit");
+    $("#main>div>div:last-child>div:nth-of-type(3)>button").click(function(){
         if (dbSignIn[dbSignIn.length-1]!=null) {
             if (AddressnName.val().trim().length>0&&AddressStreet.val().trim().length>0&&AddressCountry.val().trim().length>0&&AddressPhone.val().match(phoneFormat)!=null&&AddressCity.val().trim().length>0) {
                 axios.post("http://localhost:3000/address",{
@@ -392,6 +398,9 @@ $("document").ready(function(){
                 sweetAlert("Check Address...", "all informations is required!", "error");
             }
         }
+        else{
+            sweetAlert("Check Profile...", "Create Personal Account!", "error");
+        }
        
        
     })
@@ -405,7 +414,7 @@ $("document").ready(function(){
                             <span>${item.Location}</span>
                             <span>${item.Phone}</span>
                             <span>
-                                <i ${item.id} class="fa-solid fa-pencil"></i>
+                                <i data-Id=${item.id} class="fa-solid fa-pencil"></i>
                                 <i data-Id=${item.id} class="fa-solid fa-trash-can"></i>
                             </span>
                         `)
@@ -415,14 +424,37 @@ $("document").ready(function(){
                         axios.delete(`http://localhost:3000/address/${div.children().last().children().last().attr("data-Id")}`);
                     })
                     div.children().last().children().first().click(function(){
-                        $("#main>div>div:last-child>div:nth-of-type(3)").css({
+                        $("#main>div>div:last-child>div:nth-of-type(4)").css({
                             display:"block"
                         })
                         $("#main>div>div:last-child>div:nth-of-type(2)").css({
                             display:"none"
                         })
+                        AddressnNameEdit.val($(this).parent().parent().children().first().html());
+                        AddressStreetEdit.val($(this).parent().parent().children().first().next().html().split(",")[0]);
+                        AddressCityEdit.val($(this).parent().parent().children().first().next().html().split(",")[1]);
+                        AddressCountryEdit.val($(this).parent().parent().children().first().next().html().split(",")[2]);
+                        AddressPhoneEdit.val($(this).parent().parent().children().first().next().next().html());
                         $("#main>div>div:last-child>div:first-child>p>span").html("Back to Address");
                         $("#main>div>div:last-child>div:first-child h1>span").html("Edit Address");
+                        $("#main>div>div:last-child>div:nth-of-type(4)>button").click(function(){
+                            if (AddressnNameEdit.val().trim().length>0&&AddressStreetEdit.val().trim().length>0&&AddressCountryEdit.val().trim().length>0&&AddressPhoneEdit.val().match(phoneFormat)!=null&&AddressCityEdit.val().trim().length>0) {
+                                axios.put(`http://localhost:3000/address/${div.children().last().children().first().attr("data-Id")}`,{
+                                    Name:AddressnNameEdit.val(),
+                                    Location:`${AddressStreetEdit.val()},${AddressCityEdit.val()},${AddressCountryEdit.val()}`,
+                                    Phone:AddressPhoneEdit.val(),
+                                    Email:dbSignIn[dbSignIn.length-1].Email
+                                })
+                            }
+                            else{
+                                AddressnNameEdit.val("");
+                                AddressStreetEdit.val("");
+                                AddressCountryEdit.val("");
+                                AddressPhoneEdit.val("");
+                                AddressCityEdit.val("");
+                                sweetAlert("Check Address...", "all informations is required!", "error");
+                            }
+                        })
                         $("#main>div>div:last-child>div:first-child>p>span").on("click",function(){
                             window.location.reload();
                         })
@@ -438,19 +470,20 @@ $("document").ready(function(){
         $(this).parent().parent().remove();
     })
     $("#main>div>div:last-child>div:nth-of-type(2)>div>span>i:first-of-type").click(function(){
-        $("#main>div>div:last-child>div:nth-of-type(3)").css({
+        $("#main>div>div:last-child>div:nth-of-type(4)").css({
             display:"block"
         })
         $("#main>div>div:last-child>div:nth-of-type(2)").css({
             display:"none"
         })
-        AddressnName.val($(this).parent().parent().children().first().html());
-        AddressStreet.val($(this).parent().parent().children().first().next().html().split(",")[0]);
-        AddressCountry.val($(this).parent().parent().children().first().next().html().split(",")[1]);
-        AddressCity.val($(this).parent().parent().children().first().next().html().split(",")[2]);
-        AddressPhone.val($(this).parent().parent().children().first().next().next().html());
+        AddressnNameEdit.val($(this).parent().parent().children().first().html());
+        AddressStreetEdit.val($(this).parent().parent().children().first().next().html().split(",")[0]);
+        AddressCityEdit.val($(this).parent().parent().children().first().next().html().split(",")[1]);
+        AddressCountryEdit.val($(this).parent().parent().children().first().next().html().split(",")[2]);
+        AddressPhoneEdit.val($(this).parent().parent().children().first().next().next().html());
         $("#main>div>div:last-child>div:first-child>p>span").html("Back to Address");
         $("#main>div>div:last-child>div:first-child h1>span").html("Edit Address");
+        
         $("#main>div>div:last-child>div:first-child>p>span").on("click",function(){
             window.location.reload();
         })
