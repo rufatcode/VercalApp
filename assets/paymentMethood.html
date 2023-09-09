@@ -12,8 +12,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/bootstrap.css" />
-    <link rel="stylesheet" href="./css/address.css" />
-    <title>Profile</title>
+    <link rel="stylesheet" href="./css/paymentmethood.css" />
+    <title>Payment Methood</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg my-4">
@@ -1465,9 +1465,9 @@
           <a href="./address.html">
             <i class="fa-solid fa-location-dot"></i>
             Addresses
-            <span>5</span>
+            <span>16</span>
           </a>
-          <a href="./paymentMethood.html">
+          <a href="">
             <i class="fa-solid fa-credit-card"></i>
             Payment Methods
             <span>4</span>
@@ -1476,55 +1476,59 @@
         <div>
           <div>
             <h1>
-              <i class="fa-solid fa-location-dot" style="color: #ca0404"></i>
-              <span>My Addresses</span>
+                <i class="fa-solid fa-credit-card" style="color: #a30000;"></i>
+              <span>Payment Methods</span>
             </h1>
             <i class="fa-solid fa-bars"></i>
             <p>
-              <span>Add New Address</span>
+              <span>Add New Payment Method</span>
             </p>
           </div>
           <div>
             <div>
-                <span>Office</span>
-                <span>497 Erdman Passage, New Zoietown, Paraguay</span>
-                <span>+994516782784</span>
+                <span>
+                  <img src="./img/paymentMethod1.svg" alt="">
+                  <span>Ralf Edward</span>
+                </span>
+                <span>4098 **** **** ****</span>
+                <span>08 / 2022</span>
                 <span>
                     <i class="fa-solid fa-pencil"></i>
                     <i class="fa-solid fa-trash-can"></i>
                 </span>
             </div>
             <div>
-                <span>Shop</span>
-                <span>8000 Evans Brooks, Lake Jo, Mongolia</span>
-                <span>+994551234512</span>
+                <span>
+                  <img src="./img/paymentMethod2.svg" alt="">
+                  <span>Ralf Edward</span>
+                </span>
+                <span>5103 **** **** ****</span>
+                <span>
+                  08 / 2022</span>
                 <span>
                     <i class="fa-solid fa-pencil"></i>
                     <i class="fa-solid fa-trash-can"></i>
                 </span>
             </div>
             <div>
-                <span>Garage</span>
-                <span>978 Elton Springs, Eribertoview, Uganda</span>
-                <span>+994709001213</span>
+                <span>
+                  <img src="./img/paymentMethod3.svg" alt="">
+                  <span>Ralf Edward</span>
+                </span>
+                <span>ui-lib@email.com</span>
+                <span>N/A</span>
                 <span>
                     <i class="fa-solid fa-pencil"></i>
                     <i class="fa-solid fa-trash-can"></i>
                 </span>
             </div>
             <div>
-                <span>Coffee House</span>
-                <span>3899 Gutkowski Views, North Claudiamouth, Ghana</span>
-                <span>+994773319009</span>
                 <span>
-                    <i class="fa-solid fa-pencil"></i>
-                    <i class="fa-solid fa-trash-can"></i>
+                  <img src="./img/paymentMethod4.svg" alt="">
+                  <span>Ralf Edward</span>
                 </span>
-            </div>
-            <div>
-                <span>Italian Restaurant</span>
-                <span>789 Spencer Lock, Lolitaberg, Tanzania</span>
-                <span>+994515009080</span>
+                <span>4169 **** **** ****</span>
+                <span>08 / 2022</span>
                 <span>
                     <i class="fa-solid fa-pencil"></i>
                     <i class="fa-solid fa-trash-can"></i>
@@ -1539,44 +1543,33 @@
           <div>
             <div>
               <div>
-                <label for="FullName">Address Name</label>
+                <label for="CardNumbers">Card Number</label>
                 <input
                   autocomplete="off"
                   type="text"
-                  name="FullName"
-                  id="FullName"
+                  name="CardNumbers"
+                  id="CardNumbers"
                 />
-                <label for="Street">Street</label>
+                <label for="CardName">Name on Card</label>
                 <input
                   autocomplete="off"
                   type="text"
-                  name="Street"
-                  id="Street"
+                  name="CardName"
+                  id="CardName"
                 />
-                <label for="Country">Country</label>
-                <input
-                  list="CountryList"
-                  autocomplete="off"
-                  type="text"
-                  name="Country"
-                  id="Country"
-                />
-                <datalist id="CountryList">
-                </datalist>
+                
               </div>
               <div>
-                <label for="Phone">Phone</label>
-                <input autocomplete="off" type="tel" name="Phone" id="Phone" />
-                <label for="City">City</label>
+                <label for="ExpDate">Exp. Date</label>
                 <input
-                  list="CityList"
                   autocomplete="off"
-                  type="text"
-                  name="City"
-                  id="City"
+                  type="date"
+                  name="ExpDate"
+                  id="ExpDate"
                 />
-                <datalist id="CityList">
-                </datalist>
+                <label for="CVC">CVC</label>
+                <input autocomplete="off" type="text" name="CVC" id="CVC" />
+                
               </div>
             </div>
             <button>Save Changes</button>
@@ -1584,44 +1577,33 @@
           <div>
             <div>
               <div>
-                <label for="FullName">Address Name</label>
+                <label for="CardNumbers">Card Number</label>
                 <input
                   autocomplete="off"
                   type="text"
-                  name="FullName"
-                  id="FullNameEdit"
+                  name="CardNumbers"
+                  id="CardNumbersEdit"
                 />
-                <label for="Street">Street</label>
+                <label for="CardName">Name on Card</label>
                 <input
                   autocomplete="off"
                   type="text"
-                  name="Street"
-                  id="StreetEdit"
+                  name="CardName"
+                  id="CardNameEdit"
                 />
-                <label for="Country">Country</label>
-                <input
-                  list="CountryList"
-                  autocomplete="off"
-                  type="text"
-                  name="Country"
-                  id="CountryEdit"
-                />
-                <datalist id="CountryList">
-                </datalist>
+                
               </div>
               <div>
-                <label for="Phone">Phone</label>
-                <input autocomplete="off" type="tel" name="Phone" id="PhoneEdit" />
-                <label for="City">City</label>
+                <label for="ExpDate">Exp. Date</label>
                 <input
-                  list="CityList"
                   autocomplete="off"
-                  type="text"
-                  name="City"
-                  id="CityEdit"
+                  type="date"
+                  name="ExpDate"
+                  id="ExpDateEdit"
                 />
-                <datalist id="CityList">
-                </datalist>
+                <label for="CVC">CVC</label>
+                <input autocomplete="off" type="text" name="CVC" id="CvcEdit" />
+                
               </div>
             </div>
             <button>Save Changes</button>
@@ -1804,5 +1786,5 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
-  <script type="module" src="./js/address.js"></script>
+  <script type="module" src="./js/paymentMethood.js"></script>
 </html>

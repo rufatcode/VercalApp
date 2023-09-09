@@ -438,7 +438,7 @@ position: relative;
     padding-right: 25px;
     
 }
-#main>div>div:first-child>a:nth-of-type(5){
+#main>div>div:first-child>a:nth-of-type(6){
     border-left: 4px solid rgb(188, 2, 2);
     color: rgb(201, 1, 1);
     padding-left: 21px;
@@ -471,7 +471,7 @@ position: relative;
     font-size: 25px;
     margin-left: 12px;
     font-weight: bold;
-    width: 40%;
+    width: 60%;
 }
 #main>div>div:last-child>div:first-child h1 i{
     margin-right: 10px;

@@ -322,9 +322,9 @@ $("document").ready(function(){
         }
     })
     $("#main>div>div:last-child>div:first-child>p>span").on("click",function(){
-        if ($("#main>div>div:last-child>div:first-child h1>span").html()=="Add New Address") {
-            $("#main>div>div:last-child>div:first-child h1>span").html("My Addresses");
-            $(this).html("Add New Address");
+        if ($("#main>div>div:last-child>div:first-child h1>span").html()=="Add New Payment Method") {
+            $("#main>div>div:last-child>div:first-child h1>span").html("Payment Methods");
+            $(this).html("Add New Payment Method");
             $("#main>div>div:last-child>div:nth-of-type(3)").css({
                 display:"none"
             })
@@ -333,8 +333,8 @@ $("document").ready(function(){
             })
         }
         else{
-            $(this).html("Back to Address");
-            $("#main>div>div:last-child>div:first-child h1>span").html("Add New Address");
+            $(this).html("Back to Payment Methods");
+            $("#main>div>div:last-child>div:first-child h1>span").html("Add New Payment Method");
             $("#main>div>div:last-child>div:nth-of-type(3)").css({
                 display:"block"
             })
@@ -344,57 +344,40 @@ $("document").ready(function(){
         }
        
     })
-    axios.get('https://countriesnow.space/api/v0.1/countries/').then(datas=>{
-        datas.data.data.forEach(element => {
-            let option=$("<option>");
-            option.attr("value",element.country);
-            $("#CountryList").append(option);
-        });
-    })
-    $("#Country").on("change",function(){
-        $("#CityList").html("");
-        axios.get(`https://countriesnow.space/api/v0.1/countries/`).then(datas=>{
-            datas.data.data.forEach(item=>{
-                
-                if (item.country==$(this).val()) {
-                    item.cities.forEach(j=>{
-                        let option=$("<option>");
-                        option.attr("value",j);
-                        $("#CityList").append(option);
-                    })
-                    
-                }
-            })
-        })
-    })
-    let phoneFormat=/^\+994(50|51|55|70|77|99)+\d{7}$/;
-    let AddressnName=$("#FullName");
-    let AddressStreet=$("#Street");
-    let AddressCountry=$("#Country");
-    let AddressPhone=$("#Phone");
-    let AddressCity=$("#City");
+    let CardNumbers=$("#CardNumbers");
+    let CardName=$("#CardName");
+    let ExpDate=$("#ExpDate");
+    let Cvc=$("#CVC");
 
-    let AddressnNameEdit=$("#FullNameEdit");
-    let AddressStreetEdit=$("#StreetEdit");
-    let AddressCountryEdit=$("#CountryEdit");
-    let AddressPhoneEdit=$("#PhoneEdit");
-    let AddressCityEdit=$("#CityEdit");
+    let CardNumbersEdit=$("#CardNumbersEdit");
+    let CardNameEdit=$("#CardNameEdit");
+    let ExpDateEdit=$("#ExpDateEdit");
+    let CvcEdit=$("#CvcEdit");
     $("#main>div>div:last-child>div:nth-of-type(3)>button").click(function(){
         if (dbSignIn[dbSignIn.length-1]!=null) {
-            if (AddressnName.val().trim().length>0&&AddressStreet.val().trim().length>0&&AddressCountry.val().trim().length>0&&AddressPhone.val().match(phoneFormat)!=null&&AddressCity.val().trim().length>0) {
-                axios.post("http://localhost:3000/address",{
-                    Name:AddressnName.val(),
-                    Location:`${AddressStreet.val()},${AddressCity.val()},${AddressCountry.val()}`,
-                    Phone:AddressPhone.val(),
-                    Email:dbSignIn[dbSignIn.length-1].Email
+            if (CardNumbers.val().trim().length==16&&CardName.val().trim().length>0&&ExpDate.val().trim().length>0&&Cvc.val().trim().length==3) {
+                let demoCartNumbers="";
+                for (let index = 0; index < CardNumbers.val().trim().length; index++) {
+                    demoCartNumbers+=CardNumbers.val().trim()[index];
+                    if ((index+1)%4==0&&index!=19) {
+                        demoCartNumbers+=" ";
+                    }
+                }
+                let imgArr=["./img/paymentMethod1.svg","./img/paymentMethod2.svg","./img/paymentMethod3.svg","./img/paymentMethod4.svg"];
+                axios.post(" http://localhost:3000/PaymentMethods",{
+                    CardNumbers:demoCartNumbers,
+                    CardName:CardName.val(),
+                    ExpDate:ExpDate.val(),
+                    Email:dbSignIn[dbSignIn.length-1].Email,
+                    Cvc:Cvc.val(),
+                    Img:imgArr[Math.floor(Math.random()*5)]
                 })
            }
            else{
-                AddressnName.val("");
-                AddressStreet.val("");
-                AddressCountry.val("");
-                AddressPhone.val("");
-                AddressCity.val("");
+                CardNumbers.val("");
+                CardName.val("");
+                ExpDate.val("");
+                Cvc.val("");
                 sweetAlert("Check Address...", "all informations is required!", "error");
             }
         }
@@ -404,25 +387,29 @@ $("document").ready(function(){
        
        
     })
-    axios.get("http://localhost:3000/address").then(data=>{
-        data.data.forEach(item=>{
+    axios.get("http://localhost:3000/PaymentMethods").then(data=>{
+        
+         data.data.forEach(item=>{
             if (dbSignIn[dbSignIn.length-1]!=null) {
                 if (dbSignIn[dbSignIn.length-1].Email==item.Email) {
                     let div=$("<div>");
                     div.html(`
-                            <span>${item.Name}</span>
-                            <span>${item.Location}</span>
-                            <span>${item.Phone}</span>
+                            <span>
+                                <img src="${item.Img}" alt="">
+                                <span>${item.CardName}</span>
+                            </span>
+                            <span>${item.CardNumbers.slice(0,5)} **** **** ****</span>
+                            <span>${item.ExpDate.split("-")[1]}/${item.ExpDate.split("-")[0]}</span>
                             <span>
                                 <i data-Id=${item.id} class="fa-solid fa-pencil"></i>
                                 <i data-Id=${item.id} class="fa-solid fa-trash-can"></i>
                             </span>
                         `)
                     $("#main>div>div:last-child>div:nth-of-type(2)").prepend(div);
-                    $("#main>div>div:first-child>a:nth-of-type(5)>span").html(div.parent().children().length-1);
+                    $("#main>div>div:first-child>a:nth-of-type(6)>span").html(div.parent().children().length-1)
                     div.children().last().children().last().click(function(){
                         div.remove();
-                        axios.delete(`http://localhost:3000/address/${div.children().last().children().last().attr("data-Id")}`);
+                        axios.delete(`http://localhost:3000/PaymentMethods/${div.children().last().children().last().attr("data-Id")}`);
                     })
                     div.children().last().children().first().click(function(){
                         $("#main>div>div:last-child>div:nth-of-type(4)").css({
@@ -431,28 +418,48 @@ $("document").ready(function(){
                         $("#main>div>div:last-child>div:nth-of-type(2)").css({
                             display:"none"
                         })
-                        AddressnNameEdit.val($(this).parent().parent().children().first().html());
-                        AddressStreetEdit.val($(this).parent().parent().children().first().next().html().split(",")[0]);
-                        AddressCityEdit.val($(this).parent().parent().children().first().next().html().split(",")[1]);
-                        AddressCountryEdit.val($(this).parent().parent().children().first().next().html().split(",")[2]);
-                        AddressPhoneEdit.val($(this).parent().parent().children().first().next().next().html());
+                        let dataId=$(this).attr("data-id");
+                        axios.get(`http://localhost:3000/PaymentMethods/${dataId}`).then(item=>{
+                            console.log(item.data);
+                            CardNameEdit.val(item.data.CardName);
+                            let orginalCardNumbers="";
+                            for (let i = 0; i < item.data.CardNumbers.length; i++) {
+                                if ((i+1)%5!=0) {
+                                    orginalCardNumbers+= item.data.CardNumbers[i];
+                                }
+                                
+                            }
+                            CardNumbersEdit.val(orginalCardNumbers);
+                            ExpDateEdit.val(item.data.ExpDate);
+                            CvcEdit.val(item.data.Cvc)
+                        })
+                        
                         $("#main>div>div:last-child>div:first-child>p>span").html("Back to Address");
                         $("#main>div>div:last-child>div:first-child h1>span").html("Edit Address");
                         $("#main>div>div:last-child>div:nth-of-type(4)>button").click(function(){
-                            if (AddressnNameEdit.val().trim().length>0&&AddressStreetEdit.val().trim().length>0&&AddressCountryEdit.val().trim().length>0&&AddressPhoneEdit.val().match(phoneFormat)!=null&&AddressCityEdit.val().trim().length>0) {
-                                axios.put(`http://localhost:3000/address/${div.children().last().children().first().attr("data-Id")}`,{
-                                    Name:AddressnNameEdit.val(),
-                                    Location:`${AddressStreetEdit.val()},${AddressCityEdit.val()},${AddressCountryEdit.val()}`,
-                                    Phone:AddressPhoneEdit.val(),
-                                    Email:dbSignIn[dbSignIn.length-1].Email
+                            let demoCartNumbers="";
+                                for (let index = 0; index < CardNumbersEdit.val().trim().length; index++) {
+                                    demoCartNumbers+=CardNumbersEdit.val().trim()[index];
+                                    if ((index+1)%4==0&&index!=19) {
+                                        demoCartNumbers+=" ";
+                                    }
+                                }
+                            if (CardNameEdit.val().trim().length>0&&CardNumbersEdit.val().trim().length==16&&ExpDateEdit.val().trim().length>0&&CvcEdit.val().length==3) {
+                                
+                                axios.put(`http://localhost:3000/PaymentMethods/${div.children().last().children().first().attr("data-Id")}`,{
+                                    CardNumbers:demoCartNumbers,
+                                    CardName:CardNameEdit.val(),
+                                    ExpDate:ExpDateEdit.val(),
+                                    Cvc:CvcEdit.val(),
+                                    Email:dbSignIn[dbSignIn.length-1].Email,
+                                    Img:div.children().first().children().first().attr("src")
                                 })
                             }
                             else{
-                                AddressnNameEdit.val("");
-                                AddressStreetEdit.val("");
-                                AddressCountryEdit.val("");
-                                AddressPhoneEdit.val("");
-                                AddressCityEdit.val("");
+                                CardNumbersEdit.val("");
+                                CardNameEdit.val("");
+                                ExpDateEdit.val("");
+                                CvcEdit.val("");
                                 sweetAlert("Check Address...", "all informations is required!", "error");
                             }
                         })
@@ -477,11 +484,10 @@ $("document").ready(function(){
         $("#main>div>div:last-child>div:nth-of-type(2)").css({
             display:"none"
         })
-        AddressnNameEdit.val($(this).parent().parent().children().first().html());
-        AddressStreetEdit.val($(this).parent().parent().children().first().next().html().split(",")[0]);
-        AddressCityEdit.val($(this).parent().parent().children().first().next().html().split(",")[1]);
-        AddressCountryEdit.val($(this).parent().parent().children().first().next().html().split(",")[2]);
-        AddressPhoneEdit.val($(this).parent().parent().children().first().next().next().html());
+        CardNameEdit.val($(this).parent().parent().children().first().children().first().next().html());
+        CardNumbersEdit.val($(this).parent().parent().children().first().next().html());
+        ExpDateEdit.val("2022-08-01");
+        CvcEdit.val(198);
         $("#main>div>div:last-child>div:first-child>p>span").html("Back to Address");
         $("#main>div>div:last-child>div:first-child h1>span").html("Edit Address");
         
@@ -489,4 +495,5 @@ $("document").ready(function(){
             window.location.reload();
         })
     })
+    
 })

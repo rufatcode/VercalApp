@@ -534,7 +534,7 @@ $("document").ready(function(){
             }
         }
     })
-    if (singleProducts!=null) {
+    if (singleProducts!=null&&dbSignIn.length!=0) {
         let element=$("#main>div:nth-of-type(2)>div:nth-of-type(3)");
             
         let imgSrc='../../assets/img/profileImg.jpeg';

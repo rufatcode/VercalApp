@@ -1,12 +1,6 @@
 {
   "address": [
     {
-      "Name": "Pub",
-      "Location": "Resid Behbudov 46,Baku,Azerbaijan",
-      "Phone": "+994513004484",
-      "id": 1
-    },
-    {
       "Name": "Work",
       "Location": "Resid Behbudov 44,Baku,Azerbaijan",
       "Phone": "+994513004484",
@@ -16,6 +10,40 @@
       "Name": "Baku",
       "Location": "Suleyman Rustem 21,Baku,Azerbaijan",
       "Phone": "+994513004484",
+      "id": 3
+    },
+    {
+      "Name": "Libirary",
+      "Location": "Azadlig 21,Baku,Azerbaijan",
+      "Phone": "+994513004484",
+      "Email": "rft.smayilov@bk.ru",
+      "id": 4
+    },
+    {
+      "Name": "Home",
+      "Location": "Resid Behbudov 46,Baku,Azerbaijan",
+      "Phone": "+994513004484",
+      "Email": "rft.smayilov@bk.ru",
+      "id": 5
+    }
+  ],
+  "PaymentMethods": [
+    {
+      "CardNumbers": "5103 0715 6312 8977 ",
+      "CardName": "Asim Azizov",
+      "ExpDate": "2023-09-13",
+      "Email": "Asim123@bk.ru",
+      "Cvc": "200",
+      "Img": "./img/paymentMethod4.svg",
+      "id": 2
+    },
+    {
+      "CardNumbers": "4169 7388 5555 5813 ",
+      "CardName": "Rufat Ismayilov",
+      "ExpDate": "2023-09-20",
+      "Email": "rft.smayilov@bk.ru",
+      "Cvc": "199",
+      "Img": "./img/paymentMethod4.svg",
       "id": 3
     }
   ]
