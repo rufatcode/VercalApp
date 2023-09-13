@@ -25,6 +25,20 @@
       "Phone": "+994513004484",
       "Email": "rft.smayilov@bk.ru",
       "id": 5
+    },
+    {
+      "Name": "Home",
+      "Location": "Rasid Behbudov 46,Baku,Azerbaijan",
+      "Phone": "+994513004484",
+      "Email": "Asim123@bk.ru",
+      "id": 6
+    },
+    {
+      "Name": "Code",
+      "Location": "Azadliq 124,Baku,Azerbaijan",
+      "Phone": "+994516782784",
+      "Email": "rft.smayilov@bk.ru",
+      "id": 7
     }
   ],
   "PaymentMethods": [
@@ -45,6 +59,24 @@
       "Cvc": "199",
       "Img": "./img/paymentMethod4.svg",
       "id": 3
+    },
+    {
+      "CardNumbers": "4169 7388 1234 5678 ",
+      "CardName": "Musa Muradov",
+      "ExpDate": "2023-09-21",
+      "Cvc": "162",
+      "Email": "Asim123@bk.ru",
+      "Img": "./img/paymentMethod4.svg",
+      "id": 4
+    },
+    {
+      "CardNumbers": "1234 1234 1234 1234 ",
+      "CardName": "sasa",
+      "ExpDate": "2023-09-15",
+      "Cvc": "199",
+      "Email": "rft.smayilov@bk.ru",
+      "Img": "./img/paymentMethod4.svg",
+      "id": 5
     }
   ]
 }
