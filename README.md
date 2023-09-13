@@ -22,3 +22,9 @@ Bugunden hami layihe ucun bir private repo yaratsin ve linki turn in etsin.
 Github link 10.08.2023 18:30-a qeder repo turn in edin.
 Layihenin bashlama vaxti : 10.08.2023
 Layihenin bitme vaxti :  17.08.2023
+
+
+npm install -g json-server
+active json server:
+json-server --watch db.json
+To see more functionality, please register :
